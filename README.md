@@ -23,7 +23,7 @@ Práctica del CFGS DAM para aplicar bases de datos, acceso a datos e interfaces.
 - Realizar ventas  
 - Interfaz optimizada para PC  
 
-### 🟢 Mecánicos (Interfaz Simple)
+### 🟢 Mecánicos (Aplicación de Escritorio)
 - Ver reparaciones asignadas  
 - Iniciar y finalizar trabajos  
 - Registrar piezas, consumibles y presupuesto  
