@@ -39,37 +39,10 @@ Práctica del CFGS DAM para aplicar bases de datos, acceso a datos e interfaces.
 ---
 
 ## 🛠️ Tecnologías previstas
-- Base de datos: MySQL / PostgreSQL  
-- Backend: a definir  
-- Escritorio: JavaFX / .NET / similar  
-- Web: Angular / React / Vue  
+- Base de datos: MySQL
+- Backend: java 
+- Escritorio: JavaFX
 - Control de versiones: Git + GitHub  
-
----
-
-## 📅 Fases del proyecto
-1. Análisis y diseño de interfaces  
-2. Desarrollo de la aplicación de escritorio  
-3. Desarrollo de la aplicación web  
-4. Documentación y manuales  
-5. Testing  
-6. Despliegue  
-7. Mantenimiento y mejoras  
-
----
-
-## 📁 Estructura sugerida del repositorio
-```plaintext
-/docs  
-/database  
-/desktop-app  
-/web-app  
-/mechanics-module  
-/tests  
-README.md
-```
-
----
 
 ## 👥 Equipo
 Proyecto realizado por **3 estudiantes** del CFGS DAM – IES Pablo Picasso.
