@@ -1,10 +1,10 @@
-package domain;
+package com.tradetune.app.domain.model;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "sales_employee")
-public class SalesEmployee {
+@Table(name = "mechanic")
+public class Mechanic {
     @Id
     @Column(name = "id_worker", nullable = false)
     private Integer id;

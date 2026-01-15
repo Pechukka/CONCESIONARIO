@@ -1,4 +1,4 @@
-package domain;
+package com.tradetune.app.domain.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

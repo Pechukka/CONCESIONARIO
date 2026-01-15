@@ -1,4 +1,4 @@
-package domain;
+package com.tradetune.app.domain.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,13 +6,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "offer_status")
-public class OfferStatus {
+@Table(name = "vehicle_category")
+public class VehicleCategory {
     @Id
-    @Column(name = "id_offer_status", nullable = false)
+    @Column(name = "id_category", nullable = false)
     private Short id;
 
-    @Column(name = "name", nullable = false, length = 40)
+    @Column(name = "name", nullable = false, length = 30)
     private String name;
 
     public Short getId() {

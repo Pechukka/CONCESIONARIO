@@ -1,10 +1,10 @@
-package domain;
+package com.tradetune.app.domain.model;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "mechanic")
-public class Mechanic {
+@Table(name = "head_mechanic")
+public class HeadMechanic {
     @Id
     @Column(name = "id_worker", nullable = false)
     private Integer id;
@@ -12,7 +12,7 @@ public class Mechanic {
     @MapsId
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_worker", nullable = false)
-    private Worker worker;
+    private Mechanic mechanic;
 
     public Integer getId() {
         return id;
@@ -22,12 +22,12 @@ public class Mechanic {
         this.id = id;
     }
 
-    public Worker getWorker() {
-        return worker;
+    public Mechanic getMechanic() {
+        return mechanic;
     }
 
-    public void setWorker(Worker worker) {
-        this.worker = worker;
+    public void setMechanic(Mechanic mechanic) {
+        this.mechanic = mechanic;
     }
 
 }
