@@ -1,4 +1,4 @@
 package com.tradetune.app.domain.repository;
 
-public interface VehicleRepository {
+public interface VehicleRepository extends CommonRepository {
 }

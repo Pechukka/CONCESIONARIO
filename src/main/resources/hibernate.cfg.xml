@@ -14,7 +14,7 @@
             jdbc:mysql://localhost:3306/car_dealership?sslMode=DISABLED&amp;serverTimezone=Europe/Madrid&amp;allowPublicKeyRetrieval=true
         </property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">TU_PASSWORD</property>
+        <property name="hibernate.connection.password">RootPasswd$</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
         <!-- ==============
@@ -28,10 +28,30 @@
         <property name="hibernate.highlight_sql">true</property>
         <property name="hibernate.jdbc.lob.non_contextual_creation">true</property>
 
-        <!--
-        <mapping class="com.example.cardealership.domain.Dealership"/>
-        <mapping class="com.example.cardealership.domain.Vehicle"/>
-        <mapping class="com.example.cardealership.domain.Client"/>
-        -->
+        <!-- ==============
+             Mappings de Entidades
+             ============== -->
+        <mapping class="com.tradetune.app.domain.model.Dealership"/>
+        <mapping class="com.tradetune.app.domain.model.Worker"/>
+        <mapping class="com.tradetune.app.domain.model.SalesEmployee"/>
+        <mapping class="com.tradetune.app.domain.model.Mechanic"/>
+        <mapping class="com.tradetune.app.domain.model.HeadMechanic"/>
+        <mapping class="com.tradetune.app.domain.model.Manager"/>
+        <mapping class="com.tradetune.app.domain.model.VehicleCategory"/>
+        <mapping class="com.tradetune.app.domain.model.VehicleStatus"/>
+        <mapping class="com.tradetune.app.domain.model.Vehicle"/>
+        <mapping class="com.tradetune.app.domain.model.VehicleImage"/>
+        <mapping class="com.tradetune.app.domain.model.Client"/>
+        <mapping class="com.tradetune.app.domain.model.ClientVehicleInterest"/>
+        <mapping class="com.tradetune.app.domain.model.PaymentMethod"/>
+        <mapping class="com.tradetune.app.domain.model.OfferStatus"/>
+        <mapping class="com.tradetune.app.domain.model.Offer"/>
+        <mapping class="com.tradetune.app.domain.model.Sale"/>
+        <mapping class="com.tradetune.app.domain.model.RepairStatus"/>
+        <mapping class="com.tradetune.app.domain.model.Repair"/>
+        <mapping class="com.tradetune.app.domain.model.MechanicSpecialty"/>
+        <mapping class="com.tradetune.app.domain.model.MaterialType"/>
+        <mapping class="com.tradetune.app.domain.model.Material"/>
+        <mapping class="com.tradetune.app.domain.model.RepairMaterial"/>
     </session-factory>
 </hibernate-configuration>
