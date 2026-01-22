@@ -13,6 +13,4 @@ public class ClientRepositoryImpl extends CommonRepositoryImpl<Client, Integer> 
     public ClientRepositoryImpl(Session session) {
         super(session);
     }
-
-
 }

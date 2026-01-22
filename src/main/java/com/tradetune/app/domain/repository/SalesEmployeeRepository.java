@@ -1,4 +1,6 @@
 package com.tradetune.app.domain.repository;
 
-public interface SalesEmployeeRepository extends CommonRepository {
+import com.tradetune.app.domain.model.SalesEmployee;
+
+public interface SalesEmployeeRepository extends CommonRepository<SalesEmployee, Integer> {
 }

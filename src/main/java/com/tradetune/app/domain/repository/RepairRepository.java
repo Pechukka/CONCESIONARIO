@@ -1,4 +1,6 @@
 package com.tradetune.app.domain.repository;
 
-public interface RepairRepository extends CommonRepository {
+import com.tradetune.app.domain.model.Repair;
+
+public interface RepairRepository extends CommonRepository<Repair, Integer> {
 }

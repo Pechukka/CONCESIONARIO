@@ -1,4 +1,6 @@
 package com.tradetune.app.domain.repository;
 
-public interface HeadMechanicRepository extends CommonRepository {
+import com.tradetune.app.domain.model.HeadMechanic;
+
+public interface HeadMechanicRepository extends CommonRepository<HeadMechanic, Integer> {
 }

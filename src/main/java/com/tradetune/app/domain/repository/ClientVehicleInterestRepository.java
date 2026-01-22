@@ -1,4 +1,6 @@
 package com.tradetune.app.domain.repository;
 
-public interface ClientVehicleInterestRepository extends CommonRepository {
+import com.tradetune.app.domain.model.ClientVehicleInterest;
+
+public interface ClientVehicleInterestRepository extends CommonRepository<ClientVehicleInterest, Integer> {
 }

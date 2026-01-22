@@ -1,4 +1,6 @@
 package com.tradetune.app.domain.repository;
 
-public interface ManagerRepository extends CommonRepository {
+import com.tradetune.app.domain.model.Manager;
+
+public interface ManagerRepository extends CommonRepository<Manager, Integer> {
 }

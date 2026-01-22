@@ -1,4 +1,6 @@
 package com.tradetune.app.domain.repository;
 
-public interface MaterialRepository extends CommonRepository {
+import com.tradetune.app.domain.model.Material;
+
+public interface MaterialRepository extends CommonRepository<Material, Integer> {
 }

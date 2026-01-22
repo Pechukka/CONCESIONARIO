@@ -1,4 +1,6 @@
 package com.tradetune.app.domain.repository;
 
-public interface OfferStatusRepository extends CommonRepository {
+import com.tradetune.app.domain.model.OfferStatus;
+
+public interface OfferStatusRepository extends CommonRepository<OfferStatus, Integer> {
 }
