@@ -16,7 +16,7 @@ public interface CommonRepository<T, ID> {
      *
      * @param entity Entidad a guardar
      */
-    void save(T entity);
+    T save(T entity);
 
     /**
      * Busca una entidad por su ID
@@ -38,7 +38,7 @@ public interface CommonRepository<T, ID> {
      *
      * @param entity Entidad a actualizar
      */
-    void update(T entity);
+    T update(T entity);
 
     /**
      * Elimina una entidad de la base de datos
@@ -46,4 +46,12 @@ public interface CommonRepository<T, ID> {
      * @param entity Entidad a eliminar
      */
     void delete(T entity);
+
+    /**
+     * Elimina una entidad por su identificador.
+     *
+     * @param id Identificador de la entidad a eliminar
+     * @return true si la entidad fue eliminada, false si no existía
+     */
+    boolean deleteById(ID id);
 }
