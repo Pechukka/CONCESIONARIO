@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+/**
+ * Stores image URLs for vehicle photos.
+ * Multiple images can be associated with a single vehicle.
+ */
 @Entity
 @Table(name = "vehicle_image")
 public class VehicleImage {

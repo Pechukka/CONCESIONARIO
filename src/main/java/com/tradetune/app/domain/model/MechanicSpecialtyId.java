@@ -6,6 +6,9 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Composite primary key for the MechanicSpecialty entity.
+ */
 @Embeddable
 public class MechanicSpecialtyId implements Serializable {
     private static final long serialVersionUID = -2753275865383127809L;
@@ -33,8 +36,10 @@ public class MechanicSpecialtyId implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         MechanicSpecialtyId entity = (MechanicSpecialtyId) o;
         return Objects.equals(this.idMechanic, entity.idMechanic) &&
                 Objects.equals(this.idCategory, entity.idCategory);

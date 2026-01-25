@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+/**
+ * Represents a mechanic's specialization in a specific vehicle category.
+ * Many-to-many relationship between mechanics and vehicle categories.
+ */
 @Entity
 @Table(name = "mechanic_specialty")
 public class MechanicSpecialty {

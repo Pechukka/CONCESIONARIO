@@ -5,6 +5,11 @@ import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
 
+/**
+ * Base entity representing a dealership employee.
+ * Serves as parent for specific worker roles (Manager, SalesEmployee,
+ * Mechanic).
+ */
 @Entity
 @Table(name = "worker")
 public class Worker {

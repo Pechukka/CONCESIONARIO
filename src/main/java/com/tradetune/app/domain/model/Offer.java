@@ -6,6 +6,10 @@ import org.hibernate.annotations.ColumnDefault;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+/**
+ * Represents a sales offer made to a client for a vehicle.
+ * Includes pricing details, payment method, and validity period.
+ */
 @Entity
 @Table(name = "offer")
 public class Offer {

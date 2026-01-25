@@ -2,6 +2,11 @@ package com.tradetune.app.domain.model;
 
 import jakarta.persistence.*;
 
+/**
+ * Represents a head mechanic role with supervisory responsibilities.
+ * Extends the Mechanic entity and is responsible for creating repair work
+ * orders.
+ */
 @Entity
 @Table(name = "head_mechanic")
 public class HeadMechanic {

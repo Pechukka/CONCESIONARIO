@@ -6,6 +6,10 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import java.math.BigDecimal;
 
+/**
+ * Represents materials used in a specific repair work order.
+ * Tracks quantity and applied unit price for each material.
+ */
 @Entity
 @Table(name = "repair_material")
 public class RepairMaterial {

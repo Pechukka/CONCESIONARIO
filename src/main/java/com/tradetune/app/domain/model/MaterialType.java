@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * Catalog of material types for repair work classification.
+ */
 @Entity
 @Table(name = "material_type")
 public class MaterialType {

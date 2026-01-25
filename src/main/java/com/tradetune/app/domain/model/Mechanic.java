@@ -2,6 +2,10 @@ package com.tradetune.app.domain.model;
 
 import jakarta.persistence.*;
 
+/**
+ * Represents a mechanic role.
+ * Extends the base Worker entity and can be assigned to repair work orders.
+ */
 @Entity
 @Table(name = "mechanic")
 public class Mechanic {

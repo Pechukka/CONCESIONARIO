@@ -2,6 +2,10 @@ package com.tradetune.app.domain.model;
 
 import jakarta.persistence.*;
 
+/**
+ * Represents a sales employee role.
+ * Extends the base Worker entity and is responsible for creating offers.
+ */
 @Entity
 @Table(name = "sales_employee")
 public class SalesEmployee {

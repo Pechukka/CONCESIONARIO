@@ -4,6 +4,9 @@ import com.tradetune.app.domain.model.Vehicle;
 import com.tradetune.app.domain.repository.VehicleRepository;
 import org.hibernate.Session;
 
+/**
+ * Hibernate implementation of the Vehicle repository.
+ */
 public class VehicleRepositoryImpl extends CommonRepositoryImpl<Vehicle, Integer> implements VehicleRepository {
     protected VehicleRepositoryImpl(Session session) {
         super(session);

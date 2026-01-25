@@ -7,36 +7,32 @@ import org.hibernate.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
 /**
- * Implementación genérica del repositorio con Hibernate 6.x/7.x
- * Usa métodos JPA estándar
+ * Generic repository implementation using Hibernate 6.x/7.x.
+ * Uses standard JPA methods for persistence operations.
  *
- * @param <T> Tipo de la entidad
- * @param <ID> Tipo de la clave primaria
+ * @param <T>  the entity type
+ * @param <ID> the primary key type
  */
 public abstract class CommonRepositoryImpl<T, ID> implements CommonRepository<T, ID> {
 
     private static final Logger logger = LoggerFactory.getLogger(CommonRepositoryImpl.class);
 
-    /** Clase de la entidad (se obtiene automáticamente) */
     private final Class<T> entityClass;
-
-    /** Sesión de Hibernate */
-    protected Session session;
-
     private final String entityName;
 
+    protected Session session;
 
     /**
-     * Constructor que detecta automáticamente el tipo de entidad
+     * Constructs a repository and automatically detects the entity type using
+     * reflection.
      *
-     * @param session Sesión de Hibernate
+     * @param session the Hibernate session to use for database operations
      */
     @SuppressWarnings("unchecked")
     protected CommonRepositoryImpl(Session session) {
@@ -47,49 +43,37 @@ public abstract class CommonRepositoryImpl<T, ID> implements CommonRepository<T,
         this.entityName = entityClass.getName();
     }
 
-    /**
-     * INSERT - Guarda una nueva entidad usando session.persist()
-     */
-    @Override
     public T save(T entity) {
         Objects.requireNonNull(entity, "Entity cannot be null");
         logger.debug("Creating new {}", entityName);
+
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            session.persist(entity);  // ← persist() en lugar de save()
+            session.persist(entity);
             transaction.commit();
             logger.debug("{} created successfully with id: {}", entityName, entity);
             return entity;
         } catch (Exception e) {
-            if (transaction != null) {
+            if (transaction != null)
                 transaction.rollback();
-            }
             logger.error("Error creating {}", entityName, e);
-            throw new RuntimeException("Error al guardar la entidad: " + e.getMessage(), e);
+            throw new RuntimeException("Error creating " + entityName + ": " + e.getMessage(), e);
         }
     }
 
-    /**
-     * SELECT - Busca una entidad por ID usando session.find()
-     */
-    @Override
     public Optional<T> findById(ID id) {
         logger.debug("Finding {} with id: {}", entityName, id);
 
         try {
-            T entity = session.find(entityClass, id);  // ← find() en lugar de get()
+            T entity = session.find(entityClass, id);
             return Optional.ofNullable(entity);
         } catch (Exception e) {
             logger.error("Error finding {} with id: {}", entityName, id, e);
-            throw new RuntimeException("Error al buscar entidad por ID: " + e.getMessage(), e);
+            throw new RuntimeException("Error finding entity by ID: " + e.getMessage(), e);
         }
     }
 
-    /**
-     * SELECT ALL - Obtiene todas las entidades
-     */
-    @Override
     public List<T> findAll() {
         logger.debug("Finding all {}", entityName);
 
@@ -99,17 +83,14 @@ public abstract class CommonRepositoryImpl<T, ID> implements CommonRepository<T,
             return query.getResultList();
         } catch (Exception e) {
             logger.error("Error finding all {}", entityName, e);
-            throw new RuntimeException("Error al obtener todas las entidades: " + e.getMessage(), e);
+            throw new RuntimeException("Error retrieving all entities: " + e.getMessage(), e);
         }
     }
 
-    /**
-     * UPDATE - Actualiza una entidad usando session.merge()
-     */
-    @Override
     public T update(T entity) {
         Objects.requireNonNull(entity, "Entity cannot be null");
         logger.debug("Updating {}", entityName);
+
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
@@ -119,46 +100,35 @@ public abstract class CommonRepositoryImpl<T, ID> implements CommonRepository<T,
             return updatedEntity;
 
         } catch (Exception e) {
-            if (transaction != null) {
+            if (transaction != null)
                 transaction.rollback();
-            }
             logger.error("Error updating {}", entityName, e);
-            throw new RuntimeException("Error al actualizar la entidad: " + e.getMessage(), e);
+            throw new RuntimeException("Error updating entity: " + e.getMessage(), e);
         }
     }
 
-    /**
-     * DELETE - Elimina una entidad usando session.remove()
-     */
-    @Override
     public void delete(T entity) {
         Objects.requireNonNull(entity, "Entity cannot be null");
         logger.debug("Deleting {} entity", entityName);
+
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            session.remove(entity);  // ← remove() en lugar de delete()
+            session.remove(entity);
             transaction.commit();
             logger.debug("{} deleted successfully", entityName);
         } catch (Exception e) {
-            if (transaction != null) {
+            if (transaction != null)
                 transaction.rollback();
-            }
             logger.error("Error deleting {}", entityName, e);
-            throw new RuntimeException("Error al eliminar la entidad: " + e.getMessage(), e);
+            throw new RuntimeException("Error deleting entity: " + e.getMessage(), e);
         }
     }
 
-    /**
-     * Elimina una entidad por su identificador.
-     *
-     * @param id Identificador de la entidad a eliminar
-     * @return true si la entidad fue eliminada, false si no existía
-     */
-    public boolean deleteById(Integer id) {
+    public boolean deleteById(ID id) {
         logger.debug("Deleting {} with id: {}", entityName, id);
-        Transaction transaction = null;
 
+        Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
             T entity = session.find(entityClass, id);
@@ -173,21 +143,11 @@ public abstract class CommonRepositoryImpl<T, ID> implements CommonRepository<T,
             return true;
 
         } catch (Exception e) {
-            if (transaction != null) {
+            if (transaction != null)
                 transaction.rollback();
-            }
             logger.error("Error deleting {} with id: {}", entityName, id, e);
             throw new RuntimeException("Error deleting " + entityName + " by id", e);
         }
     }
 
-
-    /**
-     * Obtiene la clase de la entidad
-     *
-     * @return Clase de la entidad
-     */
-    protected Class<T> getEntityClass() {
-        return entityClass;
-    }
 }

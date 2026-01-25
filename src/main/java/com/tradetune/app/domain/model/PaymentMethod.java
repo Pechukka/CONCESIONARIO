@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * Catalog of payment methods available for vehicle purchases.
+ */
 @Entity
 @Table(name = "payment_method")
 public class PaymentMethod {

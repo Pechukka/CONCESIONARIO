@@ -8,6 +8,12 @@ import org.hibernate.annotations.OnDeleteAction;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+/**
+ * Represents a vehicle repair work order.
+ * Tracks repair lifecycle from creation to completion, including cost
+ * estimation,
+ * mechanic assignment, and material usage.
+ */
 @Entity
 @Table(name = "repair")
 public class Repair {

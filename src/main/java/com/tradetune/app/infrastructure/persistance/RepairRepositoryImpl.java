@@ -4,6 +4,9 @@ import com.tradetune.app.domain.model.Repair;
 import com.tradetune.app.domain.repository.RepairRepository;
 import org.hibernate.Session;
 
+/**
+ * Hibernate implementation of the Repair repository.
+ */
 public class RepairRepositoryImpl extends CommonRepositoryImpl<Repair, Integer> implements RepairRepository {
     protected RepairRepositoryImpl(Session session) {
         super(session);

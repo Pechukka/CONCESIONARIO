@@ -6,6 +6,10 @@ import org.hibernate.annotations.ColumnDefault;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+/**
+ * Records a completed vehicle sale.
+ * Links to the accepted offer and captures the final transaction price.
+ */
 @Entity
 @Table(name = "sale")
 public class Sale {

@@ -4,54 +4,57 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Repositorio genérico con operaciones CRUD básicas
+ * Generic repository with basic CRUD operations.
+ * Provides standard persistence operations for domain entities.
  *
- * @param <T> Tipo de la entidad
- * @param <ID> Tipo de la clave primaria
+ * @param <T>  the entity type
+ * @param <ID> the primary key type
  */
 public interface CommonRepository<T, ID> {
 
     /**
-     * Guarda una nueva entidad en la base de datos
+     * Persists a new entity in the database.
      *
-     * @param entity Entidad a guardar
+     * @param entity the entity to save
+     * @return the saved entity
      */
     T save(T entity);
 
     /**
-     * Busca una entidad por su ID
+     * Finds an entity by its identifier.
      *
-     * @param id Identificador de la entidad
-     * @return Optional con la entidad si existe, vacío si no
+     * @param id the entity identifier
+     * @return an Optional containing the entity if found, empty otherwise
      */
     Optional<T> findById(ID id);
 
     /**
-     * Obtiene todas las entidades de la tabla
+     * Retrieves all entities from the repository.
      *
-     * @return Lista con todas las entidades
+     * @return list containing all entities
      */
     List<T> findAll();
 
     /**
-     * Actualiza una entidad existente
+     * Updates an existing entity.
      *
-     * @param entity Entidad a actualizar
+     * @param entity the entity to update
+     * @return the updated entity
      */
     T update(T entity);
 
     /**
-     * Elimina una entidad de la base de datos
+     * Deletes an entity from the database.
      *
-     * @param entity Entidad a eliminar
+     * @param entity the entity to delete
      */
     void delete(T entity);
 
     /**
-     * Elimina una entidad por su identificador.
+     * Deletes an entity by its identifier.
      *
-     * @param id Identificador de la entidad a eliminar
-     * @return true si la entidad fue eliminada, false si no existía
+     * @param id the identifier of the entity to delete
+     * @return true if the entity was deleted, false if it didn't exist
      */
     boolean deleteById(ID id);
 }

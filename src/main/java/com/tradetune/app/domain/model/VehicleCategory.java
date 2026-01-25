@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * Catalog of vehicle categories.
+ */
 @Entity
 @Table(name = "vehicle_category")
 public class VehicleCategory {

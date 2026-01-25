@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * Catalog of repair statuses.
+ */
 @Entity
 @Table(name = "repair_status")
 public class RepairStatus {

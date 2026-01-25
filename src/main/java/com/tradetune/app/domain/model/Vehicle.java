@@ -6,6 +6,10 @@ import org.hibernate.annotations.ColumnDefault;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+/**
+ * Represents a vehicle in the dealership inventory.
+ * Tracks vehicle details, status, pricing, and associated dealership.
+ */
 @Entity
 @Table(name = "vehicle")
 public class Vehicle {

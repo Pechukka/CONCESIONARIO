@@ -4,6 +4,11 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+/**
+ * Represents a customer of the dealership.
+ * Stores personal and contact information for clients interested in purchasing
+ * vehicles.
+ */
 @Entity
 @Table(name = "client")
 public class Client {

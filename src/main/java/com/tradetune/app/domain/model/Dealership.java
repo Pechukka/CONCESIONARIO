@@ -2,6 +2,9 @@ package com.tradetune.app.domain.model;
 
 import jakarta.persistence.*;
 
+/**
+ * Represents a dealership location with its address information.
+ */
 @Entity
 @Table(name = "dealership")
 public class Dealership {
