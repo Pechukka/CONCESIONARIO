@@ -157,3 +157,92 @@
     -fx-font-weight: 700;
     -fx-text-fill: -fx-dark-blue;
 }
+
+/* =============================================================================
+   7. NAV LATERAL (Nav.fxml)
+   ============================================================================= */
+
+/* Variables SOLO para este componente */
+.nav-root {
+    -app-white: #ffffff;
+    -app-black: #000000;
+    -app-border: #E5E7EB;
+
+    -app-accent: #1f2937;
+    -app-accent-hover: #16202b;
+    -app-accent-pressed: #0f1720;
+
+    -app-mechanic-accent: #0E7490;
+
+    -fx-background-color: -app-white;
+    -fx-border-color: -app-border;
+    -fx-border-width: 0 1 0 0;
+}
+
+/* ToggleButton base */
+.nav-item {
+    -fx-background-color: -app-white;
+    -fx-text-fill: -app-black;
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+
+    -fx-padding: 12 16;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+
+    -fx-border-color: -app-black;
+    -fx-border-width: 1px;
+
+    -fx-cursor: hand;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* Hover */
+.nav-item:hover {
+    -fx-background-color: rgba(0,0,0,0.03);
+}
+
+/* Pressed */
+.nav-item:pressed {
+    -fx-background-color: rgba(0,0,0,0.06);
+}
+
+/* Seleccionado */
+.nav-item:selected {
+    -fx-background-color: -app-accent;
+    -fx-text-fill: -app-white;
+    -fx-border-color: -app-accent;
+}
+
+.nav-item:selected:hover {
+    -fx-background-color: -app-accent-hover;
+    -fx-border-color: -app-accent-hover;
+}
+
+.nav-item:selected:pressed {
+    -fx-background-color: -app-accent-pressed;
+    -fx-border-color: -app-accent-pressed;
+}
+
+/* SALES */
+.nav-item--sales:selected {
+    -fx-background-color: -app-accent;
+    -fx-border-color: -app-accent;
+}
+
+/* MECHANIC */
+.nav-item--mechanic:selected {
+    -fx-background-color: -app-mechanic-accent;
+    -fx-border-color: -app-mechanic-accent;
+}
+
+.nav-item--mechanic:selected:hover {
+    -fx-background-color: derive(-app-mechanic-accent, -10%);
+    -fx-border-color: derive(-app-mechanic-accent, -10%);
+}
+
+.nav-item--mechanic:selected:pressed {
+    -fx-background-color: derive(-app-mechanic-accent, -20%);
+    -fx-border-color: derive(-app-mechanic-accent, -20%);
+}

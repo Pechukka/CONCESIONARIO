@@ -13,7 +13,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/tradetune/app/ui/fxml/components/header.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/tradetune/app/ui/fxml/components/nav.fxml")));
         Scene scene = new Scene(root);
 
         scene.getStylesheets().add(
