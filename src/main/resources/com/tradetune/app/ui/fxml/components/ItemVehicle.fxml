@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tradetune.app.ui.controller.ItemVehicleController"
+      stylesheets="@../../css/base.css"
+      alignment="CENTER_LEFT"
+      spacing="20.0"
+      styleClass="item-card">
+
+    <padding>
+        <Insets top="15" right="20" bottom="15" left="20"/>
+    </padding>
+
+    <ImageView fx:id="imgVehicle" fitHeight="100.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" styleClass="item-image" />
+
+    <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+
+        <Label fx:id="lblModel" text="MARCA MODELO VERSIÓN" styleClass="item-title"/>
+
+        <Label fx:id="lblTechnicalInfo" text="Tipo Combustible • 000.000 km • AAAA" styleClass="item-subtitle"/>
+
+        <HBox spacing="15.0">
+            <Label fx:id="lblLocation" text="📍 Nombre Concesionario" styleClass="item-detail"/>
+            <Label fx:id="lblStockDays" text="📦 En stock: XX días" styleClass="item-detail"/>
+        </HBox>
+
+        <Button fx:id="btnViewDetails" text="Ver Detalles" styleClass="btn-primary-small"/>
+    </VBox>
+
+    <VBox alignment="TOP_RIGHT">
+        <Label fx:id="lblPrice" text="00.000 €" styleClass="item-price"/>
+    </VBox>
+
+</HBox>

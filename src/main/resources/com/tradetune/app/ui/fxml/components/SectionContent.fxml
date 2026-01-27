@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tradetune.app.ui.controller.SectionContentController"
+            stylesheets="@../../css/base.css"
+            styleClass="main-content-background"
+            prefHeight="600.0" prefWidth="800.0"> <top>
+    <VBox spacing="20.0" styleClass="header-container" fillWidth="true">
+        <padding>
+            <Insets top="30" right="40" bottom="20" left="40"/>
+        </padding>
+
+        <Label fx:id="lblTitle" text="TÍTULO SECCIÓN" styleClass="section-title"/>
+
+        <TextField fx:id="txtSearch"
+                   promptText="Buscar por nombre..."
+                   styleClass="input-text"
+                   maxWidth="Infinity"/>
+    </VBox>
+</top>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-scroll-pane">
+            <content>
+                <VBox fx:id="vboxItems" spacing="15.0" styleClass="items-container" fillWidth="true">
+                    <padding>
+                        <Insets top="10" right="40" bottom="10" left="40"/>
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" styleClass="footer-container">
+            <padding>
+                <Insets top="20" right="40" bottom="30" left="40"/>
+            </padding>
+            <Button fx:id="btnAction" text="+ Acción Principal" visible="false" styleClass="btn-primary"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,61 +1,159 @@
+/* =============================================================================
+   1. VARIABLES GLOBALES Y COLORES
+   ============================================================================= */
 .root {
+    /* Paleta de colores principal */
     -fx-white: #ffffff;
     -fx-black: #000000;
     -fx-dark-blue: #1f2937;
     -fx-dark-blue-hover: #16202b;
     -fx-dark-blue-pressed: #0f1720;
+
+    /* Colores funcionales (Fondo app, bordes suaves, texto secundario) */
+    -fx-bg-app: #F3F4F6;
+    -fx-border-color: #E5E7EB;
+    -fx-text-gray: #6B7280;
 }
 
+/* =============================================================================
+   2. LAYOUT GENERAL
+   ============================================================================= */
 .layout-root {
     -fx-background-color: -fx-white;
 }
 
+/* =============================================================================
+   3. BOTONES
+   ============================================================================= */
+
+/* Botón Principal Grande (Login, Formularios) */
 .btn-primary {
     -fx-background-color: -fx-dark-blue;
     -fx-text-fill: -fx-white;
-
-    -fx-padding: 14 22 14 22;
+    -fx-padding: 14 22;
     -fx-font-size: 16px;
     -fx-font-weight: 700;
-
-    -fx-border-color: -fx-dark-blue;
-    -fx-border-width: 1;
-
     -fx-background-radius: 2;
-    -fx-border-radius: 2;
+    -fx-cursor: hand;
 }
 
 .btn-primary:hover {
     -fx-background-color: -fx-dark-blue-hover;
-    -fx-border-color: -fx-dark-blue-hover;
 }
 
 .btn-primary:pressed {
     -fx-background-color: -fx-dark-blue-pressed;
-    -fx-border-color: -fx-dark-blue-pressed;
 }
 
+/* Botón Principal Pequeño (Para usar DENTRO de las tarjetas/listas) */
+.btn-primary-small {
+    -fx-background-color: -fx-dark-blue;
+    -fx-text-fill: -fx-white;
+    -fx-padding: 8 16;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 2;
+    -fx-cursor: hand;
+}
+
+.btn-primary-small:hover {
+    -fx-background-color: -fx-dark-blue-hover;
+}
+
+/* Botón Secundario (Borde, fondo transparente) */
 .btn-secondary {
     -fx-background-color: transparent;
     -fx-border-color: -fx-black;
     -fx-border-width: 1px;
+    -fx-cursor: hand;
 }
 
-.btn-secondary:hover {
-}
-
-.btn-secondary:pressed {
-}
-
+/* =============================================================================
+   4. FORMULARIOS E INPUTS
+   ============================================================================= */
 .input-text {
     -fx-background-color: -fx-white;
     -fx-text-fill: -fx-black;
-
     -fx-border-color: -fx-black;
     -fx-border-width: 1;
-
     -fx-background-radius: 2;
-    -fx-border-radius: 2;
+    -fx-padding: 14 16;
+}
 
-    -fx-padding: 14 16 14 16;
+.input-text:focused {
+    -fx-border-color: -fx-dark-blue; /* Resalta al escribir */
+}
+
+/* =============================================================================
+   5. VISTA DE SECCIÓN (SectionContent.fxml)
+   ============================================================================= */
+
+/* Fondo gris suave para el área de contenido principal */
+.main-content-background {
+    -fx-background-color: -fx-bg-app;
+}
+
+/* Título grande de la sección (ej: "VEHÍCULOS DISPONIBLES") */
+.section-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -fx-dark-blue;
+}
+
+/* ScrollPane Transparente: Elimina bordes y fondos grises feos del scroll */
+.content-scroll-pane,
+.content-scroll-pane .viewport {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+
+/* =============================================================================
+   6. TARJETAS DE ITEMS (ItemVehicle.fxml, ItemClient.fxml...)
+   ============================================================================= */
+
+/* Contenedor principal de la tarjeta */
+.item-card {
+    -fx-background-color: -fx-white;
+    -fx-background-radius: 4;
+    /* Sombra suave para efecto de elevación */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);
+    -fx-cursor: hand;
+}
+
+.item-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 8, 0, 0, 2);
+}
+
+/* Imagen del coche/cliente dentro de la tarjeta */
+.item-image {
+    -fx-background-color: -fx-bg-app;
+    -fx-background-radius: 2;
+}
+
+/* Título del item (ej: Nombre del coche) */
+.item-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -fx-dark-blue;
+}
+
+/* Subtítulos (ej: info técnica) */
+.item-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: -fx-text-gray;
+}
+
+/* Detalles pequeños (ej: Ubicación, Stock) */
+.item-detail {
+    -fx-font-size: 12px;
+    -fx-text-fill: -fx-text-gray;
+    -fx-font-weight: bold;
+}
+
+/* Precio destacado */
+.item-price {
+    -fx-font-size: 20px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -fx-dark-blue;
 }
