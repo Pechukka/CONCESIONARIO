@@ -1,0 +1,14 @@
+package com.tradetune.app.infrastructure.persistence;
+
+import com.tradetune.app.domain.model.Material;
+import com.tradetune.app.domain.repository.MaterialRepository;
+import org.hibernate.Session;
+
+/**
+ * Hibernate implementation of the Material repository.
+ */
+public class MaterialRepositoryImpl extends CommonRepositoryImpl<Material, Integer> implements MaterialRepository {
+    protected MaterialRepositoryImpl(Session session) {
+        super(session);
+    }
+}

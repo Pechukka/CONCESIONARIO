@@ -1,0 +1,15 @@
+package com.tradetune.app.infrastructure.persistence;
+
+import com.tradetune.app.domain.model.RepairStatus;
+import com.tradetune.app.domain.repository.RepairStatusRepository;
+import org.hibernate.Session;
+
+/**
+ * Hibernate implementation of the RepairStatus repository.
+ */
+public class RepairStatusRepositoryImpl extends CommonRepositoryImpl<RepairStatus, Integer>
+        implements RepairStatusRepository {
+    protected RepairStatusRepositoryImpl(Session session) {
+        super(session);
+    }
+}
