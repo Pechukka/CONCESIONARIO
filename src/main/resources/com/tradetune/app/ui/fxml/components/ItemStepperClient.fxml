@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tradetune.app.ui.controller.ItemStepperClientController"
+      stylesheets="@../../css/base.css"
+      alignment="CENTER_LEFT"
+      spacing="20.0"
+      styleClass="item-card"
+      maxWidth="Infinity"
+      prefWidth="900.0">
+
+    <padding>
+        <Insets top="15" right="25" bottom="15" left="25"/>
+    </padding>
+
+    <ImageView fx:id="imgAvatar" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="item-image" />
+
+    <VBox spacing="5.0" HBox.hgrow="ALWAYS" alignment="CENTER_LEFT">
+        <Label fx:id="lblName" text="NOMBRE APELLIDOS" styleClass="item-title" style="-fx-font-size: 16px;"/>
+
+        <HBox spacing="10.0">
+            <Label fx:id="lblDni" text="DNI: 00000000X" styleClass="item-subtitle"/>
+            <Label text="•" styleClass="item-subtitle"/>
+            <Label fx:id="lblPhone" text="Tel: 600 000 000" styleClass="item-subtitle"/>
+        </HBox>
+    </VBox>
+
+    <Button fx:id="btnSelect" text="Seleccionar" styleClass="btn-primary-small" style="-fx-min-width: 100px;"/>
+
+</HBox>

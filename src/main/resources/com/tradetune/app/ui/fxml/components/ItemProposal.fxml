@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tradetune.app.ui.controller.ItemProposalController"
+      stylesheets="@../../css/base.css"
+      alignment="CENTER_LEFT"
+      spacing="20.0"
+      styleClass="item-card"
+      maxWidth="Infinity"
+      prefWidth="800.0">
+
+    <padding>
+        <Insets top="20" right="25" bottom="20" left="25"/>
+    </padding>
+
+    <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+
+        <Label fx:id="lblProposalId" text="PROPUESTA #000" styleClass="item-title"/>
+
+        <Label fx:id="lblClientName" text="Cliente: NOMBRE APELLIDOS" styleClass="item-subtitle"/>
+        <Label fx:id="lblVehicleInfo" text="Vehículo: MARCA MODELO VERSIÓN" styleClass="item-detail"/>
+
+        <VBox prefHeight="5.0" />
+
+        <HBox spacing="10.0">
+            <Button fx:id="btnViewDetails" text="Ver Detalles" styleClass="btn-secondary"/>
+            <Button fx:id="btnConfirmSale" text="Confirmar Venta" styleClass="btn-success"/>
+        </HBox>
+    </VBox>
+
+    <VBox alignment="TOP_RIGHT" spacing="5.0" minWidth="150.0">
+        <Label fx:id="lblPrice" text="00.000 €" styleClass="item-price"/>
+        <Label fx:id="lblDate" text="Válida hasta: DD/MM/AAAA" styleClass="item-detail"/>
+    </VBox>
+
+</HBox>

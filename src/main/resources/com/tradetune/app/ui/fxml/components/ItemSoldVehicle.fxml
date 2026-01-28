@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tradetune.app.ui.controller.ItemSoldVehicleController"
+      stylesheets="@../../css/base.css"
+      alignment="CENTER_LEFT"
+      spacing="20.0"
+      styleClass="item-card-sold"
+      maxWidth="Infinity"
+      prefWidth="800.0">
+
+    <padding>
+        <Insets top="15" right="20" bottom="15" left="20"/>
+    </padding>
+
+    <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+
+        <Label fx:id="lblModel" text="MARCA MODELO VERSIÓN" styleClass="item-title"/>
+
+        <Label fx:id="lblClientName" text="Cliente: NOMBRE APELLIDOS" styleClass="item-subtitle"/>
+
+        <Label fx:id="lblSaleDate" text="Fecha de venta: DD/MM/AAAA" styleClass="item-detail"/>
+    </VBox>
+
+    <VBox alignment="CENTER_RIGHT" spacing="10.0" minWidth="120.0">
+        <Label fx:id="lblPrice" text="00.000 €" styleClass="item-price"/>
+
+        <Button fx:id="btnViewDetails" text="Ver Detalles" styleClass="btn-secondary"/>
+    </VBox>
+
+</HBox>
