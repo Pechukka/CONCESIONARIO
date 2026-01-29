@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- HEADER -->
+    <top>
+        <BorderPane prefHeight="48.0" styleClass="header-root" BorderPane.alignment="CENTER">
+
+            <!-- TITLE -->
+            <left>
+                <Label fx:id="lblTitle" styleClass="header-title" text="TÍTULO MODAL" BorderPane.alignment="CENTER_LEFT">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </left>
+
+            <!-- EMPTY CENTER -->
+            <center>
+                <Region />
+            </center>
+
+            <!-- CLOSE BUTTON: FULL CORNER -->
+            <right>
+                <Button fx:id="btnCross" mnemonicParsing="false" prefHeight="48.0" prefWidth="48.0" styleClass="header-close" text="✕" BorderPane.alignment="CENTER" />
+            </right>
+
+            <!-- Padding ONLY for title -->
+            <padding>
+                <Insets left="20.0" />
+            </padding>
+
+        </BorderPane>
+    </top>
+
+    <!-- CONTENT -->
+    <center>
+        <StackPane fx:id="paneModal" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+            </padding>
+        </StackPane>
+    </center>
+
+</BorderPane>

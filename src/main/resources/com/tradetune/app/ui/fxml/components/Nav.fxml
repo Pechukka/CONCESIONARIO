@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane styleClass="background-items" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox maxWidth="350.0" minWidth="300.0" spacing="12.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+
+        <!-- CLASE CSS  -->
+        <styleClass>
+            <String fx:value="nav-root" />
+        </styleClass>
+
+        <padding>
+            <Insets bottom="16.0" left="14.0" right="14.0" top="16.0" />
+        </padding>
+
+        <fx:define>
+            <ToggleGroup fx:id="navGroup" />
+        </fx:define>
+
+        <!-- SALES -->
+        <ToggleButton fx:id="btnVehicles" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="44.0" text="Vehículos">
+            <styleClass>
+                <String fx:value="nav-item" />
+                <String fx:value="nav-item--sales" />
+            </styleClass>
+          <toggleGroup>
+              <ToggleGroup fx:id="navGroup" />
+          </toggleGroup>
+        </ToggleButton>
+
+        <ToggleButton fx:id="btnClients" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="44.0" text="Clientes" toggleGroup="$navGroup">
+            <styleClass>
+                <String fx:value="nav-item" />
+                <String fx:value="nav-item--sales" />
+            </styleClass>
+        </ToggleButton>
+
+        <ToggleButton fx:id="btnOffers" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="44.0" text="Propuestas" toggleGroup="$navGroup">
+            <styleClass>
+                <String fx:value="nav-item" />
+                <String fx:value="nav-item--sales" />
+            </styleClass>
+        </ToggleButton>
+
+        <ToggleButton fx:id="btnSold" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="44.0" text="Vendidos" toggleGroup="$navGroup">
+            <styleClass>
+                <String fx:value="nav-item" />
+                <String fx:value="nav-item--sales" />
+            </styleClass>
+        </ToggleButton>
+
+        <!-- MECHANIC -->
+        <ToggleButton fx:id="btnMyJobs" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="44.0" text="Mis trabajos" toggleGroup="$navGroup">
+            <styleClass>
+                <String fx:value="nav-item" />
+                <String fx:value="nav-item--mechanic" />
+            </styleClass>
+        </ToggleButton>
+
+        <ToggleButton fx:id="btnFinished" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="44.0" text="Terminados" toggleGroup="$navGroup">
+            <styleClass>
+                <String fx:value="nav-item" />
+                <String fx:value="nav-item--mechanic" />
+            </styleClass>
+        </ToggleButton>
+    </VBox>
+</AnchorPane>
