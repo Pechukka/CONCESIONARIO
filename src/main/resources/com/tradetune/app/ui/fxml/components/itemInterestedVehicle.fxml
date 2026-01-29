@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:id="rootBox" alignment="CENTER_LEFT" maxWidth="Infinity" prefWidth="800.0" spacing="15.0" styleClass="history-row" stylesheets="@../../css/base.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tradetune.app.ui.controller.ItemInterestedVehicleController">
+
+    <VBox alignment="CENTER_LEFT" spacing="4.0" HBox.hgrow="ALWAYS">
+        <Label fx:id="lblVehicle" styleClass="history-title" text="MODELO VEHICULO" />
+        <Label fx:id="lblDate" styleClass="history-subtitle" text="Fecha de interés: XX/XX/XXXX" />
+    </VBox>
+
+    <Button fx:id="btnViewVehicle" mnemonicParsing="false" prefHeight="32.0" styleClass="btn-secondary" text="Ver vehículo" />
+</HBox>
