@@ -1,6 +1,8 @@
 package com.tradetune.app.ui.controller;
 
+import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.fxml.FXML;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 
@@ -48,37 +50,20 @@ public class NavController {
         // TODO: Definir selección inicial por defecto según el modo.
     }
 
-    // -------------------------------------------------------------------------
-    // SECCIÓN 1: MODO (VENTAS / MECÁNICA)
-    // -------------------------------------------------------------------------
+    // --- GETTERS PÚBLICOS ---
 
-    // TODO: Método setMode(NavMode mode)
-    // - Mostrar / ocultar botones según el modo.
-    // - Usar setVisible + setManaged para no dejar huecos.
-    // - Deshabilitar botones fuera de contexto.
-    // - Forzar selección válida tras el cambio de modo.
+    // Este método devuelve la propiedad de "quién está seleccionado"
+    public ReadOnlyObjectProperty<Toggle> getSelectedToggleProperty() {
+        return navGroup.selectedToggleProperty();
+    }
 
-    // -------------------------------------------------------------------------
-    // SECCIÓN 2: NAVEGACIÓN
-    // -------------------------------------------------------------------------
+    // Getters para comparar (saber si el seleccionado es btnVehicles, etc.)
+    public ToggleButton getBtnVehicles() { return btnVehicles; }
+    public ToggleButton getBtnClients() { return btnClients; }
+    public ToggleButton getBtnOffers() { return btnOffers; }
+    public ToggleButton getBtnSold() { return btnSold; }
+    public ToggleButton btnMyJobs() { return btnMyJobs; }
+    public ToggleButton btnFinished() { return btnFinished; }
 
-    // TODO: Método setOnNavigate(Consumer<NavItem> action)
-    // - Permite al layout principal reaccionar al cambio de sección.
-
-    // TODO: Método setActive(NavItem item)
-    // - Marca programáticamente una sección como activa.
-
-    // TODO: Método getActive()
-    // - Devuelve la sección actualmente seleccionada.
-
-    // -------------------------------------------------------------------------
-    // UTILIDADES INTERNAS
-    // -------------------------------------------------------------------------
-
-    // TODO: Método isItemAllowedInMode(NavItem item, NavMode mode)
-    // - Valida si un item pertenece al modo actual.
-
-    // TODO: Método selectDefaultForMode(NavMode mode)
-    // - VEHICLES para SALES.
-    // - MY_JOBS para MECHANIC.
 }
+

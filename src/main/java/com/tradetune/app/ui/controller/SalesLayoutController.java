@@ -4,14 +4,34 @@ import javafx.fxml.FXML;
 
 public class SalesLayoutController {
 
-    @FXML private HeaderController headerController;          // se inyecta desde fx:id="header"
-    @FXML private NavController navController;                // si Nav.fxml tiene controller
-    @FXML private SectionContentController contentController; // se inyecta desde fx:id="content"
+    @FXML private HeaderController headerController;         // Se inyecta desde fx:id="header"
+    @FXML private NavController navController;
+    @FXML private SectionContentController contentController; // Se inyecta desde fx:id="content"
 
     @FXML
-    private void initialize() {
-        // Header dinámico
-        // Si quieres ocultar el botón de acción, ya lo tienes visible=false en el FXML.
-        // Aquí puedes rellenar items (ver punto 3).
+    public void initialize() {
+        // Escuchamos al GRUPO entero de ToggleButtons
+        navController.getSelectedToggleProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal == null) return;  // Por si se deselecciona todo (raro)
+
+            if (newVal == navController.getBtnVehicles()) {
+                contentController.loadVehiclesView();
+            }
+            else if (newVal == navController.getBtnClients()) {
+                contentController.loadClientsView();
+            }
+            else if (newVal == navController.getBtnOffers()) {
+                contentController.loadProposalsView();
+            }
+            else if (newVal == navController.getBtnSold()) {
+                contentController.loadSoldView();
+            }
+        });
+
+        // Seleccionar uno por defecto al arrancar (esto dispara el listener automáticamente)
+        navController.getBtnVehicles().setSelected(true);
+        contentController.loadVehiclesView();
     }
+
 }
+
