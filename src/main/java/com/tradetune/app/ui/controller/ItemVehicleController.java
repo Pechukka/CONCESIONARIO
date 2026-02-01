@@ -61,18 +61,6 @@ public class ItemVehicleController {
     }
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 1: POPULAR DATOS
-    // -------------------------------------------------------------------------
-
-    // TODO: Crear método 'setData(Vehicle vehicle)'
-    // Este método recibirá el objeto 'Vehicle' de la base de datos y rellenará los labels:
-    // 1. lblModel.setText(vehicle.getBrand() + " " + vehicle.getModel());
-    // 2. lblPrice.setText(vehicle.getPrice() + " €");
-    // 3. Construir String para lblTechnicalInfo (fuel, km, year).
-    // 4. Calcular días en stock (Fecha actual - Fecha llegada) para lblStockDays.
-    // 5. Cargar la imagen en imgVehicle (usar una por defecto si es null).
-
-    // -------------------------------------------------------------------------
     // SECCIÓN 2: INTERACCIÓN
     // -------------------------------------------------------------------------
 

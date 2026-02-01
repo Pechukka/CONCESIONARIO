@@ -12,7 +12,7 @@ public class SalesLayoutController {
     public void initialize() {
         // Escuchamos al GRUPO entero de ToggleButtons
         navController.getSelectedToggleProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal == null) return;  // Por si se deselecciona todo (raro)
+            if (newVal == null) return;
 
             if (newVal == navController.getBtnVehicles()) {
                 contentController.loadVehiclesView();

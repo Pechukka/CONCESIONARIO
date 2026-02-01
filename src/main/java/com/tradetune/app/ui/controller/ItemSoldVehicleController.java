@@ -24,16 +24,29 @@ public class ItemSoldVehicleController {
         // TODO: Configuración inicial si fuera necesaria.
     }
 
-    // -------------------------------------------------------------------------
-    // SECCIÓN 1: POPULAR DATOS
-    // -------------------------------------------------------------------------
+    public void setData(
+            String model,
+            String clientName,
+            String saleDate,
+            double price
+    ) {
+        // Modelo del vehículo
+        lblModel.setText(model);
 
-    // TODO: Crear método 'setSaleData(Sale sale)'
-    // Este método recibirá el objeto de venta (que debe contener vehículo y cliente).
-    // 1. Rellenar lblModel con sale.getVehicle().getModel().
-    // 2. Rellenar lblClientName con "Cliente: " + sale.getClient().getFullName().
-    // 3. Rellenar lblSaleDate con "Fecha de venta: " + sale.getSaleDate().toString().
-    // 4. Rellenar lblPrice con el precio final de venta sale.getFinalPrice().
+        // Nombre del cliente
+        lblClientName.setText(clientName);
+
+        // Fecha de venta
+        lblSaleDate.setText(saleDate);
+
+        // Precio final
+        lblPrice.setText("€" + String.format("%.2f", price));
+
+        // Acción del botón detalles
+        btnViewDetails.setOnAction(event -> {
+            System.out.println("View sold vehicle details: " + model);
+        });
+    }
 
     // -------------------------------------------------------------------------
     // SECCIÓN 2: INTERACCIÓN

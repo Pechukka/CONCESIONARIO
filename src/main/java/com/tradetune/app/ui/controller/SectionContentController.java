@@ -96,11 +96,30 @@ public class SectionContentController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Node node = loader.load();
 
-            // AQUÍ HARÍAS EL setData() SEGÚN EL TIPO
-            if (type.equals("VEHICULO")) {
-                ItemVehicleController itemCtrl = loader.getController();
-                itemCtrl.setData("Ford Focus", "Diesel", 120000, 2018, "Madrid", 30, 12000, "/path/to/car/image.jpg");
-            }
+
+            switch (type) {
+                case "VEHICULO":
+                    ItemVehicleController ctrlVehicle = loader.getController();
+                    ctrlVehicle.setData(
+                            "Ford Focus",
+                            "Diesel",
+                            120000,
+                            2018,
+                            "Madrid",
+                            30,
+                            12000,
+                            null
+                    );
+                case "VENDIDO":
+                    ItemSoldVehicleController ctrlSoldVehicle = loader.getController();
+                    ctrlSoldVehicle.setData(
+                            "BMW Serie 1",
+                            "Juan Pérez",
+                            "12/01/2026",
+                            18500
+                    );
+                }
+
 
             listView.getItems().add(node);  // Agregar el nodo al ListView
         } catch (IOException e) {

@@ -62,8 +62,8 @@ public class NavController {
     public ToggleButton getBtnClients() { return btnClients; }
     public ToggleButton getBtnOffers() { return btnOffers; }
     public ToggleButton getBtnSold() { return btnSold; }
-    public ToggleButton btnMyJobs() { return btnMyJobs; }
-    public ToggleButton btnFinished() { return btnFinished; }
+    public ToggleButton getBtnMyJobs() { return btnMyJobs; }
+    public ToggleButton getBtnFinished() { return btnFinished; }
 
 }
 
