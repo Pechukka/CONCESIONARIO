@@ -1,5 +1,6 @@
 package com.tradetune.app.ui.controller;
 
+import com.tradetune.app.ui.navigation.NavSection;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Toggle;
@@ -8,6 +9,9 @@ import javafx.scene.control.ToggleGroup;
 
 public class NavController {
 
+    // -------------------------------------------------------------------------
+    // ENUMS
+    // -------------------------------------------------------------------------
     // -------------------------------------------------------------------------
     // ELEMENTOS FXML
     // -------------------------------------------------------------------------
@@ -24,33 +28,22 @@ public class NavController {
     @FXML private ToggleButton btnFinished;
 
     // -------------------------------------------------------------------------
-    // ESTADO / CONTEXTO
-    // -------------------------------------------------------------------------
-
-    // TODO: Crear enum NavMode { SALES, MECHANIC }
-    // Determina si el usuario está en el área de Ventas o Mecánica.
-
-    // TODO: Crear enum NavItem { VEHICLES, CLIENTS, OFFERS, SOLD, MY_JOBS, FINISHED }
-    // Representa cada sección navegable del menú.
-
-    // TODO: Variable currentMode para guardar el modo activo (SALES / MECHANIC).
-
-    // TODO: Mapa NavItem -> ToggleButton para poder operar de forma genérica.
-
-    // TODO: Consumer<NavItem> o similar para notificar navegación al controlador padre.
-
-    // -------------------------------------------------------------------------
     // INICIALIZACIÓN
     // -------------------------------------------------------------------------
     @FXML
     public void initialize() {
-        // TODO: Asociar cada ToggleButton con su NavItem (setUserData o Map).
-        // TODO: Registrar listener único sobre navGroup.selectedToggleProperty().
-        // TODO: Evitar selección de items que no correspondan al modo actual.
-        // TODO: Definir selección inicial por defecto según el modo.
+        // Asociar cada ToggleButton con su NavSection mediante UserData
+        btnVehicles.setUserData(NavSection.VEHICLES);
+        btnClients.setUserData(NavSection.CLIENTS);
+        btnOffers.setUserData(NavSection.OFFERS);
+        btnSold.setUserData(NavSection.SOLD);
+        btnMyJobs.setUserData(NavSection.MY_JOBS);
+        btnFinished.setUserData(NavSection.FINISHED);
     }
 
-    // --- GETTERS PÚBLICOS ---
+    // -------------------------------------------------------------------------
+    // GETTERS PÚBLICOS
+    // -------------------------------------------------------------------------
 
     // Este método devuelve la propiedad de "quién está seleccionado"
     public ReadOnlyObjectProperty<Toggle> getSelectedToggleProperty() {
@@ -58,12 +51,36 @@ public class NavController {
     }
 
     // Getters para comparar (saber si el seleccionado es btnVehicles, etc.)
-    public ToggleButton getBtnVehicles() { return btnVehicles; }
-    public ToggleButton getBtnClients() { return btnClients; }
-    public ToggleButton getBtnOffers() { return btnOffers; }
-    public ToggleButton getBtnSold() { return btnSold; }
-    public ToggleButton getBtnMyJobs() { return btnMyJobs; }
-    public ToggleButton getBtnFinished() { return btnFinished; }
+    public ToggleButton getBtnVehicles() {
+        return btnVehicles;
+    }
 
+    public ToggleButton getBtnClients() {
+        return btnClients;
+    }
+
+    public ToggleButton getBtnOffers() {
+        return btnOffers;
+    }
+
+    public ToggleButton getBtnSold() {
+        return btnSold;
+    }
+
+    public ToggleButton getBtnMyJobs() {
+        return btnMyJobs;
+    }
+
+    public ToggleButton getBtnFinished() {
+        return btnFinished;
+    }
+
+    // -------------------------------------------------------------------------
+    // MÉTODO PARA OBTENER SECCIÓN SELECCIONADA
+    // -------------------------------------------------------------------------
+
+    public NavSection getSelectedSection() {
+        Toggle selected = navGroup.getSelectedToggle();
+        return selected != null ? (NavSection) selected.getUserData() : null;
+    }
 }
-
