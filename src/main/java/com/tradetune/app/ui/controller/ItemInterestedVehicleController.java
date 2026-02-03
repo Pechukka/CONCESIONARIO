@@ -4,53 +4,67 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-// import com.tradetune.app.domain.model.Vehicle; // Descomentar cuando exista
+// import com.tradetune.app.domain.model.Vehicle; // Uncomment when available
 
+/**
+ * Controller for displaying an interested vehicle item.
+ * Shows vehicle information with interest date for client interested in
+ * vehicles.
+ */
 public class ItemInterestedVehicleController {
 
     // -------------------------------------------------------------------------
-    // ELEMENTOS FXML
+    // FXML ELEMENTS
     // -------------------------------------------------------------------------
-    @FXML private HBox rootBox;
+    @FXML
+    private HBox rootBox;
 
-    @FXML private Label lblVehicle;   // "SEAT IBIZA 1.0 TSI"
-    @FXML private Label lblDate;      // "Fecha de interés: 20/11/2025"
-    @FXML private Button btnViewVehicle; // "Ver vehículo"
+    @FXML
+    private Label lblVehicle; // "SEAT IBIZA 1.0 TSI"
+    @FXML
+    private Label lblDate; // "Interest date: 20/11/2025"
+    @FXML
+    private Button btnViewVehicle; // "View vehicle"
 
     // -------------------------------------------------------------------------
-    // INICIALIZACIÓN
+    // INITIALIZATION
     // -------------------------------------------------------------------------
     @FXML
     public void initialize() {
-        // TODO: Si el botón debe estar deshabilitado por defecto hasta setear datos, hacerlo aquí.
-        // TODO: Si quieres ajustar comportamiento visual (managed/visible) inicial de algún nodo, hacerlo aquí.
+        // TODO: If button should be disabled by default until data is set, do it here.
+        // TODO: If you want to adjust initial visual behavior (managed/visible) of any
+        // node, do it here.
     }
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 1: POPULAR DATOS
+    // SECTION 1: POPULATE DATA
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setInterestedVehicleData(Long vehicleId, String vehicleTitle, String interestDateText)'
-    // 1. Guardar internamente el vehicleId (para saber qué abrir al pulsar).
-    // 2. Rellenar lblVehicle con vehicleTitle (vacío si null).
-    // 3. Rellenar lblDate con interestDateText (vacío si null).
-    // 4. (Opcional) Llamar a un método interno para habilitar/deshabilitar el botón según vehicleId.
+    // TODO: Create method 'setInterestedVehicleData(Long vehicleId, String
+    // vehicleTitle, String interestDateText)'
+    // 1. Save vehicleId internally (to know what to open when pressed).
+    // 2. Fill lblVehicle with vehicleTitle (empty if null).
+    // 3. Fill lblDate with interestDateText (empty if null).
+    // 4. (Optional) Call internal method to enable/disable button based on
+    // vehicleId.
 
-    // TODO: Crear método privado 'updateViewButtonState()'
-    // Lógica recomendada:
-    // - Si vehicleId es null: btnViewVehicle.setDisable(true)
-    // - Si vehicleId no es null: btnViewVehicle.setDisable(false)
+    // TODO: Create private method 'updateViewButtonState()'
+    // Recommended logic:
+    // - If vehicleId is null: btnViewVehicle.setDisable(true)
+    // - If vehicleId is not null: btnViewVehicle.setDisable(false)
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 2: INTERACCIÓN
+    // SECTION 2: INTERACTION
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setOnViewVehicle(java.util.function.Consumer<Long> action)'
-    // Permite definir desde fuera qué ocurre al pulsar "Ver vehículo".
-    // Recomendación:
-    // - btnViewVehicle.setOnAction(event -> { if (vehicleId != null) action.accept(vehicleId); });
+    // TODO: Create method 'setOnViewVehicle(java.util.function.Consumer<Long>
+    // action)'
+    // Allows defining what happens from outside when "View vehicle" is pressed.
+    // Recommendation:
+    // - btnViewVehicle.setOnAction(event -> { if (vehicleId != null)
+    // action.accept(vehicleId); });
 
-    // TODO: (Opcional) Crear método 'setOnViewVehicle(Runnable action)'
-    // Variante simple si no necesitas pasar el id:
+    // TODO: (Optional) Create method 'setOnViewVehicle(Runnable action)'
+    // Simple variant if you don't need to pass the id:
     // - btnViewVehicle.setOnAction(event -> action.run());
 }

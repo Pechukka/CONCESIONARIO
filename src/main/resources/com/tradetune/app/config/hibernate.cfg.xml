@@ -44,8 +44,8 @@
         <mapping class="com.tradetune.app.domain.model.Client"/>
         <mapping class="com.tradetune.app.domain.model.ClientVehicleInterest"/>
         <mapping class="com.tradetune.app.domain.model.PaymentMethod"/>
-        <mapping class="com.tradetune.app.domain.model.OfferStatus"/>
-        <mapping class="com.tradetune.app.domain.model.Offer"/>
+        <mapping class="com.tradetune.app.domain.model.ProposalStatus"/>
+        <mapping class="com.tradetune.app.domain.model.Proposal"/>
         <mapping class="com.tradetune.app.domain.model.Sale"/>
         <mapping class="com.tradetune.app.domain.model.RepairStatus"/>
         <mapping class="com.tradetune.app.domain.model.Repair"/>

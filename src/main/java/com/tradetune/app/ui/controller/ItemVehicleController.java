@@ -1,57 +1,70 @@
 package com.tradetune.app.ui.controller;
 
-import com.tradetune.app.domain.model.Vehicle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+// import com.tradetune.app.domain.model.Vehicle; // Descomentar cuando exista
 
 public class ItemVehicleController {
 
+    // -------------------------------------------------------------------------
+    // ELEMENTOS FXML
+    // -------------------------------------------------------------------------
     @FXML private ImageView imgVehicle;
     @FXML private Label lblModel;
-    @FXML private Label lblTechnicalInfo;
+    @FXML private Label lblTechnicalInfo; // Para: "Diesel • 120.000 km • 2018"
     @FXML private Label lblLocation;
     @FXML private Label lblStockDays;
     @FXML private Label lblPrice;
     @FXML private Button btnViewDetails;
 
-    // --- MÉTODO SET DATA CON ENTIDAD REAL ---
-    public void setData(Vehicle vehicle) {
-        if (vehicle == null) return;
-
-        // 1. Marca y Modelo
-        lblModel.setText(vehicle.getBrand() + " " + vehicle.getModel());
-
-        // 2. Info Técnica (Combustible • Km • Año)
-        lblTechnicalInfo.setText(String.format("%s • %d km • %d",
-                vehicle.getFuel(),
-                vehicle.getKm(),
-                vehicle.getYear()));
-
-        // 3. Ubicación (Navegamos a Dealership)
-        // Nota: Asegúrate de que idDealership venga cargado (no sea null/lazy)
-        if (vehicle.getIdDealership() != null) {
-            lblLocation.setText(vehicle.getIdDealership().getCity());
-        } else {
-            lblLocation.setText("Ubicación desconocida");
-        }
-
-        // 4. Días en Stock (Cálculo dinámico)
-        long days = 0;
-        if (vehicle.getArrivalDate() != null) {
-            days = ChronoUnit.DAYS.between(vehicle.getArrivalDate(), LocalDate.now());
-        }
-        lblStockDays.setText("En stock: " + days + " días");
-
-        // 5. Precio (BigDecimal formateado)
-        lblPrice.setText(String.format("%,.0f €", vehicle.getBasePrice()));
-
-        // TODO: Cargar imagen real si tienes la lógica (ej. vehicle.getImages()...)
-
-        // Acción del botón
-        btnViewDetails.setOnAction(e -> System.out.println("Ver vehículo ID: " + vehicle.getId()));
+    // -------------------------------------------------------------------------
+    // INICIALIZACIÓN
+    // -------------------------------------------------------------------------
+    @FXML
+    public void initialize() {
+        // TODO: Configuración inicial si fuera necesaria (ej. placeholder de imagen).
     }
+
+    public void setData(String model, String fuelType, int km, int year, String location, int stockDays, double price, String imagePath) {
+        // Configura el modelo
+        lblModel.setText(model);
+
+        // Configura la información técnica (combustible, km, año)
+        lblTechnicalInfo.setText(fuelType + " • " + km + " km • " + year);
+
+        // Configura la ubicación del vehículo
+        lblLocation.setText(location);
+
+        // Configura los días en stock
+        lblStockDays.setText("En stock por " + stockDays + " días");
+
+        // Configura el precio del vehículo
+        lblPrice.setText("€" + String.format("%.2f", price));
+
+        //TODO: Agregar lógica imagen
+
+        // Configura la imagen del vehículo (si la ruta es válida)
+/*
+        if (imagePath != null && !imagePath.isEmpty()) {
+            imgVehicle.setImage(new Image(imagePath));
+        }
+*/
+
+        // Configura el botón para ver los detalles (si se desea añadir alguna acción)
+        btnViewDetails.setOnAction(event -> {
+            // Aquí puedes agregar la lógica para ver los detalles del vehículo
+            System.out.println("Ver detalles de: " + model);
+        });
+    }
+
+    // -------------------------------------------------------------------------
+    // SECCIÓN 2: INTERACCIÓN
+    // -------------------------------------------------------------------------
+
+    // TODO: Crear método 'setOnViewDetails(Runnable action)'
+    // Permite al controlador padre definir qué pasa cuando se pulsa "Ver Detalles".
+    // btnViewDetails.setOnAction(event -> action.run());
 }

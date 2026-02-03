@@ -6,32 +6,41 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 // import com.tradetune.app.domain.model.Client;
 
+/**
+ * Controller for displaying a client item in stepper selection.
+ * Shows client information for selection in proposal workflow.
+ */
 public class ItemStepperClientController {
 
-    @FXML private ImageView imgAvatar;
-    @FXML private Label lblName;
-    @FXML private Label lblDni;
-    @FXML private Label lblEmail;
-    @FXML private Button btnSelect;
+    @FXML
+    private ImageView imgAvatar;
+    @FXML
+    private Label lblName;
+    @FXML
+    private Label lblDni;
+    @FXML
+    private Label lblEmail;
+    @FXML
+    private Button btnSelect;
 
     @FXML
     public void initialize() {
-        // TODO: Cargar avatar por defecto.
+        // TODO: Load default avatar.
     }
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 1: POPULAR DATOS
+    // SECTION 1: POPULATE DATA
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setData(Client client)'
-    // 1. Rellenar lblName.
-    // 2. Rellenar lblDni.
-    // 3. Rellenar lblEmail.
+    // TODO: Create method 'setData(Client client)'
+    // 1. Fill lblName.
+    // 2. Fill lblDni.
+    // 3. Fill lblEmail.
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 2: INTERACCIÓN
+    // SECTION 2: INTERACTION
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setOnSelect(Runnable action)'
-    // Define la acción al pulsar "Seleccionar".
+    // TODO: Create method 'setOnSelect(Runnable action)'
+    // Defines the action when "Select" is pressed.
 }

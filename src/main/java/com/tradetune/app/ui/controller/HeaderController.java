@@ -5,57 +5,65 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
 
+/**
+ * Controller for the application header.
+ * Displays user information and provides logout functionality.
+ */
 public class HeaderController {
 
     // -------------------------------------------------------------------------
-    // ELEMENTOS FXML
+    // FXML ELEMENTS
     // -------------------------------------------------------------------------
-    @FXML private Button btnLogOut;
-    @FXML private Label email;   // Label para mostrar el correo del usuario
-    @FXML private Label section; // Label para el título de la sección (ej: "VENTAS")
+    @FXML
+    private Button btnLogOut;
+    @FXML
+    private Label email; // Label to show user email
+    @FXML
+    private Label section; // Label for section title (e.g: "SALES")
 
     // -------------------------------------------------------------------------
-    // INICIALIZACIÓN
+    // INITIALIZATION
     // -------------------------------------------------------------------------
     @FXML
     public void initialize() {
-        // TODO: Inicialización básica si fuera necesaria (ej. limpiar textos por defecto).
+        // TODO: Basic initialization if necessary (e.g. clear default texts).
     }
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 1: INYECCIÓN DE DATOS (API PÚBLICA)
+    // SECTION 1: DATA INJECTION (PUBLIC API)
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setSection(String sectionText)'
-    // Recibe el nombre de la sección actual y actualiza el label 'section'.
+    // TODO: Create method 'setSection(String sectionText)'
+    // Receives the current section name and updates the 'section' label.
 
-    // TODO: Crear método 'setEmail(String emailText)'
-    // Recibe el email del usuario autenticado y actualiza el label 'email'.
+    // TODO: Create method 'setEmail(String emailText)'
+    // Receives the authenticated user email and updates the 'email' label.
 
-    // TODO: Crear método 'updateHeaderData(String sectionText, String emailText)'
-    // Método de utilidad para actualizar ambos campos a la vez.
-    // Llama a setSection() y setEmail() internamente.
-
-    // -------------------------------------------------------------------------
-    // SECCIÓN 2: GESTIÓN DE ESTADO VISUAL
-    // -------------------------------------------------------------------------
-
-    // TODO: Crear método 'clearHeader()'
-    // Limpia los datos visibles (pone los labels vacíos) al cerrar sesión o cambiar contexto.
-
-    // TODO: Crear método 'disableLogoutButton(boolean disable)'
-    // Permite bloquear el botón de cerrar sesión si hay una operación crítica en curso.
-
-    // TODO: Crear método 'applyHeaderState()'
-    // Aplica ajustes visuales finales o refresco de componentes si fuera necesario tras recibir datos.
+    // TODO: Create method 'updateHeaderData(String sectionText, String emailText)'
+    // Utility method to update both fields at once.
+    // Internally calls setSection() and setEmail().
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 3: INTERACCIÓN
+    // SECTION 2: VISUAL STATE MANAGEMENT
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'onLogoutAction(ActionEvent event)'
-    // Gestiona el clic en 'btnLogOut'.
-    // 1. Confirmar intención (opcional).
-    // 2. Llamar al servicio de cierre de sesión.
-    // 3. Navegar de vuelta a la pantalla de Login.
+    // TODO: Create method 'clearHeader()'
+    // Clears visible data (sets labels empty) when logging out or changing context.
+
+    // TODO: Create method 'disableLogoutButton(boolean disable)'
+    // Allows blocking the logout button if a critical operation is in progress.
+
+    // TODO: Create method 'applyHeaderState()'
+    // Applies final visual adjustments or component refresh if necessary after
+    // receiving data.
+
+    // -------------------------------------------------------------------------
+    // SECTION 3: INTERACTION
+    // -------------------------------------------------------------------------
+
+    // TODO: Create method 'onLogoutAction(ActionEvent event)'
+    // Handles click on 'btnLogOut'.
+    // 1. Confirm intention (optional).
+    // 2. Call logout service.
+    // 3. Navigate back to Login screen.
 }

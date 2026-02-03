@@ -4,67 +4,77 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.event.ActionEvent; // Necesario para el TODO del evento
+import javafx.event.ActionEvent; // Required for the TODO event
 
+/**
+ * Controller for the login screen.
+ * Handles user authentication, form validation, and UI feedback.
+ */
 public class LoginController {
 
     // -------------------------------------------------------------------------
-    // ELEMENTOS FXML
+    // FXML ELEMENTS
     // -------------------------------------------------------------------------
-    @FXML private Button btnLogin;
-    @FXML private PasswordField pwdPassword;
-    @FXML private TextField txtEmail;
+    @FXML
+    private Button btnLogin;
+    @FXML
+    private PasswordField pwdPassword;
+    @FXML
+    private TextField txtEmail;
 
     // -------------------------------------------------------------------------
-    // INICIALIZACIÓN
+    // INITIALIZATION
     // -------------------------------------------------------------------------
     @FXML
     public void initialize() {
-        // TODO: Configurar estado inicial (foco en email, botón deshabilitado si aplica, etc.).
-        // Llamar a requestInitialFocus().
+        // TODO: Configure initial state (focus on email, disable button if applicable,
+        // etc.).
+        // Call requestInitialFocus().
     }
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 1: EVENTOS E INTERACCIÓN
+    // SECTION 1: EVENTS AND INTERACTION
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'onLoginAction(ActionEvent event)'
-    // Gestiona el evento de pulsación del botón de login.
-    // 1. Llamar a validateForm().
-    // 2. Si es válido, deshabilitar botón (disableLoginButton(true)) y mostrar spinner (opcional).
-    // 3. Llamar al servicio de autenticación.
-    // 4. Gestionar respuesta (éxito -> cambio de pantalla, error -> showValidationError).
+    // TODO: Create method 'onLoginAction(ActionEvent event)'
+    // Handles the login button press event.
+    // 1. Call validateForm().
+    // 2. If valid, disable button (disableLoginButton(true)) and show spinner
+    // (optional).
+    // 3. Call authentication service.
+    // 4. Handle response (success -> screen change, error -> showValidationError).
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 2: VALIDACIÓN
+    // SECTION 2: VALIDATION
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'validateForm()' (Return boolean)
-    // Valida que los campos contengan datos correctos.
-    // Debe usar isEmailEmpty() e isPasswordEmpty().
+    // TODO: Create method 'validateForm()' (Return boolean)
+    // Validates that form fields contain correct data.
+    // Must use isEmailEmpty() and isPasswordEmpty().
 
-    // TODO: Crear método 'isEmailEmpty()' (Return boolean)
-    // Comprueba si el campo txtEmail está vacío o nulo.
+    // TODO: Create method 'isEmailEmpty()' (Return boolean)
+    // Checks if the txtEmail field is empty or null.
 
-    // TODO: Crear método 'isPasswordEmpty()' (Return boolean)
-    // Comprueba si el campo pwdPassword está vacío.
+    // TODO: Create method 'isPasswordEmpty()' (Return boolean)
+    // Checks if the pwdPassword field is empty.
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 3: GESTIÓN DE LA UI (FEEDBACK)
+    // SECTION 3: UI MANAGEMENT (FEEDBACK)
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'showValidationError(String message)'
-    // Muestra en la interfaz un mensaje de error (label oculto o alerta) cuando el login falla.
+    // TODO: Create method 'showValidationError(String message)'
+    // Displays an error message in the UI (hidden label or alert) when login fails.
 
-    // TODO: Crear método 'clearValidationErrors()'
-    // Limpia cualquier mensaje de error visible y resetea bordes rojos si los hubiera.
+    // TODO: Create method 'clearValidationErrors()'
+    // Clears any visible error messages and resets red borders if present.
 
-    // TODO: Crear método 'disableLoginButton(boolean disable)'
-    // Habilita o deshabilita el btnLogin visualmente (setDisable) durante el proceso de carga.
+    // TODO: Create method 'disableLoginButton(boolean disable)'
+    // Enables or disables the btnLogin visually (setDisable) during loading.
 
-    // TODO: Crear método 'updateUiAfterLoginAttempt(boolean success)'
-    // Actualiza la interfaz tras el intento. Si falló, reactiva el botón y limpia campos si es necesario.
+    // TODO: Create method 'updateUiAfterLoginAttempt(boolean success)'
+    // Updates the UI after login attempt. If failed, reactivates button and clears
+    // fields if necessary.
 
-    // TODO: Crear método 'requestInitialFocus()'
-    // Pone el foco del teclado en el campo txtEmail (txtEmail.requestFocus()).
+    // TODO: Create method 'requestInitialFocus()'
+    // Sets keyboard focus to the txtEmail field (txtEmail.requestFocus()).
 }
