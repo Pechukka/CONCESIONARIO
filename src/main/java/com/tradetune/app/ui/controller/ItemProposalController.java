@@ -1,51 +1,45 @@
 package com.tradetune.app.ui.controller;
 
+import com.tradetune.app.domain.model.Proposal;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-// import com.tradetune.app.domain.model.Proposal; // Descomentar cuando exista
 
 public class ItemProposalController {
 
-    // -------------------------------------------------------------------------
-    // ELEMENTOS FXML
-    // -------------------------------------------------------------------------
     @FXML private Label lblProposalId;
     @FXML private Label lblClientName;
     @FXML private Label lblVehicleInfo;
     @FXML private Label lblPrice;
     @FXML private Label lblDate;
-
     @FXML private Button btnViewDetails;
     @FXML private Button btnConfirmSale;
 
-    // -------------------------------------------------------------------------
-    // INICIALIZACIÓN
-    // -------------------------------------------------------------------------
-    @FXML
-    public void initialize() {
-        // TODO: Configuración inicial (ej. tooltips en botones si hiciera falta).
+    // --- MÉTODO SET DATA CON ENTIDAD REAL ---
+    public void setData(Proposal proposal) {
+        if (proposal == null) return;
+
+        // 1. ID formateado (ej. PROPUESTA #005)
+        lblProposalId.setText(String.format("PROPUESTA #%03d", proposal.getId()));
+
+        // 2. Cliente (Navegación Offer -> Client)
+        if (proposal.getIdClient() != null) {
+            lblClientName.setText("Cliente: " + proposal.getIdClient().getFullName());
+        }
+
+        // 3. Vehículo (Navegación Offer -> Vehicle)
+        if (proposal.getIdVehicle() != null) {
+            lblVehicleInfo.setText("Vehículo: " + proposal.getIdVehicle().getBrand() + " " + proposal.getIdVehicle().getModel());
+        }
+
+        // 4. Precio Final
+        lblPrice.setText(String.format("%,.0f €", proposal.getFinalPrice()));
+
+        // 5. Fecha Validez
+        lblDate.setText("Válida hasta: " + proposal.getValidityDate().toString());
+
+        // Acciones
+        btnViewDetails.setOnAction(e -> System.out.println("Detalle oferta ID: " + proposal.getId()));
+        btnConfirmSale.setOnAction(e -> System.out.println("Vender oferta ID: " + proposal.getId()));
     }
-
-    // -------------------------------------------------------------------------
-    // SECCIÓN 1: POPULAR DATOS
-    // -------------------------------------------------------------------------
-
-    // TODO: Crear método 'setData(Proposal proposal)'
-    // 1. Rellenar lblProposalId con el ID (ej: "Propuesta #" + id).
-    // 2. Rellenar lblClientName con el nombre del cliente asociado.
-    // 3. Rellenar lblVehicleInfo con la marca y modelo del coche.
-    // 4. Rellenar lblPrice con el precio formateado.
-    // 5. Rellenar lblDate con la fecha de caducidad.
-    // 6. Lógica visual extra: Si la propuesta está caducada, cambiar estilo de la fecha a rojo.
-
-    // -------------------------------------------------------------------------
-    // SECCIÓN 2: INTERACCIÓN
-    // -------------------------------------------------------------------------
-
-    // TODO: Crear método 'setOnViewDetails(Runnable action)'
-    // Define la acción al pulsar "Ver Detalles".
-
-    // TODO: Crear método 'setOnConfirmSale(Runnable action)'
-    // Define la acción al pulsar "Confirmar Venta".
 }

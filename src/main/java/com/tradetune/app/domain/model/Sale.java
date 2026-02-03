@@ -41,11 +41,11 @@ public class Sale {
         this.id = id;
     }
 
-    public Proposal getIdOffer() {
+    public Proposal getidProposal() {
         return idProposal;
     }
 
-    public void setIdOffer(Proposal idProposal) {
+    public void setIdProposal(Proposal idProposal) {
         this.idProposal = idProposal;
     }
 
