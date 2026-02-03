@@ -96,7 +96,7 @@ public class SectionContentController {
                             "Madrid",
                             30,
                             12000,
-                            null
+                            getClass().getResource("/com/tradetune/app/assets/images/vehicles/seat_leon_2018_1.jpg").toExternalForm()
                     );
                     break;
                 case SOLD:
