@@ -7,15 +7,15 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
- * Represents a sales offer made to a client for a vehicle.
+ * Represents a sales proposal made to a client for a vehicle.
  * Includes pricing details, payment method, and validity period.
  */
 @Entity
-@Table(name = "offer")
-public class Offer {
+@Table(name = "proposal")
+public class Proposal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_offer", nullable = false)
+    @Column(name = "id_proposal", nullable = false)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -35,12 +35,12 @@ public class Offer {
     private PaymentMethod idPaymentMethod;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_offer_status", nullable = false)
-    private OfferStatus idOfferStatus;
+    @JoinColumn(name = "id_proposal_status", nullable = false)
+    private ProposalStatus idProposalStatus;
 
     @ColumnDefault("(curdate())")
-    @Column(name = "offer_date", nullable = false)
-    private LocalDate offerDate;
+    @Column(name = "proposal_date", nullable = false)
+    private LocalDate proposalDate;
 
     @Column(name = "validity_date", nullable = false)
     private LocalDate validityDate;
@@ -99,20 +99,20 @@ public class Offer {
         this.idPaymentMethod = idPaymentMethod;
     }
 
-    public OfferStatus getIdOfferStatus() {
-        return idOfferStatus;
+    public ProposalStatus getIdProposalStatus() {
+        return idProposalStatus;
     }
 
-    public void setIdOfferStatus(OfferStatus idOfferStatus) {
-        this.idOfferStatus = idOfferStatus;
+    public void setIdProposalStatus(ProposalStatus idProposalStatus) {
+        this.idProposalStatus = idProposalStatus;
     }
 
-    public LocalDate getOfferDate() {
-        return offerDate;
+    public LocalDate getProposalDate() {
+        return proposalDate;
     }
 
-    public void setOfferDate(LocalDate offerDate) {
-        this.offerDate = offerDate;
+    public void setProposalDate(LocalDate proposalDate) {
+        this.proposalDate = proposalDate;
     }
 
     public LocalDate getValidityDate() {

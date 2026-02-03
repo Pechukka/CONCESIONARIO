@@ -6,13 +6,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 /**
- * Catalog of offer statuses.
+ * Catalog of proposal statuses.
  */
 @Entity
-@Table(name = "offer_status")
-public class OfferStatus {
+@Table(name = "proposal_status")
+public class ProposalStatus {
     @Id
-    @Column(name = "id_offer_status", nullable = false)
+    @Column(name = "id_proposal_status", nullable = false)
     private Short id;
 
     @Column(name = "name", nullable = false, length = 40)

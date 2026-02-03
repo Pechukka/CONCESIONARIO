@@ -20,7 +20,7 @@ public class Sale {
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_offer", nullable = false)
-    private Offer idOffer;
+    private Proposal idProposal;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_vehicle", nullable = false)
@@ -41,12 +41,12 @@ public class Sale {
         this.id = id;
     }
 
-    public Offer getIdOffer() {
-        return idOffer;
+    public Proposal getidProposal() {
+        return idProposal;
     }
 
-    public void setIdOffer(Offer idOffer) {
-        this.idOffer = idOffer;
+    public void setIdProposal(Proposal idProposal) {
+        this.idProposal = idProposal;
     }
 
     public Vehicle getIdVehicle() {

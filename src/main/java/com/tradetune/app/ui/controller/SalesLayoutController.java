@@ -8,25 +8,28 @@ import java.util.Map;
 
 public class SalesLayoutController {
 
-    @FXML private HeaderController headerController;         // Se inyecta desde fx:id="header"
-    @FXML private NavController navController;
-    @FXML private SectionContentController contentController; // Se inyecta desde fx:id="content"
+    @FXML
+    private HeaderController headerController; // Se inyecta desde fx:id="header"
+    @FXML
+    private NavController navController;
+    @FXML
+    private SectionContentController contentController; // Se inyecta desde fx:id="content"
 
     private Map<NavSection, Runnable> viewLoaders;
-
 
     @FXML
     public void initialize() {
         initializeViewLoaders();
-        // Escuchamos al GRUPO entero de ToggleButtons
+        // Listen to the entire group of ToggleButtons
         navController.getSelectedToggleProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal == null) return;
+            if (newVal == null)
+                return;
 
             NavSection section = navController.getSelectedSection();
             viewLoaders.get(section).run();
         });
 
-        // Seleccionar uno por defecto al arrancar (esto dispara el listener automáticamente)
+        // Select one by default on startup (this triggers the listener automatically)
         loadDefaultView();
     }
 
@@ -34,7 +37,7 @@ public class SalesLayoutController {
         viewLoaders = new HashMap<>();
         viewLoaders.put(NavSection.VEHICLES, contentController::loadVehiclesView);
         viewLoaders.put(NavSection.CLIENTS, contentController::loadClientsView);
-        viewLoaders.put(NavSection.OFFERS, contentController::loadProposalsView);
+        viewLoaders.put(NavSection.PROPOSALS, contentController::loadProposalsView);
         viewLoaders.put(NavSection.SOLD, contentController::loadSoldView);
     }
 
@@ -43,6 +46,4 @@ public class SalesLayoutController {
         contentController.loadVehiclesView();
     }
 
-
 }
-

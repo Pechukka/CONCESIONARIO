@@ -5,55 +5,62 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 
+/**
+ * Base controller for modal popup windows.
+ * Provides common functionality for displaying and managing modal dialogs.
+ */
 public class BasePopUpController {
 
     // -------------------------------------------------------------------------
-    // ELEMENTOS FXML
+    // FXML ELEMENTS
     // -------------------------------------------------------------------------
-    @FXML private Label lblTitle;
-    @FXML private Button btnCross;
-    @FXML private StackPane paneModal;
+    @FXML
+    private Label lblTitle;
+    @FXML
+    private Button btnCross;
+    @FXML
+    private StackPane paneModal;
 
     // -------------------------------------------------------------------------
-    // INICIALIZACIÓN
+    // INITIALIZATION
     // -------------------------------------------------------------------------
 
     @FXML
     public void initialize() {
-        // TODO: Configurar estado inicial del modal (listeners, accesibilidad, etc.).
+        // TODO: Configure initial modal state (listeners, accessibility, etc.).
     }
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 1: CONFIGURACIÓN DEL HEADER
+    // SECTION 1: HEADER CONFIGURATION
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setTitle(String title)'
-    // Asigna dinámicamente el texto del título del modal (lblTitle).
+    // TODO: Create method 'setTitle(String title)'
+    // Dynamically assigns the modal title text (lblTitle).
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 2: GESTIÓN DEL CONTENIDO MODAL
+    // SECTION 2: MODAL CONTENT MANAGEMENT
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setModalContent(javafx.scene.Node content)'
-    // Inserta la pantalla/modal recibida dentro del StackPane paneModal.
-    // Debe reemplazar cualquier contenido previo.
+    // TODO: Create method 'setModalContent(javafx.scene.Node content)'
+    // Inserts the received screen/modal into the StackPane paneModal.
+    // Must replace any previous content.
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 3: EVENTOS Y CIERRE
+    // SECTION 3: EVENTS AND CLOSING
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'onCloseAction()'
-    // Gestiona el cierre del modal al pulsar la cruz.
-    // Debe cerrar el Stage o notificar al controlador padre.
+    // TODO: Create method 'onCloseAction()'
+    // Handles modal closing when X button is clicked.
+    // Must close the Stage or notify the parent controller.
 
-    // TODO: Crear método 'closeModal()'
-    // Cierra el modal de forma centralizada (reutilizable por otros eventos).
+    // TODO: Create method 'closeModal()'
+    // Closes the modal in a centralized way (reusable by other events).
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 4: UTILIDADES (OPCIONAL)
+    // SECTION 4: UTILITIES (OPTIONAL)
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'clearModalContent()'
-    // Elimina el contenido actual del StackPane paneModal.
+    // TODO: Create method 'clearModalContent()'
+    // Removes the current content from StackPane paneModal.
 
 }
