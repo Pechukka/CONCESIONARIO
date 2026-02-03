@@ -4,50 +4,62 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-// import com.tradetune.app.domain.model.Client; // Descomentar cuando exista
+// import com.tradetune.app.domain.model.Client; // Uncomment when available
 
+/**
+ * Controller for displaying a client item in lists.
+ * Shows client information including name, contact details, and status.
+ */
 public class ItemClientController {
 
     // -------------------------------------------------------------------------
-    // ELEMENTOS FXML
+    // FXML ELEMENTS
     // -------------------------------------------------------------------------
-    @FXML private ImageView imgAvatar;
-    @FXML private Label lblName;
-    @FXML private Label lblDni;
-    @FXML private Label lblPhone;
-    @FXML private Label lblEmail;
-    @FXML private Label lblStatus; // La etiqueta "Interesado"
-    @FXML private Button btnViewProfile;
+    @FXML
+    private ImageView imgAvatar;
+    @FXML
+    private Label lblName;
+    @FXML
+    private Label lblDni;
+    @FXML
+    private Label lblPhone;
+    @FXML
+    private Label lblEmail;
+    @FXML
+    private Label lblStatus; // The "Interested" badge
+    @FXML
+    private Button btnViewProfile;
 
     // -------------------------------------------------------------------------
-    // INICIALIZACIÓN
+    // INITIALIZATION
     // -------------------------------------------------------------------------
     @FXML
     public void initialize() {
-        // TODO: Cargar una imagen/avatar por defecto si fuera necesario.
+        // TODO: Load a default image/avatar if necessary.
     }
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 1: POPULAR DATOS
+    // SECTION 1: POPULATE DATA
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setClientData(Client client, boolean isInterested)'
-    // 1. Rellenar lblName con nombre y apellidos.
-    // 2. Rellenar lblDni con el DNI.
-    // 3. Rellenar lblPhone con el teléfono.
-    // 4. Rellenar lblEmail con el correo.
-    // 5. Llamar al método interno para gestionar la visibilidad del estado (ver siguiente TODO).
+    // TODO: Create method 'setClientData(Client client, boolean isInterested)'
+    // 1. Fill lblName with first and last name.
+    // 2. Fill lblDni with the DNI/ID.
+    // 3. Fill lblPhone with phone number.
+    // 4. Fill lblEmail with email.
+    // 5. Call internal method to manage status visibility (see next TODO).
 
-    // TODO: Crear método privado 'updateStatusVisibility(boolean isInterested)'
-    // Lógica para el badge 'lblStatus':
-    // - Si isInterested es TRUE: setVisible(true) y setManaged(true).
-    // - Si isInterested es FALSE: setVisible(false) y setManaged(false) para que no ocupe espacio.
+    // TODO: Create private method 'updateStatusVisibility(boolean isInterested)'
+    // Logic for the 'lblStatus' badge:
+    // - If isInterested is TRUE: setVisible(true) and setManaged(true).
+    // - If isInterested is FALSE: setVisible(false) and setManaged(false) to avoid
+    // space usage.
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 2: INTERACCIÓN
+    // SECTION 2: INTERACTION
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setOnViewProfile(Runnable action)'
-    // Permite definir desde fuera qué ocurre al pulsar "Ver Ficha".
+    // TODO: Create method 'setOnViewProfile(Runnable action)'
+    // Allows defining what happens when "View Profile" is pressed.
     // btnViewProfile.setOnAction(event -> action.run());
 }

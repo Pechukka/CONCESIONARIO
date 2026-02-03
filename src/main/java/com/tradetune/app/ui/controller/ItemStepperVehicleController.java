@@ -8,30 +8,35 @@ import javafx.scene.image.ImageView;
 
 public class ItemStepperVehicleController {
 
-    @FXML private ImageView imgVehicle;
-    @FXML private Label lblModel;
-    @FXML private Label lblPrice;
-    @FXML private Button btnSelect;
+    @FXML
+    private ImageView imgVehicle;
+    @FXML
+    private Label lblModel;
+    @FXML
+    private Label lblPrice;
+    @FXML
+    private Button btnSelect;
 
     @FXML
     public void initialize() {
-        // TODO: Configurar placeholder de imagen si es necesario.
+        // TODO: Configure image placeholder if necessary.
     }
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 1: POPULAR DATOS
+    // SECTION 1: POPULATE DATA
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setData(Vehicle vehicle)'
-    // 1. Rellenar lblModel con Marca y Modelo.
-    // 2. Rellenar lblPrice.
-    // 3. Cargar imagen en imgVehicle.
+    // TODO: Create method 'setData(Vehicle vehicle)'
+    // 1. Fill lblModel with Brand and Model.
+    // 2. Fill lblPrice.
+    // 3. Load image in imgVehicle.
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 2: INTERACCIÓN
+    // SECTION 2: INTERACTION
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setOnSelect(Runnable action)'
-    // Define qué pasa al pulsar "Seleccionar" (normalmente avanza al siguiente paso del stepper).
+    // TODO: Create method 'setOnSelect(Runnable action)'
+    // Defines what happens when "Select" is pressed (normally advances to next
+    // stepper step).
     // btnSelect.setOnAction(event -> action.run());
 }

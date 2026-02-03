@@ -3,41 +3,49 @@ package com.tradetune.app.ui.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-// import com.tradetune.app.domain.model.Proposal; // Descomentar cuando exista
+// import com.tradetune.app.domain.model.Proposal; // Uncomment when available
 
+/**
+ * Controller for displaying a proposal in history.
+ * Shows proposal summary with dynamic styling based on proposal status.
+ */
 public class ItemHistoryProposalController {
 
     // -------------------------------------------------------------------------
-    // ELEMENTOS FXML
+    // FXML ELEMENTS
     // -------------------------------------------------------------------------
-    @FXML private HBox rootBox; // Contenedor principal para cambiar el color de fondo
-    @FXML private Label lblTitle;
-    @FXML private Label lblDetails;
-    @FXML private Label lblStatus;
+    @FXML
+    private HBox rootBox; // Main container to change background color
+    @FXML
+    private Label lblTitle;
+    @FXML
+    private Label lblDetails;
+    @FXML
+    private Label lblStatus;
 
     // -------------------------------------------------------------------------
-    // INICIALIZACIÓN
+    // INITIALIZATION
     // -------------------------------------------------------------------------
     @FXML
     public void initialize() {
-        // TODO: Configuración inicial si fuera necesaria.
+        // TODO: Initial configuration if necessary.
     }
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 1: POPULAR DATOS
+    // SECTION 1: POPULATE DATA
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setData(Proposal proposal)'
-    // 1. Rellenar lblTitle con el ID y el nombre del vehículo.
-    // 2. Rellenar lblDetails con la fecha y el precio formateado.
-    // 3. Limpiar las clases de estilo dinámicas anteriores de 'rootBox' y 'lblStatus'.
-    // 4. Evaluar el estado de la propuesta (proposal.getStatus()):
-    //    - Si es "ACTIVA":
-    //      * Añadir clase 'history-row-active' a rootBox.
-    //      * Añadir clase 'history-badge-active' a lblStatus.
-    //      * Setear texto "ACTIVA".
-    //    - Si es "VENDIDA":
-    //      * Añadir clase 'history-row-sold' a rootBox.
-    //      * Añadir clase 'history-badge-sold' a lblStatus.
-    //      * Setear texto "VENDIDA".
+    // TODO: Create method 'setData(Proposal proposal)'
+    // 1. Fill lblTitle with ID and vehicle name.
+    // 2. Fill lblDetails with date and formatted price.
+    // 3. Clear previous dynamic style classes from 'rootBox' and 'lblStatus'.
+    // 4. Evaluate proposal status (proposal.getStatus()):
+    // - If "ACTIVE":
+    // * Add 'history-row-active' class to rootBox.
+    // * Add 'history-badge-active' class to lblStatus.
+    // * Set text "ACTIVE".
+    // - If "SOLD":
+    // * Add 'history-row-sold' class to rootBox.
+    // * Add 'history-badge-sold' class to lblStatus.
+    // * Set text "SOLD".
 }

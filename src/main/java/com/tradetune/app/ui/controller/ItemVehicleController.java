@@ -10,61 +10,83 @@ import javafx.scene.image.ImageView;
 public class ItemVehicleController {
 
     // -------------------------------------------------------------------------
-    // ELEMENTOS FXML
+    // FXML ELEMENTS
     // -------------------------------------------------------------------------
-    @FXML private ImageView imgVehicle;
-    @FXML private Label lblModel;
-    @FXML private Label lblTechnicalInfo; // Para: "Diesel • 120.000 km • 2018"
-    @FXML private Label lblLocation;
-    @FXML private Label lblStockDays;
-    @FXML private Label lblPrice;
-    @FXML private Button btnViewDetails;
+    @FXML
+    private ImageView imgVehicle;
+    @FXML
+    private Label lblModel;
+    @FXML
+    private Label lblTechnicalInfo; // For: "Diesel • 120,000 km • 2018"
+    @FXML
+    private Label lblLocation;
+    @FXML
+    private Label lblStockDays;
+    @FXML
+    private Label lblPrice;
+    @FXML
+    private Button btnViewDetails;
 
     // -------------------------------------------------------------------------
-    // INICIALIZACIÓN
+    // INITIALIZATION
     // -------------------------------------------------------------------------
     @FXML
     public void initialize() {
-        // TODO: Configuración inicial si fuera necesaria (ej. placeholder de imagen).
+        // TODO: Initial configuration if necessary (e.g. placeholder image).
     }
 
-    public void setData(String model, String fuelType, int km, int year, String location, int stockDays, double price, String imagePath) {
-        // Configura el modelo
+    /**
+     * Sets the vehicle display data.
+     * Populates all UI elements with vehicle information.
+     * 
+     * @param model     the vehicle model name
+     * @param fuelType  the fuel type (e.g. "Diesel", "Gasoline")
+     * @param km        the mileage in kilometers
+     * @param year      the manufacturing year
+     * @param location  the vehicle location/city
+     * @param stockDays days the vehicle has been in stock
+     * @param price     the vehicle price
+     * @param imagePath the path to the vehicle image (optional, can be null)
+     */
+    public void setData(String model, String fuelType, int km, int year, String location, int stockDays, double price,
+            String imagePath) {
+        // Sets the model
         lblModel.setText(model);
 
-        // Configura la información técnica (combustible, km, año)
+        // Configures technical information (fuel, km, year)
         lblTechnicalInfo.setText(fuelType + " • " + km + " km • " + year);
 
-        // Configura la ubicación del vehículo
+        // Configures vehicle location
         lblLocation.setText(location);
 
-        // Configura los días en stock
-        lblStockDays.setText("En stock por " + stockDays + " días");
+        // Configures days in stock
+        lblStockDays.setText("In stock for " + stockDays + " days");
 
-        // Configura el precio del vehículo
+        // Configures vehicle price
         lblPrice.setText("€" + String.format("%.2f", price));
 
-        //TODO: Agregar lógica imagen
+        // TODO: Add image logic
 
-        // Configura la imagen del vehículo (si la ruta es válida)
-/*
-        if (imagePath != null && !imagePath.isEmpty()) {
-            imgVehicle.setImage(new Image(imagePath));
-        }
-*/
+        // Configures vehicle image (if path is valid)
+        /*
+         * if (imagePath != null && !imagePath.isEmpty()) {
+         * imgVehicle.setImage(new Image(imagePath));
+         * }
+         */
 
-        // Configura el botón para ver los detalles (si se desea añadir alguna acción)
+        // Configures the details button (if action is needed)
         btnViewDetails.setOnAction(event -> {
-            // Aquí puedes agregar la lógica para ver los detalles del vehículo
-            System.out.println("Ver detalles de: " + model);
+            // Here you can add the logic to view vehicle details
+            System.out.println("View details for: " + model);
         });
     }
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 2: INTERACCIÓN
+    // SECTION 2: INTERACTION
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setOnViewDetails(Runnable action)'
-    // Permite al controlador padre definir qué pasa cuando se pulsa "Ver Detalles".
+    // TODO: Create method 'setOnViewDetails(Runnable action)'
+    // Allows the parent controller to define what happens when "View Details" is
+    // pressed.
     // btnViewDetails.setOnAction(event -> action.run());
 }

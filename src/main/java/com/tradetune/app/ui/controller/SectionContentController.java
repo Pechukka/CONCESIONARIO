@@ -13,17 +13,21 @@ import java.io.IOException;
 
 public class SectionContentController {
 
-    @FXML private Button btnAction;
-    @FXML private Label lblTitle;
-    @FXML private ListView<Node> listView;
-    @FXML private TextField txtSearch;
+    @FXML
+    private Button btnAction;
+    @FXML
+    private Label lblTitle;
+    @FXML
+    private ListView<Node> listView;
+    @FXML
+    private TextField txtSearch;
 
-    // Método para configurar el título de la sección
+    // Sets the section title
     public void setTitle(String title) {
         lblTitle.setText(title);
     }
 
-    // Método para configurar el botón de acción
+    // Configures the action button with text and handler
     public void setActionButton(String text, Runnable action) {
         btnAction.setText(text);
         btnAction.setOnAction(e -> action.run());
@@ -39,7 +43,8 @@ public class SectionContentController {
         listView.getItems().clear();
     }
 
-    private void loadView(String title, String actionButtonText, Runnable actionHandler, String fxmlItemPath, NavSection section) {
+    private void loadView(String title, String actionButtonText, Runnable actionHandler, String fxmlItemPath,
+            NavSection section) {
         setTitle(title);
         if (actionButtonText != null) {
             setActionButton(actionButtonText, actionHandler);
@@ -47,39 +52,40 @@ public class SectionContentController {
             showActionButton(false);
         }
         clearItems();
-        // Simulando la carga de 10 vehículos
+        // Simulating the loading of 10 items
         for (int i = 0; i < 10; i++) {
             addItemToContent(fxmlItemPath, section);
         }
     }
 
-    // Métodos específicos para cargar las vistas
+    // Specific methods to load different views
     public void loadVehiclesView() {
-        loadView("VEHÍCULOS DISPONIBLES", null, null, "/com/tradetune/app/ui/fxml/components/ItemVehicle.fxml", NavSection.VEHICLES);
+        loadView("AVAILABLE VEHICLES", null, null, "/com/tradetune/app/ui/fxml/components/ItemVehicle.fxml",
+                NavSection.VEHICLES);
     }
 
-
     public void loadClientsView() {
-        loadView("GESTIÓN DE CLIENTES","+ Registrar Interesado", () -> System.out.println("Click Registrar"), "/com/tradetune/app/ui/fxml/components/ItemClient.fxml", NavSection.CLIENTS);
+        loadView("CLIENT MANAGEMENT", "+ Register Interested", () -> System.out.println("Click Register"),
+                "/com/tradetune/app/ui/fxml/components/ItemClient.fxml", NavSection.CLIENTS);
     }
 
     public void loadProposalsView() {
-        loadView("PROPUESTAS DE VENTA",
-                "+ Crear Propuesta",
-                () -> System.out.println("Click Crear"),
+        loadView("SALES PROPOSALS",
+                "+ Create Proposal",
+                () -> System.out.println("Click Create"),
                 "/com/tradetune/app/ui/fxml/components/ItemProposal.fxml",
-                NavSection.OFFERS);
+                NavSection.PROPOSALS);
     }
 
     public void loadSoldView() {
-        loadView("VEHÍCULOS VENDIDOS",
+        loadView("VEHICLES SOLD",
                 null,
                 null,
                 "/com/tradetune/app/ui/fxml/components/ItemSoldVehicle.fxml",
                 NavSection.SOLD);
     }
 
-    // Método para cargar el FXML y configurar los datos correspondientes
+    // Method to load FXML and configure corresponding data
     private void addItemToContent(String fxmlPath, NavSection section) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
@@ -96,8 +102,7 @@ public class SectionContentController {
                             "Madrid",
                             30,
                             12000,
-                            null
-                    );
+                            null);
                     break;
                 case SOLD:
                     ItemSoldVehicleController ctrlSoldVehicle = loader.getController();
@@ -105,20 +110,19 @@ public class SectionContentController {
                             "BMW Serie 1",
                             "Juan Pérez",
                             "12/01/2026",
-                            18500
-                    );
+                            18500);
                     break;
                 case CLIENTS:
-                    // Configuración futura para clientes
+                    // Future configuration for clients
                     break;
-                case OFFERS:
-                    // Configuración futura para propuestas
+                case PROPOSALS:
+                    // Future configuration for proposals
                     break;
                 default:
-                    System.err.println("Tipo de item no reconocido: ");
+                    System.err.println("Unrecognized item type: ");
             }
 
-            listView.getItems().add(node);  // Agregar el nodo al ListView
+            listView.getItems().add(node); // Add the node to the ListView
         } catch (IOException e) {
             e.printStackTrace();
         }

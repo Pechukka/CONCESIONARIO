@@ -10,47 +10,51 @@ import javafx.scene.control.ToggleGroup;
 public class NavController {
 
     // -------------------------------------------------------------------------
-    // ENUMS
+    // FXML ELEMENTS
     // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-    // ELEMENTOS FXML
-    // -------------------------------------------------------------------------
-    @FXML private ToggleGroup navGroup;
+    @FXML
+    private ToggleGroup navGroup;
 
     // SALES
-    @FXML private ToggleButton btnVehicles;
-    @FXML private ToggleButton btnClients;
-    @FXML private ToggleButton btnOffers;
-    @FXML private ToggleButton btnSold;
+    @FXML
+    private ToggleButton btnVehicles;
+    @FXML
+    private ToggleButton btnClients;
+    @FXML
+    private ToggleButton btnOffers;
+    @FXML
+    private ToggleButton btnSold;
 
     // MECHANIC
-    @FXML private ToggleButton btnMyJobs;
-    @FXML private ToggleButton btnFinished;
+    @FXML
+    private ToggleButton btnMyJobs;
+    @FXML
+    private ToggleButton btnFinished;
 
     // -------------------------------------------------------------------------
-    // INICIALIZACIÓN
+    // INITIALIZATION
     // -------------------------------------------------------------------------
     @FXML
     public void initialize() {
-        // Asociar cada ToggleButton con su NavSection mediante UserData
+        // Associate each ToggleButton with its NavSection using UserData
         btnVehicles.setUserData(NavSection.VEHICLES);
         btnClients.setUserData(NavSection.CLIENTS);
-        btnOffers.setUserData(NavSection.OFFERS);
+        btnOffers.setUserData(NavSection.PROPOSALS);
         btnSold.setUserData(NavSection.SOLD);
         btnMyJobs.setUserData(NavSection.MY_JOBS);
         btnFinished.setUserData(NavSection.FINISHED);
     }
 
     // -------------------------------------------------------------------------
-    // GETTERS PÚBLICOS
+    // PUBLIC GETTERS
     // -------------------------------------------------------------------------
 
-    // Este método devuelve la propiedad de "quién está seleccionado"
+    // Returns the property of "who is selected"
     public ReadOnlyObjectProperty<Toggle> getSelectedToggleProperty() {
         return navGroup.selectedToggleProperty();
     }
 
-    // Getters para comparar (saber si el seleccionado es btnVehicles, etc.)
+    // Getters for comparison (to know if the selected one is btnVehicles, etc.)
     public ToggleButton getBtnVehicles() {
         return btnVehicles;
     }
@@ -76,7 +80,7 @@ public class NavController {
     }
 
     // -------------------------------------------------------------------------
-    // MÉTODO PARA OBTENER SECCIÓN SELECCIONADA
+    // METHOD TO GET SELECTED SECTION
     // -------------------------------------------------------------------------
 
     public NavSection getSelectedSection() {

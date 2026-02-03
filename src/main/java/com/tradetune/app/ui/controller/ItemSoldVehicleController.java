@@ -3,56 +3,73 @@ package com.tradetune.app.ui.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-// import com.tradetune.app.domain.model.Sale; // Descomentar cuando exista
+// import com.tradetune.app.domain.model.Sale; // Uncomment when available
 
+/**
+ * Controller for displaying a sold vehicle item.
+ * Shows sale information including vehicle, client, and transaction details.
+ */
 public class ItemSoldVehicleController {
 
     // -------------------------------------------------------------------------
-    // ELEMENTOS FXML
+    // FXML ELEMENTS
     // -------------------------------------------------------------------------
-    @FXML private Label lblModel;
-    @FXML private Label lblClientName;
-    @FXML private Label lblSaleDate;
-    @FXML private Label lblPrice;
-    @FXML private Button btnViewDetails;
+    @FXML
+    private Label lblModel;
+    @FXML
+    private Label lblClientName;
+    @FXML
+    private Label lblSaleDate;
+    @FXML
+    private Label lblPrice;
+    @FXML
+    private Button btnViewDetails;
 
     // -------------------------------------------------------------------------
-    // INICIALIZACIÓN
+    // INITIALIZATION
     // -------------------------------------------------------------------------
     @FXML
     public void initialize() {
-        // TODO: Configuración inicial si fuera necesaria.
+        // TODO: Initial configuration if necessary.
     }
 
+    /**
+     * Sets the sold vehicle display data.
+     * 
+     * @param model      the vehicle model
+     * @param clientName the name of the client who purchased the vehicle
+     * @param saleDate   the date of the sale
+     * @param price      the final sale price
+     */
     public void setData(
             String model,
             String clientName,
             String saleDate,
-            double price
-    ) {
-        // Modelo del vehículo
+            double price) {
+        // Vehicle model
         lblModel.setText(model);
 
-        // Nombre del cliente
+        // Client name
         lblClientName.setText(clientName);
 
-        // Fecha de venta
+        // Sale date
         lblSaleDate.setText(saleDate);
 
-        // Precio final
+        // Final price
         lblPrice.setText("€" + String.format("%.2f", price));
 
-        // Acción del botón detalles
+        // Details button action
         btnViewDetails.setOnAction(event -> {
             System.out.println("View sold vehicle details: " + model);
         });
     }
 
     // -------------------------------------------------------------------------
-    // SECCIÓN 2: INTERACCIÓN
+    // SECTION 2: INTERACTION
     // -------------------------------------------------------------------------
 
-    // TODO: Crear método 'setOnViewDetails(Runnable action)'
-    // Permite al controlador padre definir qué pasa cuando se pulsa "Ver Detalles" (ej: abrir ficha de venta).
+    // TODO: Create method 'setOnViewDetails(Runnable action)'
+    // Allows the parent controller to define what happens when "View Details" is
+    // pressed (e.g: open sale form).
     // btnViewDetails.setOnAction(event -> action.run());
 }
