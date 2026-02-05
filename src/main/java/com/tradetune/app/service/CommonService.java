@@ -1,0 +1,12 @@
+package com.tradetune.app.service;
+
+import java.util.List;
+import java.util.Optional;
+
+// Interfaz genérica para servicios (T = Entidad, ID = Tipo de dato del ID)
+public interface CommonService<T, ID> {
+    List<T> findAll();
+    Optional<T> findById(ID id);
+    void save(T entity);
+    void deleteById(ID id);
+}
