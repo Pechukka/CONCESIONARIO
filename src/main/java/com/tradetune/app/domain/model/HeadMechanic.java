@@ -19,6 +19,11 @@ public class HeadMechanic {
     @JoinColumn(name = "id_worker", nullable = false)
     private Mechanic mechanic;
 
+    public HeadMechanic(Integer id, Mechanic mechanic) {
+        this.id = id;
+        this.mechanic = mechanic;
+    }
+
     public Integer getId() {
         return id;
     }

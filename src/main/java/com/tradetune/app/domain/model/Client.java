@@ -35,6 +35,15 @@ public class Client {
     @Column(name = "address", length = 220)
     private String address;
 
+    public Client(String dniNif, String fullName, String email, String phoneNumber, LocalDate birthdate, String address) {
+        this.dniNif = dniNif;
+        this.fullName = fullName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.birthdate = birthdate;
+        this.address = address;
+    }
+
     public Integer getId() {
         return id;
     }

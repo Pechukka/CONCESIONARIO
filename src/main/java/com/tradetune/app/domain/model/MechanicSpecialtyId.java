@@ -3,6 +3,7 @@ package com.tradetune.app.domain.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -11,12 +12,18 @@ import java.util.Objects;
  */
 @Embeddable
 public class MechanicSpecialtyId implements Serializable {
+    @Serial
     private static final long serialVersionUID = -2753275865383127809L;
     @Column(name = "id_mechanic", nullable = false)
     private Integer idMechanic;
 
     @Column(name = "id_category", nullable = false)
     private Short idCategory;
+
+    public MechanicSpecialtyId(Integer idMechanic, Short idCategory) {
+        this.idMechanic = idMechanic;
+        this.idCategory = idCategory;
+    }
 
     public Integer getIdMechanic() {
         return idMechanic;

@@ -223,7 +223,7 @@ INSERT INTO proposal_status (id_proposal_status, name) VALUES
 (1,'ACTIVE'),(2,'ACCEPTED'),(3,'REJECTED');
 
 CREATE TABLE proposal (
-  id_proposal            INT NOT NULL AUTO_INCREMENT,
+  id_proposal         INT NOT NULL AUTO_INCREMENT,
   id_client           INT NOT NULL,
   id_vehicle          INT NOT NULL,
   id_sales_employee   INT NOT NULL,
@@ -581,6 +581,9 @@ VALUES
     (7, 2, 'ana.martin@trade-tune.es',     '$2b$10$sevilla.manager.hash.demo', 'Ana Martín Jiménez',     '+34 620 303 404', '2022-05-03', 1),
     (8, 2, 'javier.romero@trade-tune.es',  '$2b$10$sevilla.sales.hash.demo',   'Javier Romero León',     '+34 621 505 606', '2023-10-01', 1),
     (9, 2, 'lucas.vargas@trade-tune.es',   '$2b$10$sevilla.mech1.hash.demo',   'Lucas Vargas Herrera',   '+34 622 707 808', '2021-07-19', 1),
+    (10,2, 'sara.nieto@trade-tune.es',     '$2b$10$sevilla.head.hash.demo',    'Sara Nieto Fuentes',     '+34 623 909 010', '2020-04-08', 1),
+
+    (10,2, 'sara.nieto@trade-tune.es',     '$2b$10$sevilla.head.hash.demo',    'Sara Nieto Fuentes',     '+34 623 909 010', '2020-04-08', 1),
     (10,2, 'sara.nieto@trade-tune.es',     '$2b$10$sevilla.head.hash.demo',    'Sara Nieto Fuentes',     '+34 623 909 010', '2020-04-08', 1);
 
 INSERT INTO manager (id_worker) VALUES (1),(7);
@@ -676,16 +679,16 @@ VALUES
     (12, '33445566R', 'Isabel Fuentes Blanco',      'isabel.fuentes@gmail.com',    '+34 641 333 444', '1988-11-27', 'Av. de la Palmera 38, Sevilla');
 
 INSERT INTO client_vehicle_interest
-(id_interest, id_client, id_vehicle, interest_date, approx_budget, notes)
+(id_client, id_vehicle, interest_date, approx_budget, notes)
 VALUES
-    (1,  1,  2, '2025-12-16', 18500.00, 'Busca financiación a 48 meses.'),
-    (2,  2,  4, '2025-09-25', 17000.00, 'Prioriza mantenimiento al día y revisión de historial.'),
-    (3,  3,  3, '2026-01-08', 21000.00, 'Interesado en híbrido para ciudad; pregunta por garantía.'),
-    (4,  4,  6, '2026-01-30', 12500.00, 'Pago con tarjeta si se incluye cambio de neumáticos.'),
-    (5,  5, 10, '2025-12-03',  5200.00, 'Compra rápida; solicita entrega antes de Navidad.'),
-    (6,  6,  9, '2026-01-18', 30000.00, 'Valora tasación de su coche actual.'),
-    (7,  7,  1, '2026-01-23', NULL,     'Quiere ver el estado del embrague y prueba en carretera.'),
-    (8, 10,  3, '2026-01-22', 22000.00, 'Pregunta por seguro y consumo real.');
+    (1,  2, '2025-12-16', 18500.00, 'Busca financiación a 48 meses.'),
+    (2,  4, '2025-09-25', 17000.00, 'Prioriza mantenimiento al día y revisión de historial.'),
+    (3,  3, '2026-01-08', 21000.00, 'Interesado en híbrido para ciudad; pregunta por garantía.'),
+    (4,  6, '2026-01-30', 12500.00, 'Pago con tarjeta si se incluye cambio de neumáticos.'),
+    (5, 10, '2025-12-03',  5200.00, 'Compra rápida; solicita entrega antes de Navidad.'),
+    (6,  9, '2026-01-18', 30000.00, 'Valora tasación de su coche actual.'),
+    (7,  1, '2026-01-23', NULL,     'Quiere ver el estado del embrague y prueba en carretera.'),
+    (10,  3, '2026-01-22', 22000.00, 'Pregunta por seguro y consumo real.');
 
 -- =========================
 -- 6) Ofertas + ventas

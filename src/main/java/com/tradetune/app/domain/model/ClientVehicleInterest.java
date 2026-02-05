@@ -40,6 +40,16 @@ public class ClientVehicleInterest {
     @Column(name = "notes")
     private String notes;
 
+    public ClientVehicleInterest() {
+    }
+
+    public ClientVehicleInterest(Client idClient, Vehicle idVehicle, BigDecimal approxBudget, String notes) {
+        this.idClient = idClient;
+        this.idVehicle = idVehicle;
+        this.approxBudget = approxBudget;
+        this.notes = notes;
+    }
+
     public Integer getId() {
         return id;
     }

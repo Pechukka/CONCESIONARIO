@@ -59,6 +59,19 @@ public class Proposal {
     @Column(name = "details")
     private String details;
 
+    public Proposal(Client idClient, Vehicle idVehicle, SalesEmployee idSalesEmployee, PaymentMethod idPaymentMethod, LocalDate validityDate, BigDecimal discountAmount, BigDecimal finalPrice, String details, BigDecimal basePriceSnapshot, ProposalStatus idProposalStatus) {
+        this.idClient = idClient;
+        this.idVehicle = idVehicle;
+        this.idSalesEmployee = idSalesEmployee;
+        this.idPaymentMethod = idPaymentMethod;
+        this.validityDate = validityDate;
+        this.discountAmount = discountAmount;
+        this.finalPrice = finalPrice;
+        this.details = details;
+        this.basePriceSnapshot = basePriceSnapshot;
+        this.idProposalStatus = idProposalStatus;
+    }
+
     public Integer getId() {
         return id;
     }
