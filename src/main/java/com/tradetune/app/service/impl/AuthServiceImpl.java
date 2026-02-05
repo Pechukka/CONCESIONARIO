@@ -1,4 +1,18 @@
 package com.tradetune.app.service.impl;
 
-public class AuthServiceImpl {
+import com.tradetune.app.domain.model.Worker;
+import com.tradetune.app.service.AuthService;
+
+import java.util.Optional;
+
+public class AuthServiceImpl implements AuthService {
+    @Override
+    public Optional<Worker> authenticate(String email, String password) {
+        return Optional.empty();
+    }
+
+    @Override
+    public String determineRole(Worker worker) {
+        return "";
+    }
 }
