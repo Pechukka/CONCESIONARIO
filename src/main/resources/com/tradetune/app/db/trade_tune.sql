@@ -576,20 +576,10 @@ VALUES
     ( 1, 'paula.suarez@trade-tune.es',   '$2b$10$malaga.mech2.hash.demo',    'Paula Suárez Castro',    '+34 614 888 999', '2024-02-05', 1),
     ( 1, 'carlos.perez@trade-tune.es',   '$2b$10$malaga.head.hash.demo',     'Carlos Pérez Molina',    '+34 615 101 202', '2020-11-10', 1),
 
-<<<<<<< HEAD
     (2, 'ana.martin@trade-tune.es',     '$2b$10$sevilla.manager.hash.demo', 'Ana Martín Jiménez',     '+34 620 303 404', '2022-05-03', 1),
     ( 2, 'javier.romero@trade-tune.es',  '$2b$10$sevilla.sales.hash.demo',   'Javier Romero León',     '+34 621 505 606', '2023-10-01', 1),
     ( 2, 'lucas.vargas@trade-tune.es',   '$2b$10$sevilla.mech1.hash.demo',   'Lucas Vargas Herrera',   '+34 622 707 808', '2021-07-19', 1),
     (2, 'sara.nieto@trade-tune.es',     '$2b$10$sevilla.head.hash.demo',    'Sara Nieto Fuentes',     '+34 623 909 010', '2020-04-08', 1);
-=======
-    (7, 2, 'ana.martin@trade-tune.es',     '$2b$10$sevilla.manager.hash.demo', 'Ana Martín Jiménez',     '+34 620 303 404', '2022-05-03', 1),
-    (8, 2, 'javier.romero@trade-tune.es',  '$2b$10$sevilla.sales.hash.demo',   'Javier Romero León',     '+34 621 505 606', '2023-10-01', 1),
-    (9, 2, 'lucas.vargas@trade-tune.es',   '$2b$10$sevilla.mech1.hash.demo',   'Lucas Vargas Herrera',   '+34 622 707 808', '2021-07-19', 1),
-    (10,2, 'sara.nieto@trade-tune.es',     '$2b$10$sevilla.head.hash.demo',    'Sara Nieto Fuentes',     '+34 623 909 010', '2020-04-08', 1),
-
-    (10,2, 'sara.nieto@trade-tune.es',     '$2b$10$sevilla.head.hash.demo',    'Sara Nieto Fuentes',     '+34 623 909 010', '2020-04-08', 1),
-    (10,2, 'sara.nieto@trade-tune.es',     '$2b$10$sevilla.head.hash.demo',    'Sara Nieto Fuentes',     '+34 623 909 010', '2020-04-08', 1);
->>>>>>> 42e884f1e9074f49326be2b95349d04ed4e77d56
 
 INSERT INTO manager (id_worker) VALUES (1),(7);
 INSERT INTO sales_employee (id_worker) VALUES (2),(3),(8);
