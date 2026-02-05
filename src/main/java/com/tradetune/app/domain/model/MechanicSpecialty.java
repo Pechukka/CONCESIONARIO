@@ -25,6 +25,10 @@ public class MechanicSpecialty {
     @JoinColumn(name = "id_category", nullable = false)
     private VehicleCategory idCategory;
 
+    public MechanicSpecialty(MechanicSpecialtyId id) {
+        this.id = id;
+    }
+
     public MechanicSpecialtyId getId() {
         return id;
     }

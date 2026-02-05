@@ -73,6 +73,20 @@ public class Repair {
     @Column(name = "notes")
     private String notes;
 
+    public Repair(Dealership idDealership, Vehicle idVehicle, Client idClient, HeadMechanic createdByHeadMechanic, Mechanic assignedMechanic, RepairStatus idRepairStatus, BigDecimal estimatedTimeHours, BigDecimal estimatedCost, BigDecimal finalCost, String workType, String notes) {
+        this.idDealership = idDealership;
+        this.idVehicle = idVehicle;
+        this.idClient = idClient;
+        this.createdByHeadMechanic = createdByHeadMechanic;
+        this.assignedMechanic = assignedMechanic;
+        this.idRepairStatus = idRepairStatus;
+        this.estimatedTimeHours = estimatedTimeHours;
+        this.estimatedCost = estimatedCost;
+        this.finalCost = finalCost;
+        this.workType = workType;
+        this.notes = notes;
+    }
+
     public Integer getId() {
         return id;
     }

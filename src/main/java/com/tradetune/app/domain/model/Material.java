@@ -31,6 +31,13 @@ public class Material {
     @Column(name = "active", nullable = false)
     private Byte active;
 
+    public Material(MaterialType idMaterialType, String name, BigDecimal priceRef, Byte active) {
+        this.idMaterialType = idMaterialType;
+        this.name = name;
+        this.priceRef = priceRef;
+        this.active = active;
+    }
+
     public Integer getId() {
         return id;
     }
