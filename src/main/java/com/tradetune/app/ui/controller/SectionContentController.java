@@ -94,89 +94,89 @@ public class SectionContentController {
                 case VEHICLES:
                     if (loader.getController() instanceof ItemVehicleController) {
                         ItemVehicleController ctrl = loader.getController();
-                        // Crear Mock Vehicle
-                        Vehicle vehicle = new Vehicle();
-                        vehicle.setId(i);
-                        vehicle.setBrand("Ford");
-                        vehicle.setModel("Focus " + i);
-                        vehicle.setFuel("Diesel");
-                        vehicle.setKm(120000 + (i * 1000));
-                        vehicle.setYear((short) 2018);
-                        vehicle.setBasePrice(new BigDecimal("12500.00"));
-                        vehicle.setArrivalDate(LocalDate.now().minusDays(30 + i));
-
-
-                        // Mock relación Dealership para evitar NullPointer
-                        Dealership d = new Dealership();
-                        d.setCity("Madrid");
-                        vehicle.setIdDealership(d);
-
-                        ctrl.setData(vehicle);
+//                        // Crear Mock Vehicle
+//                        Vehicle vehicle = new Vehicle();
+//                        vehicle.setId(i);
+//                        vehicle.setBrand("Ford");
+//                        vehicle.setModel("Focus " + i);
+//                        vehicle.setFuel("Diesel");
+//                        vehicle.setKm(120000 + (i * 1000));
+//                        vehicle.setYear((short) 2018);
+//                        vehicle.setBasePrice(new BigDecimal("12500.00"));
+//                        vehicle.setArrivalDate(LocalDate.now().minusDays(30 + i));
+//
+//
+//                        // Mock relación Dealership para evitar NullPointer
+//                        Dealership d = new Dealership();
+//                        d.setCity("Madrid");
+//                        vehicle.setIdDealership(d);
+//
+//                        ctrl.setData(vehicle);
                     }
                     break;
 
                 case SOLD:
                     if (loader.getController() instanceof ItemSoldVehicleController) {
                         ItemSoldVehicleController ctrl = loader.getController();
-                        // Crear Mock Sale
-                        Sale sale = new Sale();
-                        sale.setId(i);
-                        sale.setSaleTs(Instant.now());
-                        sale.setFinalPriceSnapshot(new BigDecimal("18500.00"));
-
-                        // Mock relaciones (Sale -> Vehicle)
-                        Vehicle sv = new Vehicle();
-                        sv.setBrand("BMW");
-                        sv.setModel("Serie 1");
-                        sale.setIdVehicle(sv);
-
-                        // Mock relaciones (Sale -> Proposal -> Client)
-                        Proposal so = new Proposal();
-                        Client sc = new Client();
-                        sc.setFullName("Comprador " + i);
-                        so.setIdClient(sc);
-                        sale.setIdProposal(so);
-
-                        ctrl.setData(sale);
+//                        // Crear Mock Sale
+//                        Sale sale = new Sale();
+//                        sale.setId(i);
+//                        sale.setSaleTs(Instant.now());
+//                        sale.setFinalPriceSnapshot(new BigDecimal("18500.00"));
+//
+//                        // Mock relaciones (Sale -> Vehicle)
+//                        Vehicle sv = new Vehicle();
+//                        sv.setBrand("BMW");
+//                        sv.setModel("Serie 1");
+//                        sale.setIdVehicle(sv);
+//
+//                        // Mock relaciones (Sale -> Proposal -> Client)
+//                        Proposal so = new Proposal();
+//                        Client sc = new Client();
+//                        sc.setFullName("Comprador " + i);
+//                        so.setIdClient(sc);
+//                        sale.setIdProposal(so);
+//
+//                        ctrl.setData(sale);
                     }
                     break;
 
                 case CLIENTS:
                     if (loader.getController() instanceof ItemClientController) {
                         ItemClientController ctrl = loader.getController();
-                        // Crear Mock Client
-                        Client client = new Client();
-                        client.setId(i);
-                        client.setFullName("Cliente Ejemplo " + i);
-                        client.setDniNif("12345678" + i);
-                        client.setEmail("cliente" + i + "@email.com");
-                        client.setPhoneNumber("600 000 00" + i);
-
-                        // Pasamos el objeto cliente + un booleano random para probar el badge
-                        ctrl.setData(client, i % 2 == 0);
+//                        // Crear Mock Client
+//                        Client client = new Client();
+//                        client.setId(i);
+//                        client.setFullName("Cliente Ejemplo " + i);
+//                        client.setDniNif("12345678" + i);
+//                        client.setEmail("cliente" + i + "@email.com");
+//                        client.setPhoneNumber("600 000 00" + i);
+//
+//                        // Pasamos el objeto cliente + un booleano random para probar el badge
+//                        ctrl.setData(client, i % 2 == 0);
                     }
                     break;
 
                 case PROPOSALS:
                     if (loader.getController() instanceof ItemProposalController) {
                         ItemProposalController ctrl = loader.getController();
-                        // Crear Mock Proposal
-                        Proposal proposal = new Proposal();
-                        proposal.setId(i);
-                        proposal.setFinalPrice(new BigDecimal("15800.00"));
-                        proposal.setValidityDate(LocalDate.now().plusDays(15));
-
-                        // Mock Relaciones
-                        Client oc = new Client();
-                        oc.setFullName("María López " + i);
-                        proposal.setIdClient(oc);
-
-                        Vehicle ov = new Vehicle();
-                        ov.setBrand("Seat");
-                        ov.setModel("Ibiza");
-                        proposal.setIdVehicle(ov);
-
-                        ctrl.setData(proposal);
+//                        // Crear Mock Proposal
+//                        Proposal proposal = new Proposal();
+//                        proposal.setId(i);
+//                        proposal.setFinalPrice(new BigDecimal("15800.00"));
+//                        proposal.setValidityDate(LocalDate.now().plusDays(15));
+//
+//                        // Mock Relaciones
+//                        Client oc = new Client();
+//                        oc.setFullName("María López " + i);
+//                        proposal.setIdClient(oc);
+//
+//                        Vehicle ov = new Vehicle();
+//                        ov.setBrand("Seat");
+//                        ov.setModel("Ibiza");
+//                        proposal.setIdVehicle(ov);
+//
+//                        ctrl.setData(proposal);
                     }
                     break;
 
