@@ -556,32 +556,30 @@ DELIMITER ;
 -- Ejecuta DESPUÉS de crear el esquema.
 -- ============================================================
 
-USE trade_tune;
-
 -- =========================
 -- 1) Concesionarios
 -- =========================
-INSERT INTO dealership (id_dealership, name, address, city, province, country) VALUES
-    (1, 'Trade & Tune Málaga',  'Av. de Velázquez 284',        'Málaga',  'Málaga',  'España'),
-    (2, 'Trade & Tune Sevilla', 'Calle Luis Montoto 120',     'Sevilla', 'Sevilla', 'España');
+INSERT INTO dealership (name, address, city, province, country) VALUES
+    ('Trade & Tune Málaga',  'Av. de Velázquez 284',        'Málaga',  'Málaga',  'España'),
+    ('Trade & Tune Sevilla', 'Calle Luis Montoto 120',     'Sevilla', 'Sevilla', 'España');
 
 -- =========================
 -- 2) Trabajadores + roles
 -- =========================
 INSERT INTO worker
-(id_worker, id_dealership, email, password_hash, full_name, phone_number, entry_date, active)
+(id_dealership, email, password_hash, full_name, phone_number, entry_date, active)
 VALUES
-    (1, 1, 'laura.garcia@trade-tune.es',   '$2b$10$malaga.manager.hash.demo',  'Laura García Ramos',     '+34 600 123 456', '2022-03-01', 1),
-    (2, 1, 'daniel.ruiz@trade-tune.es',    '$2b$10$malaga.sales1.hash.demo',   'Daniel Ruiz Ortega',     '+34 611 222 333', '2023-01-15', 1),
-    (3, 1, 'marta.lopez@trade-tune.es',    '$2b$10$malaga.sales2.hash.demo',   'Marta López Navarro',    '+34 612 444 555', '2023-06-12', 1),
-    (4, 1, 'ivan.moreno@trade-tune.es',    '$2b$10$malaga.mech1.hash.demo',    'Iván Moreno Gil',        '+34 613 666 777', '2021-09-20', 1),
-    (5, 1, 'paula.suarez@trade-tune.es',   '$2b$10$malaga.mech2.hash.demo',    'Paula Suárez Castro',    '+34 614 888 999', '2024-02-05', 1),
-    (6, 1, 'carlos.perez@trade-tune.es',   '$2b$10$malaga.head.hash.demo',     'Carlos Pérez Molina',    '+34 615 101 202', '2020-11-10', 1),
+    ( 1, 'laura.garcia@trade-tune.es',   '$2b$10$malaga.manager.hash.demo',  'Laura García Ramos',     '+34 600 123 456', '2022-03-01', 1),
+    ( 1, 'daniel.ruiz@trade-tune.es',    '$2b$10$malaga.sales1.hash.demo',   'Daniel Ruiz Ortega',     '+34 611 222 333', '2023-01-15', 1),
+    ( 1, 'marta.lopez@trade-tune.es',    '$2b$10$malaga.sales2.hash.demo',   'Marta López Navarro',    '+34 612 444 555', '2023-06-12', 1),
+    ( 1, 'ivan.moreno@trade-tune.es',    '$2b$10$malaga.mech1.hash.demo',    'Iván Moreno Gil',        '+34 613 666 777', '2021-09-20', 1),
+    ( 1, 'paula.suarez@trade-tune.es',   '$2b$10$malaga.mech2.hash.demo',    'Paula Suárez Castro',    '+34 614 888 999', '2024-02-05', 1),
+    ( 1, 'carlos.perez@trade-tune.es',   '$2b$10$malaga.head.hash.demo',     'Carlos Pérez Molina',    '+34 615 101 202', '2020-11-10', 1),
 
-    (7, 2, 'ana.martin@trade-tune.es',     '$2b$10$sevilla.manager.hash.demo', 'Ana Martín Jiménez',     '+34 620 303 404', '2022-05-03', 1),
-    (8, 2, 'javier.romero@trade-tune.es',  '$2b$10$sevilla.sales.hash.demo',   'Javier Romero León',     '+34 621 505 606', '2023-10-01', 1),
-    (9, 2, 'lucas.vargas@trade-tune.es',   '$2b$10$sevilla.mech1.hash.demo',   'Lucas Vargas Herrera',   '+34 622 707 808', '2021-07-19', 1),
-    (10,2, 'sara.nieto@trade-tune.es',     '$2b$10$sevilla.head.hash.demo',    'Sara Nieto Fuentes',     '+34 623 909 010', '2020-04-08', 1);
+    (2, 'ana.martin@trade-tune.es',     '$2b$10$sevilla.manager.hash.demo', 'Ana Martín Jiménez',     '+34 620 303 404', '2022-05-03', 1),
+    ( 2, 'javier.romero@trade-tune.es',  '$2b$10$sevilla.sales.hash.demo',   'Javier Romero León',     '+34 621 505 606', '2023-10-01', 1),
+    ( 2, 'lucas.vargas@trade-tune.es',   '$2b$10$sevilla.mech1.hash.demo',   'Lucas Vargas Herrera',   '+34 622 707 808', '2021-07-19', 1),
+    (2, 'sara.nieto@trade-tune.es',     '$2b$10$sevilla.head.hash.demo',    'Sara Nieto Fuentes',     '+34 623 909 010', '2020-04-08', 1);
 
 INSERT INTO manager (id_worker) VALUES (1),(7);
 INSERT INTO sales_employee (id_worker) VALUES (2),(3),(8);
@@ -602,78 +600,78 @@ INSERT INTO mechanic_specialty (id_mechanic, id_category) VALUES
 INSERT INTO material_type (id_material_type, name) VALUES
     (1,'FLUID'),(2,'FILTER'),(3,'BRAKES'),(4,'ELECTRICAL'),(5,'TIRES'),(6,'ENGINE');
 
-INSERT INTO material (id_material, id_material_type, name, price_ref, active) VALUES
-    (1, 1, 'Aceite motor 5W-30 (1L)',                 9.50,  1),
-    (2, 2, 'Filtro de aceite',                        12.90, 1),
-    (3, 2, 'Filtro de aire',                          18.50, 1),
-    (4, 2, 'Filtro de habitáculo (polen)',            16.90, 1),
-    (5, 1, 'Líquido de frenos DOT 4 (1L)',            8.50,  1),
-    (6, 3, 'Pastillas freno delanteras (juego)',      65.00, 1),
-    (7, 3, 'Pastillas freno traseras (juego)',        55.00, 1),
-    (8, 6, 'Kit de embrague (conjunto)',              195.00,1),
-    (9, 6, 'Kit correa distribución (conjunto)',      210.00,1),
-    (10,6, 'Bujías (juego 4 uds)',                    45.00, 1),
-    (11,4, 'Batería 12V 60Ah',                        115.00,1),
-    (12,5, 'Neumático 205/55 R16',                    89.00, 1),
-    (13,6, 'Kit transmisión moto (cadena + piñones)', 145.00,1),
-    (14,1, 'Refrigerante orgánico (1L)',              7.00,  1);
+INSERT INTO material (id_material_type, name, price_ref, active) VALUES
+    ( 1, 'Aceite motor 5W-30 (1L)',                 9.50,  1),
+    ( 2, 'Filtro de aceite',                        12.90, 1),
+    (2, 'Filtro de aire',                          18.50, 1),
+    (2, 'Filtro de habitáculo (polen)',            16.90, 1),
+    ( 1, 'Líquido de frenos DOT 4 (1L)',            8.50,  1),
+    ( 3, 'Pastillas freno delanteras (juego)',      65.00, 1),
+    ( 3, 'Pastillas freno traseras (juego)',        55.00, 1),
+    ( 6, 'Kit de embrague (conjunto)',              195.00,1),
+    ( 6, 'Kit correa distribución (conjunto)',      210.00,1),
+    (6, 'Bujías (juego 4 uds)',                    45.00, 1),
+    (4, 'Batería 12V 60Ah',                        115.00,1),
+    (5, 'Neumático 205/55 R16',                    89.00, 1),
+    (6, 'Kit transmisión moto (cadena + piñones)', 145.00,1),
+    (1, 'Refrigerante orgánico (1L)',              7.00,  1);
 
 -- =========================
 -- 4) Vehículos + imágenes
 -- =========================
 INSERT INTO vehicle
-(id_vehicle, id_dealership, id_category, id_vehicle_status, vin, license_plate, brand, model, year, km, fuel, base_price, arrival_date)
+(id_dealership, id_category, id_vehicle_status, vin, license_plate, brand, model, year, km, fuel, base_price, arrival_date)
 VALUES
-    (1, 1, 1, 3, 'VSSZZZ5FZJR000101', '5483LKG', 'SEAT',       'León 1.6 TDI',            2018,  98000, 'Diesel', 13900.00, '2025-11-20'),
-    (2, 1, 1, 2, 'WVWZZZAUZLW000202', '2197KPM', 'Volkswagen', 'Golf 1.5 TSI',            2020,  62000, 'Petrol', 18900.00, '2025-10-05'),
-    (3, 1, 1, 1, 'JTDBR32E0M0000303', '7731MJD', 'Toyota',     'Corolla 1.8 Hybrid',      2021,  41000, 'Hybrid', 22900.00, '2025-12-10'),
-    (4, 1, 1, 2, 'WBA8A31070K000404', '9016LZY', 'BMW',        '320d',                     2017, 115000, 'Diesel', 17900.00, '2025-09-15'),
-    (5, 1, 2, 3, 'JYARM061000050505', '3184JHG', 'Yamaha',     'MT-07',                    2022,  12000, 'Petrol',  6990.00, '2026-01-05'),
-    (6, 1, 1, 1, 'VF1RJA00465100606', '4328MPR', 'Renault',    'Clio TCe 90',              2019,  54000, 'Petrol', 12900.00, '2025-11-01'),
-    (7, 1, 3, 1, 'ZAPC2500000000707', '8061HLM', 'Piaggio',    'Zip 50',                   2020,   8000, 'Petrol',  1790.00, '2025-12-22'),
+    ( 1, 1, 3, 'VSSZZZ5FZJR000101', '5483LKG', 'SEAT',       'León 1.6 TDI',            2018,  98000, 'Diesel', 13900.00, '2025-11-20'),
+    ( 1, 1, 2, 'WVWZZZAUZLW000202', '2197KPM', 'Volkswagen', 'Golf 1.5 TSI',            2020,  62000, 'Petrol', 18900.00, '2025-10-05'),
+    ( 1, 1, 1, 'JTDBR32E0M0000303', '7731MJD', 'Toyota',     'Corolla 1.8 Hybrid',      2021,  41000, 'Hybrid', 22900.00, '2025-12-10'),
+    ( 1, 1, 2, 'WBA8A31070K000404', '9016LZY', 'BMW',        '320d',                     2017, 115000, 'Diesel', 17900.00, '2025-09-15'),
+    (1, 2, 3, 'JYARM061000050505', '3184JHG', 'Yamaha',     'MT-07',                    2022,  12000, 'Petrol',  6990.00, '2026-01-05'),
+    (1, 1, 1, 'VF1RJA00465100606', '4328MPR', 'Renault',    'Clio TCe 90',              2019,  54000, 'Petrol', 12900.00, '2025-11-01'),
+    ( 1, 3, 1, 'ZAPC2500000000707', '8061HLM', 'Piaggio',    'Zip 50',                   2020,   8000, 'Petrol',  1790.00, '2025-12-22'),
 
-    (8, 2, 1, 3, 'VF3L3HNS0KS000808', '1049LBC', 'Peugeot',    '308 1.2 PureTech',         2019,  73000, 'Petrol', 14900.00, '2025-10-28'),
-    (9, 2, 1, 1, '5YJ3E7EB0MF000909', '6675MHL', 'Tesla',      'Model 3',                  2021,  35000, 'Electric',29900.00, '2025-12-01'),
-    (10,2, 2, 2, 'JKAEX4000LDA00110', '9042KRT', 'Kawasaki',   'Ninja 400',                2020,  18000, 'Petrol',  5390.00, '2025-11-18');
+    ( 2, 1, 3, 'VF3L3HNS0KS000808', '1049LBC', 'Peugeot',    '308 1.2 PureTech',         2019,  73000, 'Petrol', 14900.00, '2025-10-28'),
+    ( 2, 1, 1, '5YJ3E7EB0MF000909', '6675MHL', 'Tesla',      'Model 3',                  2021,  35000, 'Electric',29900.00, '2025-12-01'),
+    (2, 2, 2, 'JKAEX4000LDA00110', '9042KRT', 'Kawasaki',   'Ninja 400',                2020,  18000, 'Petrol',  5390.00, '2025-11-18');
 
-INSERT INTO vehicle_image (id_image, id_vehicle, url) VALUES
-    (1,  1, 'assets/vehicles/seat_leon_2018_1.jpg'),
-    (2,  1, 'assets/vehicles/seat_leon_2018_2.jpg'),
-    (3,  2, 'assets/vehicles/vw_golf_2020_1.jpg'),
-    (4,  2, 'assets/vehicles/vw_golf_2020_2.jpg'),
-    (5,  3, 'assets/vehicles/toyota_corolla_2021_1.jpg'),
-    (6,  3, 'assets/vehicles/toyota_corolla_2021_2.jpg'),
-    (7,  4, 'assets/vehicles/bmw_320d_2017_1.jpg'),
-    (8,  4, 'assets/vehicles/bmw_320d_2017_2.jpg'),
-    (9,  5, 'assets/vehicles/yamaha_mt07_2022_1.jpg'),
-    (10, 5, 'assets/vehicles/yamaha_mt07_2022_2.jpg'),
-    (11, 6, 'assets/vehicles/renault_clio_2019_1.jpg'),
-    (12, 6, 'assets/vehicles/renault_clio_2019_2.jpg'),
-    (15, 8, 'assets/vehicles/peugeot_308_2019_1.jpg'),
-    (16, 8, 'assets/vehicles/peugeot_308_2019_2.jpg'),
-    (17, 9, 'assets/vehicles/tesla_model3_2021_1.jpg'),
-    (18, 9, 'assets/vehicles/tesla_model3_2021_2.jpg'),
-    (19,10, 'assets/vehicles/kawasaki_ninja400_2020_1.jpg'),
-    (20,10, 'assets/vehicles/kawasaki_ninja400_2020_2.jpg');
+INSERT INTO vehicle_image (id_vehicle, url) VALUES
+    ( 1, 'assets/vehicles/seat_leon_2018_1.jpg'),
+    ( 1, 'assets/vehicles/seat_leon_2018_2.jpg'),
+    ( 2, 'assets/vehicles/vw_golf_2020_1.jpg'),
+    (  2, 'assets/vehicles/vw_golf_2020_2.jpg'),
+    (  3, 'assets/vehicles/toyota_corolla_2021_1.jpg'),
+    (  3, 'assets/vehicles/toyota_corolla_2021_2.jpg'),
+    ( 4, 'assets/vehicles/bmw_320d_2017_1.jpg'),
+    (  4, 'assets/vehicles/bmw_320d_2017_2.jpg'),
+    ( 5, 'assets/vehicles/yamaha_mt07_2022_1.jpg'),
+    (5, 'assets/vehicles/yamaha_mt07_2022_2.jpg'),
+    ( 6, 'assets/vehicles/renault_clio_2019_1.jpg'),
+    (6, 'assets/vehicles/renault_clio_2019_2.jpg'),
+    (8, 'assets/vehicles/peugeot_308_2019_1.jpg'),
+    (8, 'assets/vehicles/peugeot_308_2019_2.jpg'),
+    (9, 'assets/vehicles/tesla_model3_2021_1.jpg'),
+    (9, 'assets/vehicles/tesla_model3_2021_2.jpg'),
+    (10, 'assets/vehicles/kawasaki_ninja400_2020_1.jpg'),
+    (10, 'assets/vehicles/kawasaki_ninja400_2020_2.jpg');
 
 -- =========================
 -- 5) Clientes + interés
 -- =========================
 INSERT INTO client
-(id_client, dni_nif, full_name, email, phone_number, birthdate, address)
+(dni_nif, full_name, email, phone_number, birthdate, address)
 VALUES
-    (1,  '12345678Z', 'Sergio Martín Aguilar',      'sergio.martin@gmail.com',     '+34 640 111 222', '1992-04-17', 'C/ Héroe de Sostoa 112, Málaga'),
-    (2,  '23456789D', 'María Sánchez Moreno',       'maria.sanchez@gmail.com',     '+34 640 222 333', '1989-09-02', 'C/ Larios 14, Málaga'),
-    (3,  '34567890V', 'David López Castillo',       'david.lopez@gmail.com',       '+34 640 333 444', '1996-01-25', 'Av. Juan XXIII 45, Málaga'),
-    (4,  '45678901G', 'Lucía Fernández Ruiz',       'lucia.fernandez@gmail.com',   '+34 640 444 555', '1994-12-11', 'C/ Pacífico 67, Málaga'),
-    (5,  '56789012B', 'Raúl Ortega Torres',         'raul.ortega@gmail.com',       '+34 640 555 666', '1987-06-30', 'C/ Granada 8, Málaga'),
-    (6,  '67890123B', 'Elena Navarro Díaz',         'elena.navarro@gmail.com',     '+34 640 666 777', '1990-03-08', 'C/ San Jacinto 20, Sevilla'),
-    (7,  '78901234X', 'Adrián Molina Romero',       'adrian.molina@gmail.com',     '+34 640 777 888', '1998-10-19', 'Av. Andalucía 210, Málaga'),
-    (8,  '89012345E', 'Carmen Jiménez Herrera',     'carmen.jimenez@gmail.com',    '+34 640 888 999', '1985-02-14', 'C/ Carretería 29, Málaga'),
-    (9,  '90123456A', 'Pablo Vargas Núñez',         'pablo.vargas@gmail.com',      '+34 641 000 111', '1991-07-07', 'C/ Mármoles 5, Málaga'),
-    (10, '11223344B', 'Noelia Gil Rojas',           'noelia.gil@gmail.com',        '+34 641 111 222', '1999-05-21', 'C/ Alcazabilla 3, Málaga'),
-    (11, '22334455Y', 'Héctor León Campos',         'hector.leon@gmail.com',       '+34 641 222 333', '1993-08-09', 'C/ Nervión 12, Sevilla'),
-    (12, '33445566R', 'Isabel Fuentes Blanco',      'isabel.fuentes@gmail.com',    '+34 641 333 444', '1988-11-27', 'Av. de la Palmera 38, Sevilla');
+    ( '12345678Z', 'Sergio Martín Aguilar',      'sergio.martin@gmail.com',     '+34 640 111 222', '1992-04-17', 'C/ Héroe de Sostoa 112, Málaga'),
+    (  '23456789D', 'María Sánchez Moreno',       'maria.sanchez@gmail.com',     '+34 640 222 333', '1989-09-02', 'C/ Larios 14, Málaga'),
+    (  '34567890V', 'David López Castillo',       'david.lopez@gmail.com',       '+34 640 333 444', '1996-01-25', 'Av. Juan XXIII 45, Málaga'),
+    (  '45678901G', 'Lucía Fernández Ruiz',       'lucia.fernandez@gmail.com',   '+34 640 444 555', '1994-12-11', 'C/ Pacífico 67, Málaga'),
+    (  '56789012B', 'Raúl Ortega Torres',         'raul.ortega@gmail.com',       '+34 640 555 666', '1987-06-30', 'C/ Granada 8, Málaga'),
+    ( '67890123B', 'Elena Navarro Díaz',         'elena.navarro@gmail.com',     '+34 640 666 777', '1990-03-08', 'C/ San Jacinto 20, Sevilla'),
+    (  '78901234X', 'Adrián Molina Romero',       'adrian.molina@gmail.com',     '+34 640 777 888', '1998-10-19', 'Av. Andalucía 210, Málaga'),
+    ( '89012345E', 'Carmen Jiménez Herrera',     'carmen.jimenez@gmail.com',    '+34 640 888 999', '1985-02-14', 'C/ Carretería 29, Málaga'),
+    (  '90123456A', 'Pablo Vargas Núñez',         'pablo.vargas@gmail.com',      '+34 641 000 111', '1991-07-07', 'C/ Mármoles 5, Málaga'),
+    ( '11223344B', 'Noelia Gil Rojas',           'noelia.gil@gmail.com',        '+34 641 111 222', '1999-05-21', 'C/ Alcazabilla 3, Málaga'),
+    ( '22334455Y', 'Héctor León Campos',         'hector.leon@gmail.com',       '+34 641 222 333', '1993-08-09', 'C/ Nervión 12, Sevilla'),
+    ('33445566R', 'Isabel Fuentes Blanco',      'isabel.fuentes@gmail.com',    '+34 641 333 444', '1988-11-27', 'Av. de la Palmera 38, Sevilla');
 
 INSERT INTO client_vehicle_interest
 (id_interest, id_client, id_vehicle, interest_date, approx_budget, notes)
@@ -690,41 +688,41 @@ VALUES
 -- =========================
 -- 6) Ofertas + ventas
 -- =========================
-INSERT INTO offer
-(id_offer, id_client, id_vehicle, id_sales_employee, id_payment_method, id_offer_status,
- offer_date, validity_date, base_price_snapshot, discount_amount, final_price, details)
+INSERT INTO proposal
+(id_client, id_vehicle, id_sales_employee, id_payment_method, id_proposal_status,
+ proposal_date, validity_date, base_price_snapshot, discount_amount, final_price, details)
 VALUES
-    (1, 1,  2, 2, 4, 2, '2025-12-18', '2026-01-08', 18900.00,  900.00, 18000.00, 'Incluye cambio de aceite antes de entrega.'),
-    (2, 2,  4, 3, 3, 2, '2025-10-01', '2025-10-21', 17900.00, 1400.00, 16500.00, 'Transferencia y entrega con ITV en vigor.'),
-    (3, 3,  3, 2, 2, 3, '2026-01-10', '2026-01-25', 22900.00, 2500.00, 20400.00, 'Cliente solicita descuento extra; no aceptado.'),
-    (4, 4,  6, 3, 2, 1, '2026-02-01', '2026-02-20', 12900.00,  500.00, 12400.00, 'Oferta activa pendiente de visita.'),
-    (5, 6,  9, 8, 3, 1, '2026-01-20', '2026-02-15', 29900.00,    0.00, 29900.00, 'Oferta activa: incluye gestión de transferencia.'),
-    (6, 5, 10, 8, 2, 2, '2025-12-05', '2025-12-25',  5390.00,  200.00,  5190.00, 'Entrega con revisión general y limpieza.');
+    (1,  2, 2, 4, 2, '2025-12-18', '2026-01-08', 18900.00,  900.00, 18000.00, 'Incluye cambio de aceite antes de entrega.'),
+    ( 2,  4, 3, 3, 2, '2025-10-01', '2025-10-21', 17900.00, 1400.00, 16500.00, 'Transferencia y entrega con ITV en vigor.'),
+    (3,  3, 2, 2, 3, '2026-01-10', '2026-01-25', 22900.00, 2500.00, 20400.00, 'Cliente solicita descuento extra; no aceptado.'),
+    (4,  6, 3, 2, 1, '2026-02-01', '2026-02-20', 12900.00,  500.00, 12400.00, 'Oferta activa pendiente de visita.'),
+    (6,  9, 8, 3, 1, '2026-01-20', '2026-02-15', 29900.00,    0.00, 29900.00, 'Oferta activa: incluye gestión de transferencia.'),
+    (5, 10, 8, 2, 2, '2025-12-05', '2025-12-25',  5390.00,  200.00,  5190.00, 'Entrega con revisión general y limpieza.');
 
 INSERT INTO sale
-(id_sale, id_offer, id_vehicle, sale_ts, final_price_snapshot)
+(id_proposal, id_vehicle, sale_ts, final_price_snapshot)
 VALUES
-    (1, 1,  2, '2025-12-22 12:15:00', 18000.00),
-    (2, 2,  4, '2025-10-05 10:30:00', 16500.00),
-    (3, 6, 10, '2025-12-10 18:40:00',  5190.00);
+    ( 1,  2, '2025-12-22 12:15:00', 18000.00),
+    ( 2,  4, '2025-10-05 10:30:00', 16500.00),
+    (6, 10, '2025-12-10 18:40:00',  5190.00);
 
 -- =========================
 -- 7) Reparaciones + materiales usados
 -- =========================
 INSERT INTO repair
-(id_repair, id_dealership, id_vehicle, id_client, created_by_head_mechanic, assigned_mechanic,
+(id_dealership, id_vehicle, id_client, created_by_head_mechanic, assigned_mechanic,
  id_repair_status, creation_ts, start_ts, end_ts, estimated_time_hours, estimated_cost, final_cost,
  work_type, notes)
 VALUES
-    (1, 1,  1, NULL, 6, 4, 3, '2026-01-25 09:30:00', '2026-01-26 10:00:00', NULL, 6.50, 420.00, NULL,
+    (1,  1, NULL, 6, 4, 3, '2026-01-25 09:30:00', '2026-01-26 10:00:00', NULL, 6.50, 420.00, NULL,
      'Cambio de embrague', 'Se detecta patinaje en 3ª y 4ª. Pendiente de prueba final.'),
-    (2, 1,  5, 5,    6, 5, 2, '2026-01-28 11:10:00', NULL, NULL, 1.50,  95.00, NULL,
+    (1,  5, 5,    6, 5, 2, '2026-01-28 11:10:00', NULL, NULL, 1.50,  95.00, NULL,
      'Revisión 10.000 km + frenos traseros', 'Cliente solicita revisión completa; confirmar desgaste cadena.'),
-    (3, 1,  6, 8,    6, 4, 4, '2025-11-10 08:45:00', '2025-11-10 10:00:00', '2025-11-10 15:30:00', 2.50, 160.00, 155.00,
+    ( 1,  6, 8,    6, 4, 4, '2025-11-10 08:45:00', '2025-11-10 10:00:00', '2025-11-10 15:30:00', 2.50, 160.00, 155.00,
      'Cambio de aceite y filtros', 'Reparación finalizada. Avisar al cliente para recogida.'),
-    (4, 2,  8, NULL, 10,9, 2, '2026-01-15 16:20:00', NULL, NULL, 5.00, 380.00, NULL,
+    ( 2,  8, NULL, 10,9, 2, '2026-01-15 16:20:00', NULL, NULL, 5.00, 380.00, NULL,
      'Sustitución correa distribución', 'Programar inicio cuando llegue kit de distribución.'),
-    (5, 1,  7, 9,    6, NULL, 1, '2026-02-02 09:00:00', NULL, NULL, 0.75, 50.00, NULL,
+    ( 1,  7, 9,    6, NULL, 1, '2026-02-02 09:00:00', NULL, NULL, 0.75, 50.00, NULL,
      'Diagnóstico eléctrico (arranque)', 'No arranca en frío; revisar batería y relé de arranque.');
 
 INSERT INTO repair_material (id_repair, id_material, quantity, unit_price_applied) VALUES

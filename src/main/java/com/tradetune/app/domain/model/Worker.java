@@ -42,6 +42,17 @@ public class Worker {
     @Column(name = "active", nullable = false)
     private Byte active;
 
+    public Worker(Integer id, Dealership idDealership, String email, String passwordHash, String fullName, String phoneNumber, LocalDate entryDate, Byte active) {
+        this.id = id;
+        this.idDealership = idDealership;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.fullName = fullName;
+        this.phoneNumber = phoneNumber;
+        this.entryDate = entryDate;
+        this.active = active;
+    }
+
     public Integer getId() {
         return id;
     }

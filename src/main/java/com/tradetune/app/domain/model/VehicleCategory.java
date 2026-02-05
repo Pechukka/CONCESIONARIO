@@ -18,6 +18,11 @@ public class VehicleCategory {
     @Column(name = "name", nullable = false, length = 30)
     private String name;
 
+    public VehicleCategory(Short id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Short getId() {
         return id;
     }

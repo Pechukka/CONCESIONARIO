@@ -24,6 +24,11 @@ public class VehicleImage {
     @Column(name = "url", nullable = false, length = 500)
     private String url;
 
+    public VehicleImage(Vehicle idVehicle, String url) {
+        this.idVehicle = idVehicle;
+        this.url = url;
+    }
+
     public Integer getId() {
         return id;
     }

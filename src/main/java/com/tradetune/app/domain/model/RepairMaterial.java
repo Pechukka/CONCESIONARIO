@@ -33,6 +33,14 @@ public class RepairMaterial {
     @Column(name = "unit_price_applied", nullable = false, precision = 12, scale = 2)
     private BigDecimal unitPriceApplied;
 
+    public RepairMaterial(RepairMaterialId id, Repair idRepair, Material idMaterial, Integer quantity, BigDecimal unitPriceApplied) {
+        this.id = id;
+        this.idRepair = idRepair;
+        this.idMaterial = idMaterial;
+        this.quantity = quantity;
+        this.unitPriceApplied = unitPriceApplied;
+    }
+
     public RepairMaterialId getId() {
         return id;
     }

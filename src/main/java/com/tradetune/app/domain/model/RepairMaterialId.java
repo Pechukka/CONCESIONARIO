@@ -18,6 +18,11 @@ public class RepairMaterialId implements Serializable {
     @Column(name = "id_material", nullable = false)
     private Integer idMaterial;
 
+    public RepairMaterialId(Integer idRepair, Integer idMaterial) {
+        this.idRepair = idRepair;
+        this.idMaterial = idMaterial;
+    }
+
     public Integer getIdRepair() {
         return idRepair;
     }

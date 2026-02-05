@@ -18,6 +18,11 @@ public class SalesEmployee {
     @JoinColumn(name = "id_worker", nullable = false)
     private Worker worker;
 
+    public SalesEmployee(Integer id, Worker worker) {
+        this.id = id;
+        this.worker = worker;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -105,6 +105,7 @@ public class SectionContentController {
                         vehicle.setBasePrice(new BigDecimal("12500.00"));
                         vehicle.setArrivalDate(LocalDate.now().minusDays(30 + i));
 
+
                         // Mock relación Dealership para evitar NullPointer
                         Dealership d = new Dealership();
                         d.setCity("Madrid");

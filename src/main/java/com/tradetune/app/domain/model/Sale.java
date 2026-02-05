@@ -33,6 +33,12 @@ public class Sale {
     @Column(name = "final_price_snapshot", nullable = false, precision = 12, scale = 2)
     private BigDecimal finalPriceSnapshot;
 
+    public Sale(Proposal idProposal, Vehicle idVehicle, BigDecimal finalPriceSnapshot) {
+        this.idProposal = idProposal;
+        this.idVehicle = idVehicle;
+        this.finalPriceSnapshot = finalPriceSnapshot;
+    }
+
     public Integer getId() {
         return id;
     }

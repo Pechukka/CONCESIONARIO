@@ -18,6 +18,11 @@ public class RepairStatus {
     @Column(name = "name", nullable = false, length = 40)
     private String name;
 
+    public RepairStatus(Short id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Short getId() {
         return id;
     }
