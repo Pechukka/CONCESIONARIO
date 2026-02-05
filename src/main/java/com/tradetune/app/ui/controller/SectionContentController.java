@@ -94,7 +94,7 @@ public class SectionContentController {
                 case VEHICLES:
                     if (loader.getController() instanceof ItemVehicleController) {
                         ItemVehicleController ctrl = loader.getController();
-//                        // Crear Mock Vehicle
+                          // Crear Mock Vehicle
 //                        Vehicle vehicle = new Vehicle();
 //                        vehicle.setId(i);
 //                        vehicle.setBrand("Ford");
@@ -118,7 +118,7 @@ public class SectionContentController {
                 case SOLD:
                     if (loader.getController() instanceof ItemSoldVehicleController) {
                         ItemSoldVehicleController ctrl = loader.getController();
-//                        // Crear Mock Sale
+                          // Crear Mock Sale
 //                        Sale sale = new Sale();
 //                        sale.setId(i);
 //                        sale.setSaleTs(Instant.now());

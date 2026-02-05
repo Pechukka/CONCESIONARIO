@@ -11,7 +11,7 @@
             prefHeight="720.0">
 
     <top>
-        <fx:include fx:id="header" source="../components/header.fxml"/>
+        <fx:include fx:id="header" source="../components/Header.fxml"/>
     </top>
 
     <left>
