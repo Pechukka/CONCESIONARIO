@@ -11,23 +11,31 @@ import org.hibernate.annotations.OnDeleteAction;
 @Entity
 @Table(name = "vehicle_image")
 public class VehicleImage {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_image", nullable = false)
     private Integer id;
 
+    // En @JoinColumn le decimos que en la BD la columna sigue siendo "id_vehicle".
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "id_vehicle", nullable = false)
-    private Vehicle idVehicle;
+    private Vehicle vehicle;
 
     @Column(name = "url", nullable = false, length = 500)
     private String url;
 
-    public VehicleImage(Vehicle idVehicle, String url) {
-        this.idVehicle = idVehicle;
+    public VehicleImage() {
+    }
+
+    // Constructor
+    public VehicleImage(Vehicle vehicle, String url) {
+        this.vehicle = vehicle;
         this.url = url;
     }
+
+    // --- GETTERS Y SETTERS ---
 
     public Integer getId() {
         return id;
@@ -37,12 +45,12 @@ public class VehicleImage {
         this.id = id;
     }
 
-    public Vehicle getIdVehicle() {
-        return idVehicle;
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
-    public void setIdVehicle(Vehicle idVehicle) {
-        this.idVehicle = idVehicle;
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     public String getUrl() {
@@ -52,5 +60,4 @@ public class VehicleImage {
     public void setUrl(String url) {
         this.url = url;
     }
-
 }
