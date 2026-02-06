@@ -29,8 +29,7 @@ public class MainApp extends Application {
                 Objects.requireNonNull(getClass().getResource("/com/tradetune/app/ui/fxml/screens/SalesLayout.fxml")));
         Scene scene = new Scene(root);
 
-        scene.getStylesheets().add(
-                Objects.requireNonNull(getClass().getResource("/com/tradetune/app/ui/css/base.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/tradetune/app/ui/css/base.css")).toExternalForm());
 
         primaryStage.setScene(scene);
         primaryStage.show();

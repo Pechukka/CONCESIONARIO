@@ -426,3 +426,61 @@
 .header-close:pressed {
     -fx-background-color: #C0392B; /* rojo oscuro */
 }
+
+
+/* =============================================================================
+   10. VEHICLE DETAILS (VehicleDetails.fxml)
+   ============================================================================= */
+
+.vehicle-image-frame {
+    -fx-background-color: -fx-bg-app;
+    -fx-border-color: -fx-black;
+    -fx-border-width: 2px;
+    -fx-padding: 26;
+}
+
+.vehicle-image {
+    -fx-fit-to-width: true;
+}
+
+.vehicle-title {
+    -fx-font-size: 34px;
+    -fx-font-weight: 900;
+    -fx-text-fill: -fx-black;
+}
+
+.vehicle-key {
+    -fx-font-size: 15px;
+    -fx-font-weight: 800;
+    -fx-text-fill: -fx-black;
+}
+
+.vehicle-value {
+    -fx-font-size: 15px;
+    -fx-text-fill: -fx-black;
+}
+
+.vehicle-value-strong {
+    -fx-font-size: 15px;
+    -fx-font-weight: 800;
+    -fx-text-fill: -fx-black;
+}
+
+.vehicle-price-box {
+    -fx-background-color: -fx-bg-app;
+    -fx-border-color: -fx-black;
+    -fx-border-width: 2px;
+    -fx-padding: 18 26;
+    -fx-min-width: 320px;
+}
+
+.vehicle-price {
+    -fx-font-size: 36px;
+    -fx-font-weight: 900;
+    -fx-text-fill: -fx-black;
+}
+
+.vehicle-price-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: -fx-text-gray;
+}
