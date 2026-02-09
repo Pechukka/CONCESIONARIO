@@ -1,12 +1,17 @@
 package com.tradetune.app.ui.controller;
 
 import com.tradetune.app.domain.model.Vehicle;
+import com.tradetune.app.domain.model.VehicleImage;
+import com.tradetune.app.service.VehicleService;
+import com.tradetune.app.service.impl.VehicleServiceImpl;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 public class ItemVehicleController {
 
@@ -18,40 +23,51 @@ public class ItemVehicleController {
     @FXML private Label lblPrice;
     @FXML private Button btnViewDetails;
 
-    // --- MÉTODO SET DATA CON ENTIDAD REAL ---
+    // Instancia del servicio (necesaria para pedir las fotos)
+    private final VehicleService vehicleService = new VehicleServiceImpl();
+
     public void setData(Vehicle vehicle) {
         if (vehicle == null) return;
 
-        // 1. Marca y Modelo
+        // 1. Datos de texto (Igual que antes)
         lblModel.setText(vehicle.getBrand() + " " + vehicle.getModel());
-
-        // 2. Info Técnica (Combustible • Km • Año)
         lblTechnicalInfo.setText(String.format("%s • %d km • %d",
-                vehicle.getFuel(),
-                vehicle.getKm(),
-                vehicle.getYear()));
+                vehicle.getFuel(), vehicle.getKm(), vehicle.getYear()));
 
-        // 3. Ubicación (Navegamos a Dealership)
-        // Nota: Asegúrate de que idDealership venga cargado (no sea null/lazy)
+        // Manejo de nulos en Dealership
         if (vehicle.getIdDealership() != null) {
             lblLocation.setText(vehicle.getIdDealership().getCity());
         } else {
-            lblLocation.setText("Ubicación desconocida");
+            lblLocation.setText("-");
         }
 
-        // 4. Días en Stock (Cálculo dinámico)
         long days = 0;
         if (vehicle.getArrivalDate() != null) {
             days = ChronoUnit.DAYS.between(vehicle.getArrivalDate(), LocalDate.now());
         }
         lblStockDays.setText("En stock: " + days + " días");
-
-        // 5. Precio (BigDecimal formateado)
         lblPrice.setText(String.format("%,.0f €", vehicle.getBasePrice()));
 
-        // TODO: Cargar imagen real si tienes la lógica (ej. vehicle.getImages()...)
+        // --- 2. CARGA DE IMAGEN REAL (Backend) ---
+        // Pedimos al servicio las fotos de ESTE vehículo
+        List<VehicleImage> images = vehicleService.getVehicleImages(vehicle.getId());
 
-        // Acción del botón
+        if (images != null && !images.isEmpty()) {
+            // Cogemos la primera foto de la lista
+            String imageUrl = images.get(0).getUrl();
+
+            try {
+                // 'true' en el constructor activa la carga en segundo plano (para no congelar la UI)
+                Image image = new Image(imageUrl, true);
+                imgVehicle.setImage(image);
+            } catch (Exception e) {
+                System.err.println("No se pudo cargar la imagen: " + imageUrl);
+            }
+        } else {
+            // Si no hay fotos, podrías poner una imagen por defecto
+            // imgVehicle.setImage(new Image(getClass().getResource("/images/placeholder.png").toExternalForm()));
+        }
+
         btnViewDetails.setOnAction(e -> System.out.println("Ver vehículo ID: " + vehicle.getId()));
     }
 }

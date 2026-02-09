@@ -8,7 +8,8 @@ import org.hibernate.Session;
  * Hibernate implementation of the Vehicle repository.
  */
 public class VehicleRepositoryImpl extends CommonRepositoryImpl<Vehicle, Integer> implements VehicleRepository {
-    protected VehicleRepositoryImpl(Session session) {
+
+    public VehicleRepositoryImpl(Session session) {
         super(session);
     }
 }

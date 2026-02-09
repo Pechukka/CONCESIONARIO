@@ -16,6 +16,7 @@ public class VehicleImageRepositoryImpl extends CommonRepositoryImpl<VehicleImag
     public List<VehicleImage> findByVehicleId(Integer vehicleId) {
         // CORRECTO: Usamos "vi.vehicle.id"
         String hql = "FROM VehicleImage vi WHERE vi.vehicle.id = :vid";
+        // TODO PROBAR SI ME HACE 2 CONSULTA O UNA, SI SI HACER YO UNA CON INNER JOIN
 
         Query<VehicleImage> query = session.createQuery(hql, VehicleImage.class);
         query.setParameter("vid", vehicleId);
