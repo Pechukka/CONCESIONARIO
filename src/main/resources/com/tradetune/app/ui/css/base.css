@@ -85,7 +85,8 @@
 }
 
 .input-text:focused {
-    -fx-border-color: -fx-dark-blue; /* Resalta al escribir */
+    -fx-border-color: -fx-dark-blue;
+    /* Resalta al escribir */
 }
 
 /* =============================================================================
@@ -121,12 +122,12 @@
     -fx-background-color: -fx-white;
     -fx-background-radius: 4;
     /* Sombra suave para efecto de elevación */
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 1);
     -fx-cursor: hand;
 }
 
 .item-card:hover {
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 8, 0, 0, 2);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 8, 0, 0, 2);
 }
 
 /* Imagen del coche/cliente dentro de la tarjeta */
@@ -165,20 +166,25 @@
 /* --- BADGES / ETIQUETAS DE ESTADO --- */
 
 .badge-interested {
-    -fx-background-color: #FFF8E1; /* Fondo crema muy clarito */
-    -fx-border-color: #F39C12;     /* Borde naranja */
-    -fx-text-fill: #E67E22;        /* Texto naranja oscuro */
+    -fx-background-color: #FFF8E1;
+    /* Fondo crema muy clarito */
+    -fx-border-color: #F39C12;
+    /* Borde naranja */
+    -fx-text-fill: #E67E22;
+    /* Texto naranja oscuro */
     -fx-border-width: 1px;
     -fx-border-radius: 4;
     -fx-background-radius: 4;
-    -fx-padding: 5 12 5 12;        /* Padding interno */
+    -fx-padding: 5 12 5 12;
+    /* Padding interno */
     -fx-font-size: 12px;
     -fx-font-weight: bold;
 }
 
 /* --- BOTÓN DE ÉXITO (VERDE) --- */
 .btn-success {
-    -fx-background-color: #27AE60; /* Verde esmeralda */
+    -fx-background-color: #27AE60;
+    /* Verde esmeralda */
     -fx-text-fill: white;
     -fx-padding: 8 16;
     -fx-font-size: 13px;
@@ -188,29 +194,35 @@
 }
 
 .btn-success:hover {
-    -fx-background-color: #219150; /* Verde más oscuro al pasar ratón */
+    -fx-background-color: #219150;
+    /* Verde más oscuro al pasar ratón */
 }
 
 /* --- TARJETA DE VEHÍCULO VENDIDO --- */
 .item-card-sold {
-    -fx-background-color: #E8F8F5; /* Verde menta muy suave */
+    -fx-background-color: #E8F8F5;
+    /* Verde menta muy suave */
     -fx-background-radius: 4;
-    -fx-border-color: #2C3E50;     /* Borde oscuro según diseño */
+    -fx-border-color: #2C3E50;
+    /* Borde oscuro según diseño */
     -fx-border-width: 1px;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 1);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.05), 5, 0, 0, 1);
     -fx-cursor: hand;
 }
 
 .item-card-sold:hover {
-    -fx-background-color: #D1F2EB; /* Un poco más oscuro al pasar el ratón */
+    -fx-background-color: #D1F2EB;
+    /* Un poco más oscuro al pasar el ratón */
 }
 
 /* --- HISTORIAL DE PROPUESTAS (Filas completas) --- */
 
 /* Estilo base para la fila del historial */
 .history-row {
-    -fx-border-color: -fx-dark-blue; /* Borde oscuro y sólido */
-    -fx-border-width: 2px;           /* Borde más grueso como en la imagen */
+    -fx-border-color: -fx-dark-blue;
+    /* Borde oscuro y sólido */
+    -fx-border-width: 2px;
+    /* Borde más grueso como en la imagen */
     -fx-background-radius: 0;
     -fx-border-radius: 0;
     -fx-padding: 10 15;
@@ -218,12 +230,14 @@
 
 /* Variación 1: Fila ACTIVA (Fondo beige) */
 .history-row-active {
-    -fx-background-color: #FDF6E3; /* Beige suave */
+    -fx-background-color: #FDF6E3;
+    /* Beige suave */
 }
 
 /* Variación 2: Fila VENDIDA (Fondo verde menta) */
 .history-row-sold {
-    -fx-background-color: #E8F8F5; /* Verde muy claro */
+    -fx-background-color: #E8F8F5;
+    /* Verde muy claro */
 }
 
 /* --- BADGES INTERNOS DEL HISTORIAL --- */
@@ -233,18 +247,21 @@
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 12px;
-    -fx-padding: 6 20; /* Ancho y relleno */
+    -fx-padding: 6 20;
+    /* Ancho y relleno */
     -fx-background-radius: 2;
 }
 
 /* Color para estado ACTIVA */
 .history-badge-active {
-    -fx-background-color: #D4AC0D; /* Dorado/Ocre */
+    -fx-background-color: #D4AC0D;
+    /* Dorado/Ocre */
 }
 
 /* Color para estado VENDIDA */
 .history-badge-sold {
-    -fx-background-color: #27AE60; /* Verde intenso */
+    -fx-background-color: #27AE60;
+    /* Verde intenso */
 }
 
 /* Textos dentro del historial */
@@ -296,7 +313,8 @@
 }
 
 .nav-item:hover {
-    -fx-background-color: #00000008; /* ~3% */
+    -fx-background-color: #00000008;
+    /* ~3% */
 }
 
 /* Seleccionado */
@@ -347,7 +365,8 @@
     -fx-background-color: white;
     -fx-border-color: -fx-dark-blue;
     -fx-border-width: 2px;
-    -fx-background-radius: 50%; /* Redondo */
+    -fx-background-radius: 50%;
+    /* Redondo */
     -fx-border-radius: 50%;
     -fx-min-width: 40px;
     -fx-min-height: 40px;
@@ -363,7 +382,8 @@
 .stepper-circle-active {
     -fx-background-color: -fx-dark-blue;
     -fx-border-color: -fx-dark-blue;
-    -fx-text-fill: white; /* Número en blanco */
+    -fx-text-fill: white;
+    /* Número en blanco */
 }
 
 /* Texto del paso (ej: "Vehículo") */
@@ -371,22 +391,26 @@
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-text-fill: -fx-dark-blue;
-    -fx-padding: 0 0 5 0; /* Un poco de aire abajo si tiene borde inferior */
+    -fx-padding: 0 0 5 0;
+    /* Un poco de aire abajo si tiene borde inferior */
 }
 
 /* Texto activo (subrayado) */
 .stepper-label-active {
     -fx-border-color: -fx-dark-blue;
-    -fx-border-width: 0 0 2 0; /* Borde solo abajo (subrayado) */
+    -fx-border-width: 0 0 2 0;
+    /* Borde solo abajo (subrayado) */
 }
 
 /* Línea conectora entre pasos */
 .stepper-line {
-    -fx-background-color: #BDC3C7; /* Gris suave */
+    -fx-background-color: #BDC3C7;
+    /* Gris suave */
     -fx-min-height: 2px;
     -fx-pref-height: 2px;
     -fx-max-height: 2px;
-    -fx-min-width: 50px; /* Longitud de la línea */
+    -fx-min-width: 50px;
+    /* Longitud de la línea */
 }
 
 /* =============================================================================
@@ -419,10 +443,130 @@
 
 /* Hover → fondo rojo */
 .header-close:hover {
-    -fx-background-color: #E74C3C; /* rojo */
+    -fx-background-color: #E74C3C;
+    /* rojo */
 }
 
 /* Pressed → rojo más oscuro */
 .header-close:pressed {
-    -fx-background-color: #C0392B; /* rojo oscuro */
+    -fx-background-color: #C0392B;
+    /* rojo oscuro */
+}
+
+
+/* =============================================================================
+   10. VEHICLE DETAILS (VehicleDetails.fxml)
+   ============================================================================= */
+
+.vehicle-image-frame {
+    -fx-background-color: -fx-bg-app;
+    -fx-border-color: -fx-black;
+    -fx-border-width: 2px;
+    -fx-padding: 26;
+}
+
+.vehicle-image {
+    -fx-fit-to-width: true;
+}
+
+.vehicle-title {
+    -fx-font-size: 34px;
+    -fx-font-weight: 900;
+    -fx-text-fill: -fx-black;
+}
+
+.vehicle-key {
+    -fx-font-size: 15px;
+    -fx-font-weight: 800;
+    -fx-text-fill: -fx-black;
+}
+
+.vehicle-value {
+    -fx-font-size: 15px;
+    -fx-text-fill: -fx-black;
+}
+
+.vehicle-value-strong {
+    -fx-font-size: 15px;
+    -fx-font-weight: 800;
+    -fx-text-fill: -fx-black;
+}
+
+.vehicle-price-box {
+    -fx-background-color: -fx-bg-app;
+    -fx-border-color: -fx-black;
+    -fx-border-width: 2px;
+    -fx-padding: 18 26;
+    -fx-min-width: 320px;
+}
+
+.vehicle-price {
+    -fx-font-size: 36px;
+    -fx-font-weight: 900;
+    -fx-text-fill: -fx-black;
+}
+
+.vehicle-price-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: -fx-text-gray;
+}
+
+/* =============================================================================
+   11. CLIENT PROFILE (DETAILS)
+   ============================================================================= */
+.form-section-title {
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+    -fx-text-fill: -fx-black;
+}
+
+.profile-name {
+    -fx-font-size: 20px;
+    -fx-font-weight: 800;
+    -fx-text-fill: -fx-black;
+}
+
+.section-separator {
+    -fx-opacity: 1;
+}
+
+.avatar-circle {
+    -fx-fill: -fx-white;
+    -fx-stroke: -fx-dark-blue;
+    -fx-stroke-width: 2px;
+}
+
+.avatar-icon {
+    -fx-font-size: 18px;
+}
+
+.input-text {
+    -fx-font-weight: 700;
+    -fx-text-fill: -fx-black;
+    -fx-prompt-text-fill: -fx-text-gray;
+    -fx-padding: 24 12 10 16;
+}
+
+.field-overlay-label {
+    -fx-text-fill: -fx-text-gray;
+    -fx-font-weight: 400;
+    -fx-translate-x: 12;
+    -fx-translate-y: 8;
+    -fx-padding: 0 6;
+    -fx-background-color: -fx-white;
+}
+
+.vehicle-interest-row {
+    -fx-border-color: -fx-dark-blue;
+    -fx-border-width: 1px;
+    -fx-padding: 10 12;
+}
+
+.footer-bar {
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+}
+
+.field-stack {
+    -fx-padding: 2 0 0 0;
 }

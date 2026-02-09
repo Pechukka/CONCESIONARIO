@@ -1,9 +1,13 @@
 package com.tradetune.app.ui.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
+
+import java.io.IOException;
 
 /**
  * Base controller for modal popup windows.
@@ -37,13 +41,16 @@ public class BasePopUpController {
     // TODO: Create method 'setTitle(String title)'
     // Dynamically assigns the modal title text (lblTitle).
 
-    // -------------------------------------------------------------------------
-    // SECTION 2: MODAL CONTENT MANAGEMENT
-    // -------------------------------------------------------------------------
 
-    // TODO: Create method 'setModalContent(javafx.scene.Node content)'
-    // Inserts the received screen/modal into the StackPane paneModal.
-    // Must replace any previous content.
+    public void setContent(String fxmlPath) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent view = loader.load();
+            paneModal.getChildren().setAll(view);
+        } catch (IOException e) {
+            throw new RuntimeException("No se pudo cargar: " + fxmlPath, e);
+        }
+    }
 
     // -------------------------------------------------------------------------
     // SECTION 3: EVENTS AND CLOSING
