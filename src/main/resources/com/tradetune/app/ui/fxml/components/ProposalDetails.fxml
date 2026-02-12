@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane styleClass="layout-root proposal-page" stylesheets="@../../css/base.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- TOP HEADER -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12">
+            <padding>
+                <Insets bottom="14" left="24" right="24" top="20" />
+            </padding>
+
+            <VBox spacing="4">
+            <HBox>
+               <children>
+                      <Label styleClass="proposal-title" text="Proposal #" />
+                  <Label fx:id="lblIdProposal" styleClass="proposal-title" text="001" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label styleClass="proposal-subtitle" text="Creada el: " />
+                      <Label fx:id="lblProposalDate" styleClass="proposal-subtitle" text="25/11/2025" />
+               </children>
+            </HBox>
+            </VBox>
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <Button styleClass="proposal-status-active" text="ACTIVA" />
+        </HBox>
+    </top>
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-scroll-pane">
+            <content>
+                <VBox spacing="18">
+                    <padding>
+                        <Insets bottom="18" left="24" right="24" top="0" />
+                    </padding>
+
+                    <!-- VEHICULO -->
+                    <VBox spacing="8">
+                        <Label styleClass="proposal-section-title" text="VEHÍCULO" />
+
+                        <HBox spacing="16" styleClass="proposal-box">
+                            <padding>
+                                <Insets bottom="16" left="16" right="16" top="16" />
+                            </padding>
+
+                            <StackPane maxWidth="120" minHeight="70" minWidth="120" prefHeight="70" prefWidth="120" styleClass="proposal-image-frame">
+                                <ImageView fitHeight="48" fitWidth="48" pickOnBounds="true" preserveRatio="true" />
+                            </StackPane>
+
+                            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                                <Label fx:id="lblVehicleModel" styleClass="proposal-item-title" text="SEAT IBIZA 1.0 TSI" />
+                                <VBox spacing="2">
+                           <HBox>
+                              <children>
+                                          <Label styleClass="proposal-item-subtitle" text="Year:  " />
+                                 <Label fx:id="lblVehicleYear" styleClass="proposal-item-subtitle" text="2020" />
+                                 <Label styleClass="proposal-item-subtitle" text=" • Km: " />
+                                 <Label fx:id="lblVehicleKm" styleClass="proposal-item-subtitle" text="45.000" />
+                              </children>
+                           </HBox>
+                           <HBox>
+                              <children>
+                                          <Label styleClass="proposal-item-subtitle" text="Combustible: " />
+                                 <Label fx:id="lblVehicleFuel" styleClass="proposal-item-subtitle" text="Gasolina" />
+                              </children>
+                           </HBox>
+                           <HBox>
+                              <children>
+                                          <Label styleClass="proposal-item-subtitle" text="Matricula: " />
+                                 <Label fx:id="lblVehicleLicensePlate" styleClass="proposal-item-subtitle" text="5678 XYZ" />
+                              </children>
+                           </HBox>
+                                </VBox>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+
+                    <!-- CLIENTE -->
+                    <VBox spacing="8">
+                        <Label styleClass="proposal-section-title" text="CLIENTE" />
+
+                        <VBox spacing="6" styleClass="proposal-box">
+                            <padding>
+                                <Insets bottom="16" left="16" right="16" top="16" />
+                            </padding>
+
+                            <Label fx:id="lblClientFullName" styleClass="proposal-client-name" text="María López Ruiz" />
+                     <HBox>
+                        <children>
+                                  <Label styleClass="proposal-item-subtitle" text="DNI: " />
+                           <Label fx:id="lblClientDniNif" styleClass="proposal-item-subtitle" text="98765432B" />
+                           <Label styleClass="proposal-item-subtitle" text=" • Tel: " />
+                           <Label fx:id="lblClientPhoneNumber" styleClass="proposal-item-subtitle" text="678 901 234" />
+                        </children>
+                     </HBox>
+                     <HBox>
+                        <children>
+                                  <Label styleClass="proposal-item-subtitle" text="Email: " />
+                           <Label fx:id="lblClientEmail" styleClass="proposal-item-subtitle" text="maria.lopez@email.com" />
+                        </children>
+                     </HBox>
+                     <HBox>
+                        <children>
+                                  <Label styleClass="proposal-item-subtitle" text="Dirección: " />
+                           <Label fx:id="lblClientAddress" styleClass="proposal-item-subtitle" text="Av. Castellana 200, Madrid" />
+                        </children>
+                     </HBox>
+                        </VBox>
+                    </VBox>
+
+                    <!-- DETALLES -->
+                    <VBox spacing="8">
+                        <Label styleClass="proposal-section-title" text="DETALLES DE LA PROPUESTA" />
+
+                        <VBox spacing="12" styleClass="proposal-box">
+                            <padding>
+                                <Insets bottom="16" left="16" right="16" top="16" />
+                            </padding>
+
+                            <GridPane hgap="16" vgap="10">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" minWidth="10" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="160" />
+                                </columnConstraints>
+
+                                <Label styleClass="proposal-detail-key" text="Precio base del vehículo:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <Label styleClass="proposal-detail-value" text="16.200 €" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                <Label styleClass="proposal-detail-key" text="Descuento aplicado:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <Label styleClass="vehicle-value-danger" text="- 400 €" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Label styleClass="proposal-detail-key" text="Forma de pago:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <Label styleClass="proposal-detail-value" text="Financiación" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                <Label styleClass="proposal-detail-key" text="Válida hasta:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                <Label styleClass="proposal-detail-value" text="15/12/2025" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <rowConstraints>
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                        </rowConstraints>
+                            </GridPane>
+
+                            <Separator styleClass="section-separator" />
+
+                            <HBox alignment="CENTER_LEFT">
+                                <Label styleClass="proposal-final-key" text="PRECIO FINAL:" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="proposal-final-price" text="15.800 €" />
+                            </HBox>
+                        </VBox>
+                    </VBox>
+
+                    <!-- OBSERVACIONES -->
+                    <VBox spacing="8">
+                        <Label styleClass="proposal-section-title" text="OBSERVACIONES" />
+                        <TextArea prefRowCount="4" styleClass="proposal-observations" wrapText="true" />
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <!-- FOOTER -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="footer-bar">
+            <padding>
+                <Insets bottom="24" left="24" right="24" top="18" />
+            </padding>
+
+            <Button styleClass="btn-success" text="✓ Confirmar Venta" />
+            <Button styleClass="btn-secondary" text="Editar" />
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <Button styleClass="btn-secondary" text="Cerrar" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -636,23 +636,14 @@ VALUES
 
 INSERT INTO vehicle_image (id_vehicle, url) VALUES
     ( 1, 'assets/vehicles/seat_leon_2018_1.jpg'),
-    ( 1, 'assets/vehicles/seat_leon_2018_2.jpg'),
     ( 2, 'assets/vehicles/vw_golf_2020_1.jpg'),
-    (  2, 'assets/vehicles/vw_golf_2020_2.jpg'),
     (  3, 'assets/vehicles/toyota_corolla_2021_1.jpg'),
-    (  3, 'assets/vehicles/toyota_corolla_2021_2.jpg'),
     ( 4, 'assets/vehicles/bmw_320d_2017_1.jpg'),
-    (  4, 'assets/vehicles/bmw_320d_2017_2.jpg'),
     ( 5, 'assets/vehicles/yamaha_mt07_2022_1.jpg'),
-    (5, 'assets/vehicles/yamaha_mt07_2022_2.jpg'),
     ( 6, 'assets/vehicles/renault_clio_2019_1.jpg'),
-    (6, 'assets/vehicles/renault_clio_2019_2.jpg'),
     (8, 'assets/vehicles/peugeot_308_2019_1.jpg'),
-    (8, 'assets/vehicles/peugeot_308_2019_2.jpg'),
-    (9, 'assets/vehicles/tesla_model3_2021_1.jpg'),
-    (9, 'assets/vehicles/tesla_model3_2021_2.jpg'),
-    (10, 'assets/vehicles/kawasaki_ninja400_2020_1.jpg'),
-    (10, 'assets/vehicles/kawasaki_ninja400_2020_2.jpg');
+    (9, 'assets/vehicles/tesla_model3_1.jpg'),
+    (10, 'assets/vehicles/kawasaki_ninja400_2020_1.jpg');
 
 -- =========================
 -- 5) Clientes + interés
