@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<BorderPane styleClass="layout-root" stylesheets="@../../css/base.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane styleClass="layout-root" stylesheets="@../../css/base.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tradetune.app.ui.controller.ClientProfileController">
 
    <center>
       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" pannable="true" vbarPolicy="AS_NEEDED" BorderPane.alignment="TOP_LEFT">
@@ -21,18 +21,18 @@
                   <StackPane minHeight="54" minWidth="54" prefHeight="54" prefWidth="54">
                      <Circle radius="27" styleClass="avatar-circle" />
 
-                     <ImageView fitHeight="44" fitWidth="44" pickOnBounds="true" preserveRatio="true" styleClass="avatar-image">
+                     <ImageView fitHeight="44" fitWidth="44" pickOnBounds="true" preserveRatio="true" styleClass="avatar-image" fx:id="imgAvatar">
                         <clip>
                            <Circle radius="22" />
                         </clip>
                      </ImageView>
 
-                     <Label styleClass="avatar-icon" text="👤" />
+                     <Label styleClass="avatar-icon" text="👤" fx:id="lblAvatarIcon" />
                   </StackPane>
 
                   <VBox alignment="CENTER_LEFT" spacing="6">
-                     <Label styleClass="profile-name" text="Client Name" />
-                     <Label styleClass="badge-interested" text="STATUS" />
+                     <Label styleClass="profile-name" text="Client Name" fx:id="lblClientName" />
+                     <Label styleClass="badge-interested" text="STATUS" fx:id="lblStatus"/>
                   </VBox>
 
                   <Region HBox.hgrow="ALWAYS" />
@@ -51,12 +51,12 @@
                      </columnConstraints>
 
                      <StackPane styleClass="field-stack" GridPane.columnIndex="0">
-                        <TextField editable="false" focusTraversable="false" promptText="Value" styleClass="input-text" />
-                        <Label styleClass="field-overlay-label" text="ID Number" StackPane.alignment="TOP_LEFT" />
+                        <TextField editable="false" focusTraversable="false" promptText="Value" styleClass="input-text" fx:id="txtDni"/>
+                        <Label styleClass="field-overlay-label" text="ID Number" StackPane.alignment="TOP_LEFT"/>
                      </StackPane>
 
                      <StackPane styleClass="field-stack" GridPane.columnIndex="1">
-                        <TextField editable="false" focusTraversable="false" promptText="Value" styleClass="input-text" />
+                        <TextField editable="false" focusTraversable="false" promptText="Value" styleClass="input-text" fx:id="txtBirthdate"/>
                         <Label styleClass="field-overlay-label" text="Date of Birth" StackPane.alignment="TOP_LEFT" />
                      </StackPane>
                      <rowConstraints>
@@ -76,12 +76,12 @@
                      </columnConstraints>
 
                      <StackPane styleClass="field-stack" GridPane.columnIndex="0">
-                        <TextField editable="false" focusTraversable="false" promptText="Value" styleClass="input-text" />
+                        <TextField editable="false" focusTraversable="false" promptText="Value" styleClass="input-text" fx:id="txtPhone"/>
                         <Label styleClass="field-overlay-label" text="Phone" StackPane.alignment="TOP_LEFT" />
                      </StackPane>
 
                      <StackPane styleClass="field-stack" GridPane.columnIndex="1">
-                        <TextField editable="false" focusTraversable="false" promptText="Value" styleClass="input-text" />
+                        <TextField editable="false" focusTraversable="false" promptText="Value" styleClass="input-text" fx:id="txtEmail"/>
                         <Label styleClass="field-overlay-label" text="Email" StackPane.alignment="TOP_LEFT" />
                      </StackPane>
                      <rowConstraints>
@@ -113,7 +113,7 @@
          <padding>
             <Insets bottom="20" left="26" right="26" top="12" />
          </padding>
-         <Button minHeight="36" minWidth="120" prefHeight="36" styleClass="btn-secondary" text="Close" />
+         <Button minHeight="36" minWidth="120" prefHeight="36" styleClass="btn-secondary" text="Close" fx:id="btnClose"/>
       </HBox>
    </bottom>
 

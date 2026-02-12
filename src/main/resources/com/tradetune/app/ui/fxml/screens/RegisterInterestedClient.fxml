@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.lang.String?>
+<BorderPane styleClass="layout-root" stylesheets="@../../css/base.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" pannable="true" vbarPolicy="AS_NEEDED" BorderPane.alignment="TOP_LEFT">
+            <content>
+                <VBox spacing="18">
+                    <padding>
+                        <Insets bottom="22" left="22" right="22" top="22" />
+                    </padding>
+
+                    <!-- DATOS PERSONALES -->
+                    <VBox spacing="10">
+                        <Label styleClass="form-section-title" text="DATOS PERSONALES" />
+                        <Separator styleClass="section-separator" />
+
+                        <GridPane hgap="14" vgap="12">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                            </columnConstraints>
+
+                            <VBox spacing="6" GridPane.columnSpan="2">
+                                <Label styleClass="form-section-title" text="Nombre completo *" />
+                                <TextField promptText="Nombre y apellidos" styleClass="input-text" />
+                            </VBox>
+
+                            <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                <Label styleClass="form-section-title" text="DNI/NIE *" />
+                                <TextField promptText="12345678A" styleClass="input-text" />
+                            </VBox>
+
+                            <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <Label styleClass="form-section-title" text="Fecha nacimiento" />
+                                <TextField styleClass="input-text" />
+                            </VBox>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                        </GridPane>
+                    </VBox>
+
+                    <!-- DATOS DE CONTACTO -->
+                    <VBox spacing="10">
+                        <Label styleClass="form-section-title" text="DATOS DE CONTACTO" />
+                        <Separator styleClass="section-separator" />
+
+                        <GridPane hgap="14" vgap="12">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                            </columnConstraints>
+
+                            <VBox spacing="6" GridPane.columnIndex="0">
+                                <Label styleClass="form-section-title" text="Teléfono *" />
+                                <TextField promptText="612 345 678" styleClass="input-text" />
+                            </VBox>
+
+                            <VBox spacing="6" GridPane.columnIndex="1">
+                                <Label styleClass="form-section-title" text="Email *" />
+                                <TextField promptText="email@ejemplo.com" styleClass="input-text" />
+                            </VBox>
+
+                            <VBox spacing="6" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                <Label styleClass="form-section-title" text="Dirección" />
+                                <TextField styleClass="input-text" />
+                            </VBox>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                        </GridPane>
+                    </VBox>
+
+                    <!-- INFORMACIÓN DE INTERÉS -->
+                    <VBox spacing="10">
+                        <Label styleClass="form-section-title" text="INFORMACIÓN DE INTERÉS" />
+                        <Separator styleClass="section-separator" />
+
+                        <GridPane hgap="14" vgap="12">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                            </columnConstraints>
+
+                            <VBox spacing="6" GridPane.columnSpan="2">
+                                <Label styleClass="form-section-title" text="Vehículo de interés" />
+                                <ComboBox promptText="Seleccionar vehículo..." styleClass="input-text" />
+                            </VBox>
+
+                            <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                <Label styleClass="form-section-title" text="Presupuesto aproximado (€)" />
+                                <TextField styleClass="input-text" />
+                            </VBox>
+
+                            <Region GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                            <VBox spacing="6" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                <Label styleClass="form-section-title" text="Notas adicionales" />
+                                <TextArea prefRowCount="3" promptText="Preferencias, observaciones..." styleClass="input-text" wrapText="true" />
+                            </VBox>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                        </GridPane>
+                    </VBox>
+
+                    <HBox alignment="CENTER_LEFT" spacing="12" styleClass="footer-bar">
+                        <Button text="Registrar Cliente">
+                            <styleClass>
+                                <String fx:value="btn-primary"/>
+                                <String fx:value="btn-compact"/>
+                            </styleClass>
+                        </Button>
+                        <Button minHeight="36" styleClass="btn-secondary" text="Cancelar" />
+                    </HBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

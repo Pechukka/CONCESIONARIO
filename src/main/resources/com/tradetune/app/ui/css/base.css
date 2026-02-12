@@ -543,8 +543,6 @@
 .input-text {
     -fx-font-weight: 700;
     -fx-text-fill: -fx-black;
-    -fx-prompt-text-fill: -fx-text-gray;
-    -fx-padding: 24 12 10 16;
 }
 
 .field-overlay-label {
@@ -570,3 +568,26 @@
 .field-stack {
     -fx-padding: 2 0 0 0;
 }
+
+/* =============================================================================
+   14. REGISTERED INTERESTED CLIENT
+   ============================================================================= */
+/* Botón Primary compacto (misma altura visual que btn-secondary) */
+/* Solo ajusta tamaño; no toca colores/bordes/fuentes */
+.btn-compact {
+    -fx-padding: 6 18;
+    -fx-min-height: 36;
+    -fx-pref-height: 36;
+
+    -fx-background-color: -fx-dark-blue;
+    -fx-text-fill: -fx-white;
+}
+
+.btn-compact:hover {
+    -fx-background-color: -fx-dark-blue-hover;
+}
+
+.btn-compact:pressed {
+    -fx-background-color: -fx-dark-blue-pressed;
+}
+
