@@ -6,10 +6,6 @@ import org.hibernate.annotations.ColumnDefault;
 import java.math.BigDecimal;
 import java.time.Instant;
 
-/**
- * Records a completed vehicle sale.
- * Links to the accepted offer and captures the final transaction price.
- */
 @Entity
 @Table(name = "sale")
 public class Sale {
@@ -19,7 +15,7 @@ public class Sale {
     private Integer id;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_offer", nullable = false)
+    @JoinColumn(name = "id_proposal", nullable = false)
     private Proposal idProposal;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
@@ -33,12 +29,6 @@ public class Sale {
     @Column(name = "final_price_snapshot", nullable = false, precision = 12, scale = 2)
     private BigDecimal finalPriceSnapshot;
 
-    public Sale(Proposal idProposal, Vehicle idVehicle, BigDecimal finalPriceSnapshot) {
-        this.idProposal = idProposal;
-        this.idVehicle = idVehicle;
-        this.finalPriceSnapshot = finalPriceSnapshot;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -47,7 +37,7 @@ public class Sale {
         this.id = id;
     }
 
-    public Proposal getidProposal() {
+    public Proposal getIdProposal() {
         return idProposal;
     }
 

@@ -5,9 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- * Catalog of vehicle categories.
- */
 @Entity
 @Table(name = "vehicle_category")
 public class VehicleCategory {
@@ -17,11 +14,6 @@ public class VehicleCategory {
 
     @Column(name = "name", nullable = false, length = 30)
     private String name;
-
-    public VehicleCategory(Short id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
     public Short getId() {
         return id;

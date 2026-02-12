@@ -4,11 +4,6 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
-/**
- * Represents a customer of the dealership.
- * Stores personal and contact information for clients interested in purchasing
- * vehicles.
- */
 @Entity
 @Table(name = "client")
 public class Client {
@@ -34,15 +29,6 @@ public class Client {
 
     @Column(name = "address", length = 220)
     private String address;
-
-    public Client(String dniNif, String fullName, String email, String phoneNumber, LocalDate birthdate, String address) {
-        this.dniNif = dniNif;
-        this.fullName = fullName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.birthdate = birthdate;
-        this.address = address;
-    }
 
     public Integer getId() {
         return id;

@@ -26,7 +26,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(
-                Objects.requireNonNull(getClass().getResource("/com/tradetune/app/ui/fxml/screens/Client_file.fxml")));
+                Objects.requireNonNull(getClass().getResource("/com/tradetune/app/ui/fxml/screens/SalesLayout.fxml")));
         Scene scene = new Scene(root);
 
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/tradetune/app/ui/css/base.css")).toExternalForm());

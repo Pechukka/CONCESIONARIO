@@ -2,11 +2,6 @@ package com.tradetune.app.domain.model;
 
 import jakarta.persistence.*;
 
-/**
- * Represents a head mechanic role with supervisory responsibilities.
- * Extends the Mechanic entity and is responsible for creating repair work
- * orders.
- */
 @Entity
 @Table(name = "head_mechanic")
 public class HeadMechanic {
@@ -18,11 +13,6 @@ public class HeadMechanic {
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_worker", nullable = false)
     private Mechanic mechanic;
-
-    public HeadMechanic(Integer id, Mechanic mechanic) {
-        this.id = id;
-        this.mechanic = mechanic;
-    }
 
     public Integer getId() {
         return id;

@@ -5,9 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- * Catalog of proposal statuses.
- */
 @Entity
 @Table(name = "proposal_status")
 public class ProposalStatus {

@@ -6,10 +6,6 @@ import org.hibernate.annotations.ColumnDefault;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-/**
- * Represents a sales proposal made to a client for a vehicle.
- * Includes pricing details, payment method, and validity period.
- */
 @Entity
 @Table(name = "proposal")
 public class Proposal {
@@ -55,22 +51,8 @@ public class Proposal {
     @Column(name = "final_price", nullable = false, precision = 12, scale = 2)
     private BigDecimal finalPrice;
 
-    @Lob
     @Column(name = "details")
     private String details;
-
-    public Proposal(Client idClient, Vehicle idVehicle, SalesEmployee idSalesEmployee, PaymentMethod idPaymentMethod, LocalDate validityDate, BigDecimal discountAmount, BigDecimal finalPrice, String details, BigDecimal basePriceSnapshot, ProposalStatus idProposalStatus) {
-        this.idClient = idClient;
-        this.idVehicle = idVehicle;
-        this.idSalesEmployee = idSalesEmployee;
-        this.idPaymentMethod = idPaymentMethod;
-        this.validityDate = validityDate;
-        this.discountAmount = discountAmount;
-        this.finalPrice = finalPrice;
-        this.details = details;
-        this.basePriceSnapshot = basePriceSnapshot;
-        this.idProposalStatus = idProposalStatus;
-    }
 
     public Integer getId() {
         return id;

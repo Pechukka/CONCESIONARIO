@@ -6,22 +6,14 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Composite primary key for the RepairMaterial entity.
- */
 @Embeddable
 public class RepairMaterialId implements Serializable {
-    private static final long serialVersionUID = 7133949969328264321L;
+    private static final long serialVersionUID = -1218268854464192609L;
     @Column(name = "id_repair", nullable = false)
     private Integer idRepair;
 
     @Column(name = "id_material", nullable = false)
     private Integer idMaterial;
-
-    public RepairMaterialId(Integer idRepair, Integer idMaterial) {
-        this.idRepair = idRepair;
-        this.idMaterial = idMaterial;
-    }
 
     public Integer getIdRepair() {
         return idRepair;
@@ -41,10 +33,8 @@ public class RepairMaterialId implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         RepairMaterialId entity = (RepairMaterialId) o;
         return Objects.equals(this.idRepair, entity.idRepair) &&
                 Objects.equals(this.idMaterial, entity.idMaterial);

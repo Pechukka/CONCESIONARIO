@@ -8,12 +8,6 @@ import org.hibernate.annotations.OnDeleteAction;
 import java.math.BigDecimal;
 import java.time.Instant;
 
-/**
- * Represents a vehicle repair work order.
- * Tracks repair lifecycle from creation to completion, including cost
- * estimation,
- * mechanic assignment, and material usage.
- */
 @Entity
 @Table(name = "repair")
 public class Repair {
@@ -72,20 +66,6 @@ public class Repair {
 
     @Column(name = "notes")
     private String notes;
-
-    public Repair(Dealership idDealership, Vehicle idVehicle, Client idClient, HeadMechanic createdByHeadMechanic, Mechanic assignedMechanic, RepairStatus idRepairStatus, BigDecimal estimatedTimeHours, BigDecimal estimatedCost, BigDecimal finalCost, String workType, String notes) {
-        this.idDealership = idDealership;
-        this.idVehicle = idVehicle;
-        this.idClient = idClient;
-        this.createdByHeadMechanic = createdByHeadMechanic;
-        this.assignedMechanic = assignedMechanic;
-        this.idRepairStatus = idRepairStatus;
-        this.estimatedTimeHours = estimatedTimeHours;
-        this.estimatedCost = estimatedCost;
-        this.finalCost = finalCost;
-        this.workType = workType;
-        this.notes = notes;
-    }
 
     public Integer getId() {
         return id;

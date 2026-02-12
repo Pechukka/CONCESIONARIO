@@ -11,10 +11,10 @@
              ============== -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost:3306/car_dealership?sslMode=DISABLED&amp;serverTimezone=Europe/Madrid&amp;allowPublicKeyRetrieval=true
+            jdbc:mysql://192.168.22.103:3306/trade_tune?sslMode=DISABLED&amp;serverTimezone=Europe/Madrid&amp;allowPublicKeyRetrieval=true
         </property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">RootPasswd$</property>
+        <property name="hibernate.connection.username">trade_tune</property>
+        <property name="hibernate.connection.password">1234</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
         <!-- ==============

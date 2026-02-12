@@ -5,9 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- * Catalog of repair statuses.
- */
 @Entity
 @Table(name = "repair_status")
 public class RepairStatus {
@@ -17,11 +14,6 @@ public class RepairStatus {
 
     @Column(name = "name", nullable = false, length = 40)
     private String name;
-
-    public RepairStatus(Short id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
     public Short getId() {
         return id;

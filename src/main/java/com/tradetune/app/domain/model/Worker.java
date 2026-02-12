@@ -5,11 +5,6 @@ import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
 
-/**
- * Base entity representing a dealership employee.
- * Serves as parent for specific worker roles (Manager, SalesEmployee,
- * Mechanic).
- */
 @Entity
 @Table(name = "worker")
 public class Worker {
@@ -41,17 +36,6 @@ public class Worker {
     @ColumnDefault("1")
     @Column(name = "active", nullable = false)
     private Byte active;
-
-    public Worker(Integer id, Dealership idDealership, String email, String passwordHash, String fullName, String phoneNumber, LocalDate entryDate, Byte active) {
-        this.id = id;
-        this.idDealership = idDealership;
-        this.email = email;
-        this.passwordHash = passwordHash;
-        this.fullName = fullName;
-        this.phoneNumber = phoneNumber;
-        this.entryDate = entryDate;
-        this.active = active;
-    }
 
     public Integer getId() {
         return id;

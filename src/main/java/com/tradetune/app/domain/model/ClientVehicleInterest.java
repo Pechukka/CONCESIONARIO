@@ -8,10 +8,6 @@ import org.hibernate.annotations.OnDeleteAction;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-/**
- * Records a client's interest in a specific vehicle.
- * Used for tracking potential sales opportunities and client preferences.
- */
 @Entity
 @Table(name = "client_vehicle_interest")
 public class ClientVehicleInterest {
@@ -39,16 +35,6 @@ public class ClientVehicleInterest {
 
     @Column(name = "notes")
     private String notes;
-
-    public ClientVehicleInterest() {
-    }
-
-    public ClientVehicleInterest(Client idClient, Vehicle idVehicle, BigDecimal approxBudget, String notes) {
-        this.idClient = idClient;
-        this.idVehicle = idVehicle;
-        this.approxBudget = approxBudget;
-        this.notes = notes;
-    }
 
     public Integer getId() {
         return id;

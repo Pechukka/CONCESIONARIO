@@ -5,10 +5,6 @@ import org.hibernate.annotations.ColumnDefault;
 
 import java.math.BigDecimal;
 
-/**
- * Represents a material or part used in vehicle repairs.
- * Tracks material type, pricing, and availability status.
- */
 @Entity
 @Table(name = "material")
 public class Material {
@@ -30,13 +26,6 @@ public class Material {
     @ColumnDefault("1")
     @Column(name = "active", nullable = false)
     private Byte active;
-
-    public Material(MaterialType idMaterialType, String name, BigDecimal priceRef, Byte active) {
-        this.idMaterialType = idMaterialType;
-        this.name = name;
-        this.priceRef = priceRef;
-        this.active = active;
-    }
 
     public Integer getId() {
         return id;

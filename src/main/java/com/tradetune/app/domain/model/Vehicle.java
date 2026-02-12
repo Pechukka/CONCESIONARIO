@@ -6,10 +6,6 @@ import org.hibernate.annotations.ColumnDefault;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-/**
- * Represents a vehicle in the dealership inventory.
- * Tracks vehicle details, status, pricing, and associated dealership.
- */
 @Entity
 @Table(name = "vehicle")
 public class Vehicle {
@@ -57,21 +53,6 @@ public class Vehicle {
 
     @Column(name = "arrival_date", nullable = false)
     private LocalDate arrivalDate;
-
-    public Vehicle(Dealership idDealership, VehicleCategory idCategory, VehicleStatus idVehicleStatus, String vin, String licensePlate, String brand, String model, Short year, Integer km, String fuel, BigDecimal basePrice, LocalDate arrivalDate) {
-        this.idDealership = idDealership;
-        this.idCategory = idCategory;
-        this.idVehicleStatus = idVehicleStatus;
-        this.vin = vin;
-        this.licensePlate = licensePlate;
-        this.brand = brand;
-        this.model = model;
-        this.year = year;
-        this.km = km;
-        this.fuel = fuel;
-        this.basePrice = basePrice;
-        this.arrivalDate = arrivalDate;
-    }
 
     public Integer getId() {
         return id;

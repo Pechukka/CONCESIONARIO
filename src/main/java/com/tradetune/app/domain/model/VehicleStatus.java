@@ -5,9 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- * Catalog of vehicle statuses.
- */
 @Entity
 @Table(name = "vehicle_status")
 public class VehicleStatus {
@@ -17,11 +14,6 @@ public class VehicleStatus {
 
     @Column(name = "name", nullable = false, length = 30)
     private String name;
-
-    public VehicleStatus(Short id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
     public Short getId() {
         return id;

@@ -27,8 +27,8 @@ public class ItemSoldVehicleController {
         }
 
         // 2. Cliente (Navegación Sale -> Offer -> Client)
-        if (sale.getidProposal() != null && sale.getidProposal().getIdClient() != null) {
-            lblClientName.setText("Cliente: " + sale.getidProposal().getIdClient().getFullName());
+        if (sale.getIdProposal() != null && sale.getIdProposal().getIdClient() != null) {
+            lblClientName.setText("Cliente: " + sale.getIdProposal().getIdClient().getFullName());
         } else {
             lblClientName.setText("Cliente: Desconocido");
         }
