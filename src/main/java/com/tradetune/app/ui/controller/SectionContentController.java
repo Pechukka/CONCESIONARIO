@@ -60,8 +60,8 @@ public class SectionContentController {
         setTitle("VEHÍCULOS DISPONIBLES (" + vehicles.size() + ")");
 
         // 2. Iteramos sobre los datos reales
-        for (Vehicle v : vehicles) {
-            addItemToContent("/com/tradetune/app/ui/fxml/components/ItemVehicle.fxml", NavSection.VEHICLES, v);
+        for (Vehicle vehicle : vehicles) {
+            addItemToContent("/com/tradetune/app/ui/fxml/components/ItemVehicle.fxml", NavSection.VEHICLES, vehicle);
         }
     }
 
