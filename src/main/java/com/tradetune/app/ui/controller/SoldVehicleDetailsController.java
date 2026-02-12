@@ -4,13 +4,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
-public class VehicleDetailsController {
-
+public class SoldVehicleDetailsController {
     @FXML
     private ImageView imgVehicle;
 
     @FXML
     private Label lblBrand;
+
+    @FXML
+    private Label lblBuyerName;
 
     @FXML
     private Label lblDealer;
@@ -22,13 +24,12 @@ public class VehicleDetailsController {
     private Label lblKm;
 
     @FXML
-    private Label lblPrice;
-
-    @FXML
     private Label lblStockDays;
 
     @FXML
-    private Label lblYear;
+    private Label lblTitle;
 
+    @FXML
+    private Label lblYear;
 
 }

@@ -2,9 +2,9 @@ package com.tradetune.app.domain.model;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "vehicle")
@@ -54,108 +54,38 @@ public class Vehicle {
     @Column(name = "arrival_date", nullable = false)
     private LocalDate arrivalDate;
 
-    public Integer getId() {
-        return id;
-    }
+    @OneToMany(mappedBy = "vehicle", fetch = FetchType.LAZY)
+    private List<VehicleImage> images;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    // Getters y Setters
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+    public Dealership getIdDealership() { return idDealership; }
+    public void setIdDealership(Dealership idDealership) { this.idDealership = idDealership; }
+    public VehicleCategory getIdCategory() { return idCategory; }
+    public void setIdCategory(VehicleCategory idCategory) { this.idCategory = idCategory; }
+    public VehicleStatus getIdVehicleStatus() { return idVehicleStatus; }
+    public void setIdVehicleStatus(VehicleStatus idVehicleStatus) { this.idVehicleStatus = idVehicleStatus; }
+    public String getVin() { return vin; }
+    public void setVin(String vin) { this.vin = vin; }
+    public String getLicensePlate() { return licensePlate; }
+    public void setLicensePlate(String licensePlate) { this.licensePlate = licensePlate; }
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
+    public Short getYear() { return year; }
+    public void setYear(Short year) { this.year = year; }
+    public Integer getKm() { return km; }
+    public void setKm(Integer km) { this.km = km; }
+    public String getFuel() { return fuel; }
+    public void setFuel(String fuel) { this.fuel = fuel; }
+    public BigDecimal getBasePrice() { return basePrice; }
+    public void setBasePrice(BigDecimal basePrice) { this.basePrice = basePrice; }
+    public LocalDate getArrivalDate() { return arrivalDate; }
+    public void setArrivalDate(LocalDate arrivalDate) { this.arrivalDate = arrivalDate; }
 
-    public Dealership getIdDealership() {
-        return idDealership;
-    }
-
-    public void setIdDealership(Dealership idDealership) {
-        this.idDealership = idDealership;
-    }
-
-    public VehicleCategory getIdCategory() {
-        return idCategory;
-    }
-
-    public void setIdCategory(VehicleCategory idCategory) {
-        this.idCategory = idCategory;
-    }
-
-    public VehicleStatus getIdVehicleStatus() {
-        return idVehicleStatus;
-    }
-
-    public void setIdVehicleStatus(VehicleStatus idVehicleStatus) {
-        this.idVehicleStatus = idVehicleStatus;
-    }
-
-    public String getVin() {
-        return vin;
-    }
-
-    public void setVin(String vin) {
-        this.vin = vin;
-    }
-
-    public String getLicensePlate() {
-        return licensePlate;
-    }
-
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public Short getYear() {
-        return year;
-    }
-
-    public void setYear(Short year) {
-        this.year = year;
-    }
-
-    public Integer getKm() {
-        return km;
-    }
-
-    public void setKm(Integer km) {
-        this.km = km;
-    }
-
-    public String getFuel() {
-        return fuel;
-    }
-
-    public void setFuel(String fuel) {
-        this.fuel = fuel;
-    }
-
-    public BigDecimal getBasePrice() {
-        return basePrice;
-    }
-
-    public void setBasePrice(BigDecimal basePrice) {
-        this.basePrice = basePrice;
-    }
-
-    public LocalDate getArrivalDate() {
-        return arrivalDate;
-    }
-
-    public void setArrivalDate(LocalDate arrivalDate) {
-        this.arrivalDate = arrivalDate;
-    }
-
+    // Getter y Setter de IMAGES
+    public List<VehicleImage> getImages() { return images; }
+    public void setImages(List<VehicleImage> images) { this.images = images; }
 }

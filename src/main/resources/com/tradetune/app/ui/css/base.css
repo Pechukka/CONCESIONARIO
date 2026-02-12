@@ -591,3 +591,142 @@
     -fx-background-color: -fx-dark-blue-pressed;
 }
 
+12. VEHICLE SOLD DETAILS=============================================================================*/ .vehicle-sold-box {
+    -fx-background-color: #D1F2EB;
+    -fx-border-color: #1B5E20;
+    -fx-border-width: 2px;
+    -fx-padding: 18 26;
+}
+
+.vehicle-sold-text {
+    -fx-font-size: 36px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #1B5E20;
+}
+
+.vehicle-value-danger {
+    -fx-font-size: 15px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #E53935;
+}
+
+.vehicle-buyer-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: 900;
+    -fx-text-fill: -fx-black;
+}
+
+.vehicle-buyer-box {
+    -fx-background-color: -fx-white;
+    -fx-border-color: -fx-black;
+    -fx-border-width: 2px;
+    -fx-padding: 10 16;
+}
+
+.vehicle-buyer-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: 800;
+    -fx-text-fill: -fx-black;
+}
+
+/* =============================================================================
+   13. SALES PROPOSAL (ProposalDetails.fxml)
+   ============================================================================= */
+
+.proposal-page {}
+
+/* Header */
+.proposal-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: 900;
+    -fx-text-fill: -fx-black;
+}
+
+.proposal-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: -fx-text-gray;
+}
+
+/* Status badge/button */
+.proposal-status-active {
+    -fx-background-color: transparent;
+    -fx-border-color: #D4AC0D;
+    -fx-border-width: 2px;
+    -fx-text-fill: #B9770E;
+    -fx-font-weight: 800;
+    -fx-padding: 8 22;
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+}
+
+/* Sections */
+.proposal-section-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 900;
+    -fx-text-fill: -fx-black;
+}
+
+.proposal-box {
+    -fx-background-color: -fx-white;
+    -fx-border-color: -fx-black;
+    -fx-border-width: 2px;
+}
+
+.proposal-image-frame {
+    -fx-background-color: -fx-bg-app;
+    -fx-border-color: -fx-black;
+    -fx-border-width: 2px;
+}
+
+/* Item text */
+.proposal-item-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+    -fx-text-fill: -fx-black;
+}
+
+.proposal-item-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: -fx-text-gray;
+}
+
+.proposal-client-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: 900;
+    -fx-text-fill: -fx-black;
+}
+
+/* Details */
+.proposal-detail-key {
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+    -fx-text-fill: -fx-black;
+}
+
+.proposal-detail-value {
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+    -fx-text-fill: -fx-black;
+}
+
+.proposal-final-key {
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+    -fx-text-fill: -fx-black;
+}
+
+.proposal-final-price {
+    -fx-font-size: 26px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #1B5E20;
+}
+
+/* Observations */
+.proposal-observations {
+    -fx-background-color: -fx-white;
+    -fx-text-fill: -fx-black;
+    -fx-border-color: -fx-black;
+    -fx-border-width: 2px;
+    -fx-background-radius: 2;
+    -fx-padding: 10 12;
+}
