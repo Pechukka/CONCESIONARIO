@@ -569,29 +569,9 @@
     -fx-padding: 2 0 0 0;
 }
 
-/* =============================================================================
-   14. REGISTERED INTERESTED CLIENT
-   ============================================================================= */
-/* Botón Primary compacto (misma altura visual que btn-secondary) */
-/* Solo ajusta tamaño; no toca colores/bordes/fuentes */
-.btn-compact {
-    -fx-padding: 6 18;
-    -fx-min-height: 36;
-    -fx-pref-height: 36;
 
-    -fx-background-color: -fx-dark-blue;
-    -fx-text-fill: -fx-white;
-}
-
-.btn-compact:hover {
-    -fx-background-color: -fx-dark-blue-hover;
-}
-
-.btn-compact:pressed {
-    -fx-background-color: -fx-dark-blue-pressed;
-}
-
-12. VEHICLE SOLD DETAILS=============================================================================*/ .vehicle-sold-box {
+/* 12. VEHICLE SOLD DETAILS=============================================================================*/
+.vehicle-sold-box {
     -fx-background-color: #D1F2EB;
     -fx-border-color: #1B5E20;
     -fx-border-width: 2px;
@@ -729,4 +709,26 @@
     -fx-border-width: 2px;
     -fx-background-radius: 2;
     -fx-padding: 10 12;
+}
+
+/* =============================================================================
+   14. REGISTERED INTERESTED CLIENT
+   ============================================================================= */
+/* Botón Primary compacto (misma altura visual que btn-secondary) */
+/* Solo ajusta tamaño; no toca colores/bordes/fuentes */
+.btn-compact {
+    -fx-padding: 6 18;
+    -fx-min-height: 36;
+    -fx-pref-height: 36;
+
+    -fx-background-color: -fx-dark-blue;
+    -fx-text-fill: -fx-white;
+}
+
+.btn-compact:hover {
+    -fx-background-color: -fx-dark-blue-hover;
+}
+
+.btn-compact:pressed {
+    -fx-background-color: -fx-dark-blue-pressed;
 }
