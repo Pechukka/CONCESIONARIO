@@ -1,39 +1,33 @@
 package com.tradetune.app.domain.model;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "vehicle_image")
 public class VehicleImage {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_image", nullable = false)
+    @Column(name = "id_image")
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "id_vehicle", nullable = false)
-    private Vehicle idVehicle;
-
-    @Column(name = "url", nullable = false, length = 500)
+    @Column(name = "url", nullable = false)
     private String url;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_vehicle", nullable = false)
+    private Vehicle vehicle;
+
+    // Constructores
+    public VehicleImage() {}
+
+    // Getters y Setters
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Vehicle getIdVehicle() {
-        return idVehicle;
-    }
-
-    public void setIdVehicle(Vehicle idVehicle) {
-        this.idVehicle = idVehicle;
     }
 
     public String getUrl() {
@@ -44,4 +38,11 @@ public class VehicleImage {
         this.url = url;
     }
 
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
 }
