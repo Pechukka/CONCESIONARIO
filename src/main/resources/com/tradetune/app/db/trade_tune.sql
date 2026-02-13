@@ -635,15 +635,15 @@ VALUES
     (2, 2, 2, 'JKAEX4000LDA00110', '9042KRT', 'Kawasaki',   'Ninja 400',                2020,  18000, 'Petrol',  5390.00, '2025-11-18');
 
 INSERT INTO vehicle_image (id_vehicle, url) VALUES
-    ( 1, 'assets/vehicles/seat_leon_2018_1.jpg'),
-    ( 2, 'assets/vehicles/vw_golf_2020_1.jpg'),
-    (  3, 'assets/vehicles/toyota_corolla_2021_1.jpg'),
-    ( 4, 'assets/vehicles/bmw_320d_2017_1.jpg'),
-    ( 5, 'assets/vehicles/yamaha_mt07_2022_1.jpg'),
-    ( 6, 'assets/vehicles/renault_clio_2019_1.jpg'),
-    (8, 'assets/vehicles/peugeot_308_2019_1.jpg'),
-    (9, 'assets/vehicles/tesla_model3_1.jpg'),
-    (10, 'assets/vehicles/kawasaki_ninja400_2020_1.jpg');
+    ( 1, 'assets/images/vehicles/seat_leon_2018_1.jpg'),
+    ( 2, 'assets/images/vehicles/vw_golf_2020_1.jpg'),
+    (  3, 'assets/images/vehicles/toyota_corolla_2021_1.jpg'),
+    ( 4, 'assets/images/vehicles/bmw_320d_2017_1.jpg'),
+    ( 5, 'assets/images/vehicles/yamaha_mt07_2022_1.jpg'),
+    ( 6, 'assets/images/vehicles/renault_clio_2019_1.jpg'),
+    (8, 'assets/images/vehicles/peugeot_308_2019_1.jpg'),
+    (9, 'assets/images/vehicles/kawasaki_ninja400_2020_1.jpg'),
+    (10, 'assets/images/vehicles/tesla_model3_1.jpeg');
 
 -- =========================
 -- 5) Clientes + interés
