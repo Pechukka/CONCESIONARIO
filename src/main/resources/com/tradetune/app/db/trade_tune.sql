@@ -641,9 +641,10 @@ INSERT INTO vehicle_image (id_vehicle, url) VALUES
     ( 4, 'assets/images/vehicles/bmw_320d_2017_1.jpg'),
     ( 5, 'assets/images/vehicles/yamaha_mt07_2022_1.jpg'),
     ( 6, 'assets/images/vehicles/renault_clio_2019_1.jpg'),
+    ( 7, 'assets/images/vehicles/piaggio_zip50.jpg'),
     (8, 'assets/images/vehicles/peugeot_308_2019_1.jpg'),
-    (9, 'assets/images/vehicles/kawasaki_ninja400_2020_1.jpg'),
-    (10, 'assets/images/vehicles/tesla_model3_1.jpeg');
+    (9, 'assets/images/vehicles/tesla_model3_1.jpeg'),
+    (10, 'assets/images/vehicles/kawasaki_ninja400_2020_1.jpg');
 
 -- =========================
 -- 5) Clientes + interés
