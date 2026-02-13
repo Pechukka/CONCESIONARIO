@@ -4,14 +4,18 @@ import com.tradetune.app.domain.model.Vehicle;
 import com.tradetune.app.domain.model.VehicleImage;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -32,23 +36,37 @@ public class ItemVehicleController {
     private void initialize() {
         btnViewDetails.setOnAction(e -> openVehicleDetailsPopup());
     }
+
     private void openVehicleDetailsPopup() {
         try {
+            StackPane rootStack = (StackPane) btnViewDetails.getScene().getRoot();
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource(
                     "/com/tradetune/app/ui/fxml/components/BasePopUp.fxml"
             ));
-            Parent root = loader.load();
+            Parent modal = loader.load();
 
-            BasePopUpController popUpCtrl = loader.getController();
-            popUpCtrl.setContent("/com/tradetune/app/ui/fxml/screens/VehicleDetails.fxml");
+            if (modal instanceof Region region) {
+                region.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+            }
 
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setResizable(true);
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException ex) {
-            throw new RuntimeException("No se pudo abrir el popup de detalles", ex);
+            StackPane.setAlignment(modal, Pos.CENTER);
+
+            BasePopUpController controller = loader.getController();
+            controller.setContent("/com/tradetune/app/ui/fxml/screens/VehicleDetails.fxml");
+
+            StackPane overlay = new StackPane();
+            overlay.setStyle("-fx-background-color: rgba(0,0,0,0.75);");
+            overlay.prefWidthProperty().bind(rootStack.widthProperty());
+            overlay.prefHeightProperty().bind(rootStack.heightProperty());
+
+            controller.setOverlay(overlay);
+            controller.setModalRoot(modal);
+
+            rootStack.getChildren().addAll(overlay, modal);
+
+        } catch (IOException e) {
+            throw new RuntimeException("No se pudo abrir el popup de detalles", e);
         }
     }
 

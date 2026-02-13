@@ -44,9 +44,6 @@
     <!-- CONTENT -->
     <center>
         <StackPane fx:id="paneModal" BorderPane.alignment="CENTER">
-            <padding>
-                <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
-            </padding>
         </StackPane>
     </center>
 
