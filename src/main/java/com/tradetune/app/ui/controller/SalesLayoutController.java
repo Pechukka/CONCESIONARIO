@@ -2,6 +2,7 @@ package com.tradetune.app.ui.controller;
 
 import com.tradetune.app.ui.navigation.NavSection;
 import javafx.fxml.FXML;
+import javafx.scene.layout.StackPane;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,11 +10,13 @@ import java.util.Map;
 public class SalesLayoutController {
 
     @FXML
-    private HeaderController headerController; // Se inyecta desde fx:id="header"
+    public StackPane rootStack;
+    @FXML
+    private HeaderController headerController;
     @FXML
     private NavController navController;
     @FXML
-    private SectionContentController contentController; // Se inyecta desde fx:id="content"
+    private SectionContentController contentController;
 
     private Map<NavSection, Runnable> viewLoaders;
 

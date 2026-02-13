@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -24,6 +25,8 @@ public class BasePopUpController {
     private Button btnCross;
     @FXML
     private StackPane paneModal;
+    private StackPane overlay;
+    private Parent modalRoot;
 
     // -------------------------------------------------------------------------
     // INITIALIZATION
@@ -31,7 +34,7 @@ public class BasePopUpController {
 
     @FXML
     public void initialize() {
-        // TODO: Configure initial modal state (listeners, accessibility, etc.).
+        btnCross.setOnAction(event -> closeModal());
     }
 
     // -------------------------------------------------------------------------
@@ -56,13 +59,24 @@ public class BasePopUpController {
     // SECTION 3: EVENTS AND CLOSING
     // -------------------------------------------------------------------------
 
-    // TODO: Create method 'onCloseAction()'
-    // Handles modal closing when X button is clicked.
-    // Must close the Stage or notify the parent controller.
+    private void closeModal() {
+        StackPane rootStack = (StackPane) paneModal.getScene().getRoot();
+        rootStack.getChildren().removeAll(overlay, modalRoot);
+    }
 
-    // TODO: Create method 'closeModal()'
-    // Closes the modal in a centralized way (reusable by other events).
 
+    public void setOverlay(StackPane overlay) {
+        this.overlay = overlay;
+    }
+
+    public void setModalRoot(Parent modalRoot) {
+        this.modalRoot = modalRoot;
+    }
+
+    @FXML
+    private void onCloseAction() {
+        closeModal();
+    }
     // -------------------------------------------------------------------------
     // SECTION 4: UTILITIES (OPTIONAL)
     // -------------------------------------------------------------------------
