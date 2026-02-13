@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS car_dealership;
-CREATE DATABASE IF NOT EXISTS car_dealership
+DROP DATABASE IF EXISTS trade_tune;
+CREATE DATABASE IF NOT EXISTS trade_tune
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
-USE car_dealership;
+USE trade_tune;
 
 -- =========================
 -- 1) Organización
