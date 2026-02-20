@@ -543,6 +543,8 @@
 .input-text {
     -fx-font-weight: 700;
     -fx-text-fill: -fx-black;
+    -fx-prompt-text-fill: -fx-text-gray;
+    -fx-padding: 26 12 10 12; /* top padding creates label zone */
 }
 
 .field-overlay-label {
@@ -552,6 +554,12 @@
     -fx-translate-y: 8;
     -fx-padding: 0 6;
     -fx-background-color: -fx-white;
+}
+
+.field-inner-label {
+    -fx-text-fill: -fx-text-gray;
+    -fx-font-weight: 400;
+    -fx-padding: 8 0 0 12; /* inside the border */
 }
 
 .vehicle-interest-row {
@@ -731,4 +739,15 @@
 
 .btn-compact:pressed {
     -fx-background-color: -fx-dark-blue-pressed;
+}
+
+/* =============================================================================
+   15. CREATE SALES PROPOSAL (CreateSellProposal3.fxml)
+   ============================================================================= */
+
+.summary-box {
+    -fx-background-color: -fx-bg-app;
+    -fx-border-color: -fx-black;
+    -fx-border-width: 1px;
+    -fx-background-radius: 2;
 }

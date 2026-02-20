@@ -1,119 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 
-<BorderPane styleClass="layout-root" stylesheets="@../../css/base.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tradetune.app.ui.controller.ClientProfileController">
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            styleClass="layout-root"
+            stylesheets="@../../css/base.css"
+            fx:controller="com.tradetune.app.ui.controller.ClientProfileController">
 
    <center>
-      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" pannable="true" vbarPolicy="AS_NEEDED" BorderPane.alignment="TOP_LEFT">
+      <ScrollPane fitToWidth="true" pannable="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" BorderPane.alignment="TOP_LEFT">
          <content>
             <VBox spacing="16">
                <padding>
-                  <Insets bottom="20" left="26" right="26" top="20" />
+                  <Insets top="20" right="26" bottom="20" left="26"/>
                </padding>
 
                <!-- HEADER -->
-               <HBox alignment="CENTER_LEFT" spacing="14">
-                  <StackPane minHeight="54" minWidth="54" prefHeight="54" prefWidth="54">
-                     <Circle radius="27" styleClass="avatar-circle" />
+               <HBox spacing="14" alignment="CENTER_LEFT">
+                  <StackPane minWidth="54" minHeight="54" prefWidth="54" prefHeight="54">
+                     <Circle radius="27" styleClass="avatar-circle"/>
 
-                     <ImageView fitHeight="44" fitWidth="44" pickOnBounds="true" preserveRatio="true" styleClass="avatar-image" fx:id="imgAvatar">
+                     <ImageView fitWidth="44" fitHeight="44" preserveRatio="true" pickOnBounds="true" styleClass="avatar-image">
                         <clip>
-                           <Circle radius="22" />
+                           <Circle radius="22"/>
                         </clip>
                      </ImageView>
 
-                     <Label styleClass="avatar-icon" text="👤" fx:id="lblAvatarIcon" />
+                     <Label text="👤" styleClass="avatar-icon"/>
                   </StackPane>
 
-                  <VBox alignment="CENTER_LEFT" spacing="6">
-                     <Label styleClass="profile-name" text="Client Name" fx:id="lblClientName" />
-                     <Label styleClass="badge-interested" text="STATUS" fx:id="lblStatus"/>
+                  <VBox spacing="6" alignment="CENTER_LEFT">
+                     <Label text="Client Name" styleClass="profile-name"/>
+                     <Label text="STATUS" styleClass="badge-interested"/>
                   </VBox>
 
-                  <Region HBox.hgrow="ALWAYS" />
+                  <Region HBox.hgrow="ALWAYS"/>
                </HBox>
 
-               <Separator styleClass="section-separator" />
+               <Separator styleClass="section-separator"/>
 
                <!-- PERSONAL DETAILS -->
                <VBox spacing="8">
-                  <Label styleClass="form-section-title" text="PERSONAL DETAILS" />
+                  <Label text="PERSONAL DETAILS" styleClass="form-section-title"/>
 
                   <GridPane hgap="18" vgap="12">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
-                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
                      </columnConstraints>
 
-                     <StackPane styleClass="field-stack" GridPane.columnIndex="0">
-                        <TextField editable="false" focusTraversable="false" promptText="Value" styleClass="input-text" fx:id="txtDni"/>
-                        <Label styleClass="field-overlay-label" text="ID Number" StackPane.alignment="TOP_LEFT"/>
+                     <StackPane GridPane.columnIndex="0" styleClass="field-stack">
+                        <TextField promptText="Value" styleClass="input-text"/>
+                        <Label text="ID Number" styleClass="field-inner-label" StackPane.alignment="TOP_LEFT"/>
                      </StackPane>
 
-                     <StackPane styleClass="field-stack" GridPane.columnIndex="1">
-                        <TextField editable="false" focusTraversable="false" promptText="Value" styleClass="input-text" fx:id="txtBirthdate"/>
-                        <Label styleClass="field-overlay-label" text="Date of Birth" StackPane.alignment="TOP_LEFT" />
+                     <StackPane GridPane.columnIndex="1" styleClass="field-stack">
+                        <TextField promptText="Value" styleClass="input-text"/>
+                        <Label text="Date of Birth" styleClass="field-inner-label" StackPane.alignment="TOP_LEFT"/>
                      </StackPane>
-                     <rowConstraints>
-                        <RowConstraints />
-                     </rowConstraints>
                   </GridPane>
                </VBox>
 
                <!-- CONTACT -->
                <VBox spacing="8">
-                  <Label styleClass="form-section-title" text="CONTACT" />
+                  <Label text="CONTACT" styleClass="form-section-title"/>
 
                   <GridPane hgap="18" vgap="12">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
-                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
                      </columnConstraints>
 
-                     <StackPane styleClass="field-stack" GridPane.columnIndex="0">
-                        <TextField editable="false" focusTraversable="false" promptText="Value" styleClass="input-text" fx:id="txtPhone"/>
-                        <Label styleClass="field-overlay-label" text="Phone" StackPane.alignment="TOP_LEFT" />
+                     <StackPane GridPane.columnIndex="0" styleClass="field-stack">
+                        <TextField promptText="Value" styleClass="input-text"/>
+                        <Label text="Phone" styleClass="field-inner-label" StackPane.alignment="TOP_LEFT"/>
                      </StackPane>
 
-                     <StackPane styleClass="field-stack" GridPane.columnIndex="1">
-                        <TextField editable="false" focusTraversable="false" promptText="Value" styleClass="input-text" fx:id="txtEmail"/>
-                        <Label styleClass="field-overlay-label" text="Email" StackPane.alignment="TOP_LEFT" />
+                     <StackPane GridPane.columnIndex="1" styleClass="field-stack">
+                        <TextField promptText="Value" styleClass="input-text"/>
+                        <Label text="Email" styleClass="field-inner-label" StackPane.alignment="TOP_LEFT"/>
                      </StackPane>
-                     <rowConstraints>
-                        <RowConstraints />
-                     </rowConstraints>
                   </GridPane>
                </VBox>
 
                <!-- INTERESTED VEHICLES (DYNAMIC) -->
                <VBox spacing="8">
-                  <Label styleClass="form-section-title" text="INTERESTED VEHICLES" />
-                  <VBox fx:id="interestedVehiclesContainer" spacing="10" />
+                  <Label text="INTERESTED VEHICLES" styleClass="form-section-title"/>
+                  <VBox fx:id="interestedVehiclesContainer" spacing="10"/>
                </VBox>
 
                <!-- PROPOSAL HISTORY (DYNAMIC) -->
                <VBox spacing="8">
-                  <Label styleClass="form-section-title" text="PROPOSAL HISTORY" />
-                  <VBox fx:id="proposalHistoryContainer" spacing="10" />
+                  <Label text="PROPOSAL HISTORY" styleClass="form-section-title"/>
+                  <VBox fx:id="proposalHistoryContainer" spacing="10"/>
                </VBox>
 
-               <Region VBox.vgrow="ALWAYS" />
+               <Region VBox.vgrow="ALWAYS"/>
             </VBox>
          </content>
       </ScrollPane>
    </center>
 
    <bottom>
-      <HBox alignment="CENTER_RIGHT" styleClass="footer-bar" BorderPane.alignment="CENTER_RIGHT">
+      <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER_RIGHT" styleClass="footer-bar">
          <padding>
-            <Insets bottom="20" left="26" right="26" top="12" />
+            <Insets top="12" right="26" bottom="20" left="26"/>
          </padding>
-         <Button minHeight="36" minWidth="120" prefHeight="36" styleClass="btn-secondary" text="Close" fx:id="btnClose"/>
+         <Button text="Close" styleClass="btn-secondary" minWidth="120" minHeight="36" prefHeight="36"/>
       </HBox>
    </bottom>
 

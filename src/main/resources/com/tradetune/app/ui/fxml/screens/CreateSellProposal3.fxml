@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      stylesheets="@../../css/base.css"
+      spacing="18"
+      styleClass="layout-root,proposal-page"
+      maxWidth="1.7976931348623157E308">
+
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+    <!-- TITLE -->
+    <Label fx:id="lblTitle" text="DETALLES DE LA PROPUESTA" styleClass="proposal-title"/>
+
+    <!-- SELECTED VEHICLE / CLIENT -->
+    <GridPane fx:id="gridSelected" hgap="20" vgap="0" maxWidth="1.7976931348623157E308">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+            <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <!-- VEHICLE BOX -->
+        <VBox fx:id="boxSelectedVehicle"
+              GridPane.columnIndex="0"
+              spacing="6"
+              styleClass="proposal-box"
+              maxWidth="1.7976931348623157E308">
+            <padding>
+                <Insets top="10" right="14" bottom="10" left="14"/>
+            </padding>
+
+            <Label fx:id="lblVehicleSelectedTitle" text="VEHÍCULO SELECCIONADO" styleClass="proposal-subtitle"/>
+            <Label fx:id="lblVehicleName" text="FORD FOCUS 1.6 TDCI" styleClass="proposal-item-title"/>
+            <Label fx:id="lblVehicleBasePriceInfo" text="Precio base: 12.500 €" styleClass="proposal-item-subtitle"/>
+        </VBox>
+
+        <!-- CLIENT BOX -->
+        <VBox fx:id="boxSelectedClient"
+              GridPane.columnIndex="1"
+              spacing="6"
+              styleClass="proposal-box"
+              maxWidth="1.7976931348623157E308">
+            <padding>
+                <Insets top="10" right="14" bottom="10" left="14"/>
+            </padding>
+
+            <Label fx:id="lblClientSelectedTitle" text="CLIENTE SELECCIONADO" styleClass="proposal-subtitle"/>
+            <Label fx:id="lblClientName" text="Juan García Martínez" styleClass="proposal-client-name"/>
+            <Label fx:id="lblClientDni" text="DNI: 12345678A" styleClass="proposal-item-subtitle"/>
+        </VBox>
+    </GridPane>
+
+    <!-- PRICE / VALIDITY -->
+    <GridPane fx:id="gridMainFields" hgap="20" vgap="0" maxWidth="1.7976931348623157E308">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+            <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <VBox fx:id="boxVehiclePrice" GridPane.columnIndex="0" spacing="6" maxWidth="1.7976931348623157E308">
+            <Label fx:id="lblVehiclePriceKey" text="Precio vehículo (€) *" styleClass="proposal-detail-key"/>
+            <TextField fx:id="txtVehiclePrice"
+                       text="12500"
+                       styleClass="input-text"
+                       prefHeight="38"
+                       maxWidth="1.7976931348623157E308"/>
+        </VBox>
+
+        <VBox fx:id="boxValidityDate" GridPane.columnIndex="1" spacing="6" maxWidth="1.7976931348623157E308">
+            <Label fx:id="lblValidityKey" text="Fecha de validez *" styleClass="proposal-detail-key"/>
+            <DatePicker fx:id="dpValidity"
+                        promptText="dd/mm/aaaa"
+                        styleClass="input-text"
+                        prefHeight="38"
+                        maxWidth="1.7976931348623157E308"/>
+        </VBox>
+    </GridPane>
+
+    <!-- PAYMENT METHOD -->
+    <VBox fx:id="boxPaymentMethod" spacing="6" maxWidth="1.7976931348623157E308">
+        <Label fx:id="lblPaymentKey" text="Forma de pago" styleClass="proposal-detail-key"/>
+        <ComboBox fx:id="cmbPaymentMethod"
+                  styleClass="input-text"
+                  prefHeight="38"
+                  maxWidth="1.7976931348623157E308"/>
+    </VBox>
+
+    <!-- EXTRA DISCOUNT -->
+    <VBox fx:id="boxExtraDiscount" spacing="6" maxWidth="1.7976931348623157E308">
+        <Label fx:id="lblExtraDiscountKey" text="Descuento adicional (€)" styleClass="proposal-detail-key"/>
+        <TextField fx:id="txtExtraDiscount"
+                   text="0"
+                   styleClass="input-text"
+                   prefHeight="38"
+                   maxWidth="1.7976931348623157E308"/>
+    </VBox>
+
+    <!-- OBSERVATIONS -->
+    <VBox fx:id="boxObservations" spacing="6" maxWidth="1.7976931348623157E308">
+        <Label fx:id="lblObservationsKey" text="Observaciones" styleClass="proposal-detail-key"/>
+        <TextArea fx:id="txtaObservations"
+                  promptText="Detalles adicionales sobre la propuesta..."
+                  styleClass="proposal-observations"
+                  wrapText="true"
+                  prefRowCount="4"
+                  prefHeight="120"
+                  maxWidth="1.7976931348623157E308"/>
+    </VBox>
+
+    <!-- SUMMARY -->
+    <VBox fx:id="boxSummary" spacing="10" styleClass="summary-box" maxWidth="1.7976931348623157E308">
+        <padding>
+            <Insets top="12" right="14" bottom="12" left="14"/>
+        </padding>
+
+        <Label fx:id="lblSummaryTitle" text="RESUMEN" styleClass="proposal-section-title"/>
+
+        <GridPane fx:id="gridSummary" hgap="10" vgap="8" maxWidth="1.7976931348623157E308">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="70" hgrow="ALWAYS"/>
+                <ColumnConstraints percentWidth="30" hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <Label fx:id="lblBasePriceKey" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                   text="Precio base:" styleClass="proposal-item-subtitle"/>
+            <Label fx:id="lblBasePriceValue" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                   text="12.500 €" styleClass="proposal-detail-value"/>
+
+            <Label fx:id="lblDiscountKey" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                   text="Descuento:" styleClass="vehicle-value-danger"/>
+            <Label fx:id="lblDiscountValue" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                   text="- 0 €" styleClass="vehicle-value-danger"/>
+
+            <Label fx:id="lblFinalPriceKey" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                   text="PRECIO FINAL:" styleClass="proposal-final-key"/>
+            <Label fx:id="lblFinalPriceValue" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                   text="12.500 €" styleClass="proposal-final-key"/>
+        </GridPane>
+    </VBox>
+
+    <!-- FOOTER BUTTONS -->
+    <HBox fx:id="boxFooterButtons" spacing="16" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308">
+        <Button fx:id="btnPrevious" text="← Anterior" styleClass="btn-secondary"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Button fx:id="btnCreateProposal" text="Crear Propuesta" styleClass="btn-success"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Button fx:id="btnCancel" text="Cancelar" styleClass="btn-secondary"/>
+    </HBox>
+
+</VBox>
