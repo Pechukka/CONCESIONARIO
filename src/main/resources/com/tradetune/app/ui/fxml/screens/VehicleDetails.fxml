@@ -1,76 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="650.0" prefWidth="1000.0"
-            xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.tradetune.app.ui.controller.VehicleDetailsController"
-            stylesheets="@../../css/base.css"
-            styleClass="layout-root">
+<BorderPane prefHeight="650.0" prefWidth="1000.0" styleClass="layout-root" stylesheets="@../../css/base.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tradetune.app.ui.controller.VehicleDetailsController">
 
    <top>
-      <StackPane styleClass="vehicle-image-frame" BorderPane.alignment="CENTER">
+      <StackPane maxWidth="958.0" prefWidth="958.0" styleClass="vehicle-image-frame" BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets top="18" right="20" left="20"/>
+            <Insets left="20" right="20" top="18" />
          </BorderPane.margin>
 
-         <ImageView fx:id="imgVehicle"
-                    pickOnBounds="true"
-                    preserveRatio="true"
-                    styleClass="vehicle-image"/>
+         <ImageView fx:id="imgVehicle" pickOnBounds="true" preserveRatio="true" styleClass="vehicle-image" />
       </StackPane>
    </top>
 
    <center>
       <VBox spacing="14" BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets top="10" right="20" left="20"/>
+            <Insets left="20" right="20" top="10" />
          </BorderPane.margin>
 
-         <Label text="FORD FOCUS 1.6 TDCI" styleClass="vehicle-title"/>
+         <Label fx:id="lblModel" styleClass="vehicle-title" text="FORD FOCUS 1.6 TDCI" />
 
          <HBox spacing="20">
             <VBox spacing="10">
                <GridPane hgap="18" vgap="10">
-                  <Label text="Marca:" styleClass="vehicle-key" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                  <Label fx:id="lblBrand" text="Ford" styleClass="vehicle-value" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                  <Label styleClass="vehicle-key" text="Marca:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <Label fx:id="lblBrand" styleClass="vehicle-value" text="Ford" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-                  <Label text="Año:" styleClass="vehicle-key" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                  <Label fx:id="lblYear" text="2018" styleClass="vehicle-value" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                  <Label styleClass="vehicle-key" text="Año:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <Label fx:id="lblYear" styleClass="vehicle-value" text="2018" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                  <Label text="Kilómetros:" styleClass="vehicle-key" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                  <Label fx:id="lblKm" text="120.000 km" styleClass="vehicle-value" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                  <Label styleClass="vehicle-key" text="Kilómetros:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                  <Label fx:id="lblKm" styleClass="vehicle-value" text="120.000 km" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-                  <Label text="Combustible:" styleClass="vehicle-key" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                  <Label fx:id="lblFuel" text="Diésel" styleClass="vehicle-value" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                  <Label styleClass="vehicle-key" text="Combustible:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                  <Label fx:id="lblFuel" styleClass="vehicle-value" text="Diésel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <columnConstraints>
+                     <ColumnConstraints />
+                     <ColumnConstraints />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
                </GridPane>
             </VBox>
 
-            <Region minWidth="0" HBox.hgrow="ALWAYS"/>
+            <Region minWidth="0" HBox.hgrow="ALWAYS" />
 
             <VBox spacing="14">
-               <VBox styleClass="vehicle-price-box" alignment="CENTER" spacing="6"
-                     minWidth="320" prefWidth="320" maxWidth="320"
-                     minHeight="110" prefHeight="110" maxHeight="110">
-                  <Label fx:id="lblPrice" text="12.500 €" styleClass="vehicle-price"/>
-                  <Label text="Precio de venta" styleClass="vehicle-price-subtitle"/>
+               <VBox alignment="CENTER" maxHeight="110" maxWidth="320" minHeight="110" minWidth="320" prefHeight="110" prefWidth="320" spacing="6" styleClass="vehicle-price-box">
+                  <Label fx:id="lblPrice" styleClass="vehicle-price" text="12.500 €" />
+                  <Label styleClass="vehicle-price-subtitle" text="Precio de venta" />
                </VBox>
 
                <GridPane hgap="18" vgap="10">
-                  <Label text="Concesionario:" styleClass="vehicle-key" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                  <Label fx:id="lblDealer" text="Madrid Central" styleClass="vehicle-value" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                  <Label styleClass="vehicle-key" text="Concesionario:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <Label fx:id="lblDealer" styleClass="vehicle-value" text="Madrid Central" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-                  <Label text="Días en stock:" styleClass="vehicle-key" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                  <Label fx:id="lblStockDays" text="45 días" styleClass="vehicle-value-strong" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                  <Label styleClass="vehicle-key" text="Días en stock:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <Label fx:id="lblStockDays" styleClass="vehicle-value-strong" text="45 días" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <columnConstraints>
+                     <ColumnConstraints />
+                     <ColumnConstraints />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
                </GridPane>
             </VBox>
          </HBox>
@@ -80,10 +90,8 @@
    <bottom>
       <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets top="0" right="20" bottom="18" left="20"/>
+            <Insets bottom="18" left="20" right="20" top="0" />
          </BorderPane.margin>
-
-         <Button text="Cerrar" styleClass="btn-secondary" prefWidth="180"/>
       </HBox>
    </bottom>
 
