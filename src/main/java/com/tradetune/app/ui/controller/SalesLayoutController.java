@@ -1,5 +1,7 @@
 package com.tradetune.app.ui.controller;
 
+import com.tradetune.app.domain.model.Worker;
+import com.tradetune.app.ui.AppState;
 import com.tradetune.app.ui.navigation.NavSection;
 import javafx.fxml.FXML;
 import javafx.scene.layout.StackPane;
@@ -34,6 +36,11 @@ public class SalesLayoutController {
 
         // Select one by default on startup (this triggers the listener automatically)
         loadDefaultView();
+
+        Worker w = AppState.getCurrentWorker();
+        if (w != null) {
+            headerController.setEmail(w.getEmail());
+        }
     }
 
     private void initializeViewLoaders() {

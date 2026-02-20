@@ -29,6 +29,10 @@ public class HeaderController {
         // TODO: Basic initialization if necessary (e.g. clear default texts).
     }
 
+    public void setEmail(String value) {
+        email.setText(value);
+    }
+
     // -------------------------------------------------------------------------
     // SECTION 1: DATA INJECTION (PUBLIC API)
     // -------------------------------------------------------------------------

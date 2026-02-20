@@ -61,7 +61,7 @@
          <VBox.margin>
             <Insets />
          </VBox.margin>
-         <Button fx:id="btnLogin" mnemonicParsing="false" prefHeight="60.0" prefWidth="400.0" styleClass="btn-primary" text="Log In">
+         <Button fx:id="btnLogin" onAction="#onLoginAction" mnemonicParsing="false" prefHeight="60.0" prefWidth="400.0" styleClass="btn-primary" text="Log In">
             <HBox.margin>
                <Insets />
             </HBox.margin>

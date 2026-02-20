@@ -1,10 +1,20 @@
 package com.tradetune.app.ui.controller;
 
+import com.tradetune.app.domain.model.Worker;
+import com.tradetune.app.service.AuthService;
+import com.tradetune.app.service.impl.AuthServiceImpl;
+import com.tradetune.app.ui.AppState;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.event.ActionEvent; // Required for the TODO event
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.Optional;
 
 /**
  * Controller for the login screen.
@@ -21,22 +31,76 @@ public class LoginController {
     private PasswordField pwdPassword;
     @FXML
     private TextField txtEmail;
+    @FXML
+    private Label lblError;
+
+
+    private final AuthService authService = new AuthServiceImpl();
 
     // -------------------------------------------------------------------------
     // INITIALIZATION
     // -------------------------------------------------------------------------
     @FXML
     public void initialize() {
+        txtEmail.requestFocus();
         // TODO: Configure initial state (focus on email, disable button if applicable,
         // etc.).
         // Call requestInitialFocus().
+    }
+
+    @FXML
+    private void onLoginAction(ActionEvent event) {
+
+        String email = txtEmail.getText();
+        String pass = pwdPassword.getText();
+
+        Optional<Worker> opt = authService.authenticate(email, pass);
+
+        if (opt.isPresent()) {
+            Worker worker = opt.get();
+            AppState.setCurrentWorker(worker);
+            goToSalesLayout();
+        } else {
+            showError("Credenciales incorrectas");
+            pwdPassword.clear();
+            pwdPassword.requestFocus();
+        }
+    }
+
+    private void showError(String message) {
+        lblError.setText(message);
+        lblError.setVisible(true);
+    }
+
+    private void clearError() {
+        lblError.setText("");
+        lblError.setVisible(false);
+    }
+
+    @FXML
+    private void goToSalesLayout() {
+        try {
+            URL url = getClass().getResource("/com/tradetune/app/ui/layout/SalesLayout.fxml");
+            if (url == null) {
+                throw new IllegalStateException("No se encuentra SalesLayout.fxml. Revisa la ruta en resources.");
+            }
+
+            FXMLLoader loader = new FXMLLoader(url);
+            Parent root = loader.load();
+
+            Stage stage = (Stage) btnLogin.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.centerOnScreen();
+        } catch (Exception e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).showAndWait();
+        }
     }
 
     // -------------------------------------------------------------------------
     // SECTION 1: EVENTS AND INTERACTION
     // -------------------------------------------------------------------------
 
-    // TODO: Create method 'onLoginAction(ActionEvent event)'
     // Handles the login button press event.
     // 1. Call validateForm().
     // 2. If valid, disable button (disableLoginButton(true)) and show spinner
