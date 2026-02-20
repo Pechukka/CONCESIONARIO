@@ -45,16 +45,18 @@ public class BasePopUpController {
     // Dynamically assigns the modal title text (lblTitle).
 
 
-    public void setContent(String fxmlPath) {
+// BasePopUpController.java
+
+    public <T> T setContent(String fxmlPath) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent view = loader.load();
             paneModal.getChildren().setAll(view);
+            return loader.getController();
         } catch (IOException e) {
             throw new RuntimeException("No se pudo cargar: " + fxmlPath, e);
         }
     }
-
     // -------------------------------------------------------------------------
     // SECTION 3: EVENTS AND CLOSING
     // -------------------------------------------------------------------------

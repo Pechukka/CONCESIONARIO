@@ -32,6 +32,8 @@ public class ItemVehicleController {
     @FXML private Label lblPrice;
     @FXML private Button btnViewDetails;
 
+    private Vehicle vehicle;
+
     @FXML
     private void initialize() {
         btnViewDetails.setOnAction(e -> openVehicleDetailsPopup());
@@ -52,16 +54,19 @@ public class ItemVehicleController {
 
             StackPane.setAlignment(modal, Pos.CENTER);
 
-            BasePopUpController controller = loader.getController();
-            controller.setContent("/com/tradetune/app/ui/fxml/screens/VehicleDetails.fxml");
+            BasePopUpController popup = loader.getController();
+
+            VehicleDetailsController detailsController =
+                    popup.setContent("/com/tradetune/app/ui/fxml/screens/VehicleDetails.fxml");
+            detailsController.setData(vehicle);
 
             StackPane overlay = new StackPane();
             overlay.setStyle("-fx-background-color: rgba(0,0,0,0.75);");
             overlay.prefWidthProperty().bind(rootStack.widthProperty());
             overlay.prefHeightProperty().bind(rootStack.heightProperty());
 
-            controller.setOverlay(overlay);
-            controller.setModalRoot(modal);
+            popup.setOverlay(overlay);
+            popup.setModalRoot(modal);
 
             rootStack.getChildren().addAll(overlay, modal);
 
@@ -72,6 +77,7 @@ public class ItemVehicleController {
 
     public void setData(Vehicle vehicle) {
         if (vehicle == null) return;
+        this.vehicle = vehicle; // ← línea que falta
 
         lblModel.setText(vehicle.getBrand() + " " + vehicle.getModel());
         lblTechnicalInfo.setText(String.format("%s • %d km • %d", vehicle.getFuel(), vehicle.getKm(), vehicle.getYear()));
