@@ -80,17 +80,20 @@ public class LoginController {
     @FXML
     private void goToSalesLayout() {
         try {
-            URL url = getClass().getResource("/com/tradetune/app/ui/layout/SalesLayout.fxml");
-            if (url == null) {
-                throw new IllegalStateException("No se encuentra SalesLayout.fxml. Revisa la ruta en resources.");
-            }
-
-            FXMLLoader loader = new FXMLLoader(url);
+            URL fxml = getClass().getResource("/com/tradetune/app/ui/fxml/screens/SalesLayout.fxml"); // tu ruta real
+            FXMLLoader loader = new FXMLLoader(fxml);
             Parent root = loader.load();
 
             Stage stage = (Stage) btnLogin.getScene().getWindow();
-            stage.setScene(new Scene(root));
+
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(
+                    getClass().getResource("/com/tradetune/app/ui/css/base.css").toExternalForm()
+            );
+
+            stage.setScene(scene);
             stage.centerOnScreen();
+
         } catch (Exception e) {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, e.getMessage()).showAndWait();
