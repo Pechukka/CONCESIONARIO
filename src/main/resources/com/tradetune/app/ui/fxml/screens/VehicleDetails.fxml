@@ -20,7 +20,12 @@
             <Insets left="20" right="20" top="18" />
          </BorderPane.margin>
 
-         <ImageView fx:id="imgVehicle" pickOnBounds="true" preserveRatio="true" styleClass="vehicle-image" />
+         <ImageView fx:id="imgVehicle"
+                    preserveRatio="true"
+                    fitWidth="958"
+                    fitHeight="260"
+                    cache="true"
+                    styleClass="vehicle-image"/>
       </StackPane>
    </top>
 
@@ -90,7 +95,7 @@
    <bottom>
       <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets bottom="18" left="20" right="20" top="0" />
+            <Insets bottom="18" left="20" right="20"/>
          </BorderPane.margin>
       </HBox>
    </bottom>
